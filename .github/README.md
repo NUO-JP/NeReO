@@ -1,5 +1,7 @@
 # NeReO
 
+[![Download NeReO](https://img.shields.io/sourceforge/dw/nereo.svg)](https://sourceforge.net/projects/nereo/files/latest/download)
+
 **Ne(ws) Re(ader) O(pen-source)** — a free, open source, **text-only** Usenet (NNTP) newsreader for Android. No binaries, no ads, no tracking. GPL-3.0-or-later.
 
 Written from scratch in Kotlin + Jetpack Compose. Its interface follows Piao Hong's *Newsreader* (MOD 17); its goal is to combine that familiarity with the depth of configuration of MesNews.
