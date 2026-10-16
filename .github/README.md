@@ -1,5 +1,7 @@
 # NeReO
 
+[![Download NeReO](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/nereo/files/latest/download)
+
 [![Download NeReO](https://img.shields.io/sourceforge/dw/nereo.svg)](https://sourceforge.net/projects/nereo/files/latest/download)
 
 **Ne(ws) Re(ader) O(pen-source)** — a free, open source, **text-only** Usenet (NNTP) newsreader for Android. No binaries, no ads, no tracking. GPL-3.0-or-later.
