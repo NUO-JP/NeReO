@@ -1,0 +1,24 @@
+# NeReO - file e cartelle che git NON deve caricare
+# Generati da Gradle / Android Studio
+build/
+.gradle/
+.kotlin/
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# APK e bundle compilati (vanno nelle release, non nel codice)
+*.apk
+*.aab
+
+# Chiavi di firma: MAI nel repository
+*.jks
+*.keystore
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    RC01: lingue supportate da NeReO.
+
+    Dichiarandole qui, Android 13+ mostra la voce "Lingua" nelle impostazioni
+    dell'app (Impostazioni → App → NeReO → Lingua): l'utente può tenere il
+    telefono in una lingua e NeReO in un'altra, senza cambiare tutto il sistema.
+
+    Sono previste SOLO queste due lingue: nessun'altra verrà aggiunta.
+    L'inglese è il default (values/), l'italiano sta in values-it/.
+-->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="it" />
+</locale-config>

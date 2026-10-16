@@ -1,0 +1,9 @@
+NeReO (Ne(ws) Re(ader) O(pen-source))
+(package interno org.openusenet.reader: invariato di proposito)
+Versione sorgenti: 1.5.4 (versionCode 168)
+Data build: 2026-10-15
+
+Questo file e' GENERATO automaticamente a ogni build da
+app/build.gradle.kts: non modificarlo a mano, le modifiche
+verrebbero sovrascritte. La versione qui sopra e' sempre
+quella realmente compilata nell'APK.

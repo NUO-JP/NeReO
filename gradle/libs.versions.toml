@@ -1,0 +1,77 @@
+# ---------------------------------------------------------------------------
+# TOOLCHAIN — migrata il 10 settembre 2026 con l'AGP Upgrade Assistant di
+# Android Studio (Quail 2 | 2026.1.2, JDK 21): AGP 8.7.3 -> 9.3.0,
+# Gradle 8.9 -> 9.5.0, Kotlin 2.0.21 -> 2.2.10, KSP alla numerazione KSP2.
+# Le tre righe qui sotto NON sono state scelte da me: le ha decise lo
+# strumento in base a cio' che quella installazione regge davvero, e il
+# risultato e' stato COMPILATO E PROVATO da Marco prima di questo passo,
+# con la Compose ancora vecchia (verificato nell'APK: AGP 9.3.0 +
+# Compose 1.7.6). E' la linea di partenza: se qualcosa si rompe adesso,
+# AGP e Gradle sono gia' stati assolti sul campo.
+# ---------------------------------------------------------------------------
+[versions]
+agp = "9.3.0"
+kotlin = "2.2.10"
+ksp = "2.3.2"
+
+# ---------------------------------------------------------------------------
+# COMPOSE — il salto vero di questa release: 2024.12.01 (Compose 1.7.6) ->
+# 2026.08.00 (Compose 1.12). Venti mesi.
+#
+# PERCHE': nelle note di rilascio di Compose 1.12 ci sono lavori espliciti
+# sulla selezione col MOUSE e sulla barra di selezione del testo. E' l'unica
+# strada per sapere se il caso di Roxy (barra flottante che non compare mai
+# col puntatore) sia gia' risolto a monte. NON e' una certezza: e' il motivo
+# per cui vale la pena provare.
+#
+# REQUISITI dichiarati da Compose 1.12: compileSdk 37 e AGP >= 9.2.0.
+# Il secondo e' soddisfatto (9.3.0). Il primo comporta scaricare la
+# piattaforma SDK 37 da Android Studio, se non c'e' gia'.
+#
+# SE GRADLE PROTESTA — scaletta di ripiego, si scende di un gradino alla
+# volta cambiando SOLO questa riga (e, se lo chiede, compileSdk in
+# app/build.gradle.kts):
+#     2026.08.00   <- attuale
+#     2026.06.01
+#     2026.03.01
+#     2025.12.01
+#     2024.12.01   <- il valore di prima, ritorno sicuro
+# ---------------------------------------------------------------------------
+composeBom = "2026.08.00"
+activityCompose = "1.9.3"
+navigationCompose = "2.8.5"
+lifecycle = "2.8.7"
+room = "2.8.4"
+coroutines = "1.9.0"
+coreKtx = "1.15.0"
+coreSplashscreen = "1.0.1"
+junit = "4.13.2"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "coreSplashscreen" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+# 1.5.2 (13 ottobre 2026): material-icons-EXTENDED -> material-icons-CORE.
+# Extended portava 11.400 classi di icone, il 55% di tutto il codice dell'APK
+# (10,1 MB su 18,3), e NeReO ne usa 75: quelle 75 stanno ora in
+# ui/icone/IconeNeReO.kt, lette dal bytecode della libreria e verificate
+# IDENTICHE eseguendole (controlli/icone/). Core resta: contiene l'oggetto
+# Icons e costa poche decine di classi. Stessa versione di prima (BOM, 1.7.8).
+compose-material-icons = { group = "androidx.compose.material", name = "material-icons-core" }
+activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }

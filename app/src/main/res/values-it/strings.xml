@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NeReO — stringhe dell'interfaccia, ITALIANO.
+
+    Usato automaticamente quando il telefono è impostato in italiano.
+    Per tutte le altre lingue vale values/strings.xml (inglese).
+
+    Le chiavi devono corrispondere ESATTAMENTE a quelle del file inglese:
+    una chiave presente qui ma non là (o viceversa) è un errore di
+    compilazione o una stringa che non verrà mai tradotta.
+-->
+<resources>
+    <!-- ===== voci comuni, usate in più schermate ===== -->
+    <string name="common_back">Indietro</string>
+    <string name="common_cancel">Annulla</string>
+    <string name="common_save">Salva</string>
+    <string name="common_delete">Elimina</string>
+    <string name="common_copy">Copia</string>
+    <string name="common_ok">OK</string>
+
+    <!-- ===== Informazioni ===== -->
+    <string name="about_title">Informazioni</string>
+
+    <!-- ===== Bozze ===== -->
+    <string name="drafts_title">Bozze</string>
+    <string name="drafts_title_group">Bozze — %1$s</string>
+    <string name="drafts_delete">Elimina la bozza</string>
+    <string name="drafts_filter_this_group">Questo gruppo</string>
+    <string name="drafts_filter_all_groups">Tutti i gruppi</string>
+
+    <!-- ===== Novità versione ===== -->
+    <string name="releasenotes_title">Novità versione</string>
+
+    <!-- ===== Disiscrizione da un gruppo ===== -->
+    <string name="unsubscribe_title">Annullare la sottoscrizione?</string>
+    <string name="unsubscribe_confirm">Disiscrivi</string>
+
+    <!-- ===== Schermata gruppi e menu principale ===== -->
+    <string name="menu_servers">Server</string>
+    <string name="menu_filters">Filtri</string>
+    <string name="menu_identity">Identità e firma</string>
+    <string name="menu_appearance">Aspetto</string>
+    <string name="menu_maintenance">Manutenzione e backup</string>
+    <string name="menu_more">Altro</string>
+    <string name="groups_refresh_all">Aggiorna tutti i gruppi</string>
+    <string name="sel_refresh_all">Aggiorna tutto</string>
+    <string name="sel_refresh_choose_servers">Scegli quali server aggiornare…</string>
+    <string name="sel_refresh_server_cd">Aggiorna %1$s</string>
+    <string name="sel_refresh_server_all">Aggiorna tutti i gruppi di questo server</string>
+    <string name="sel_refresh_server_choose">Scegli quali gruppi aggiornare…</string>
+    <string name="sel_pick_servers_title">Scegli i server da aggiornare</string>
+    <string name="sel_pick_groups_title">Scegli i gruppi da aggiornare (%1$s)</string>
+    <string name="groups_search">Cerca nei messaggi</string>
+    <string name="groups_subscribe">Sottoscrivi gruppi</string>
+    <string name="groups_move_up">Sposta su</string>
+    <string name="groups_reorder_toggle">Riordina i gruppi</string>
+    <string name="groups_move_down">Sposta giù</string>
+    <string name="sec_section">Sicurezza</string>
+    <string name="sec_plain_auth">Consenti autenticazione non cifrata</string>
+    <string name="sec_lazy_auth">Invia la password solo quando il server la chiede</string>
+    <string name="sec_lazy_auth_note">Di norma NeReO si autentica appena si collega. Con questa opzione attende che sia il server a chiederlo, poi invia le credenziali e ripete il comando. Su un server che non riesce a cifrare la connessione, la password attraversa la rete solo quando pubblichi invece che ad ogni sincronizzazione. Spenta di default perché cambia il modo in cui si contatta ogni server: se uno smette di funzionare, rispegnila.</string>
+    <string name="sec_cert_unverified">Non verificare il nome host sul certificato</string>
+    <string name="sec_cert_unverified_note">NeReO verifica che il certificato del server appartenga davvero all\'host a cui si collega. Accendi questa voce solo se il tuo provider ha il certificato configurato male e accetti il rischio: la connessione resta cifrata ma non più autenticata, quindi chi si trova in mezzo potrebbe leggere tutto, credenziali comprese.\n\nQuello che NON fa: non fa accettare a NeReO un certificato autofirmato, emesso da un\'autorità che Android non conosce, o scaduto. Quelli vengono rifiutati comunque, e questo interruttore non può cambiarlo.</string>
+    <string name="sec_plain_auth_note">Rischioso: se attivo, su un server senza SSL/TLS la password viene inviata IN CHIARO sulla rete. Lascialo spento a meno che tu non abbia un vecchio server che richiede l’auth solo su porta non cifrata. Preferisci sempre la porta SSL (di solito 563).</string>
+    <string name="sec_unsafe_title">Connessione non sicura</string>
+    <string name="sec_unsafe_msg">Il server «%1$s» rifiuta di inviare la password su una connessione non cifrata — ed è un bene. Due strade: passa quel server a SSL (consigliato, di solito porta 563), oppure consenti l’autenticazione non cifrata per tutti i server (sconsigliato).</string>
+    <string name="sec_unsafe_use_ssl">Passa a SSL</string>
+    <string name="sec_unsafe_allow">Consenti non cifrata (sconsigliato)</string>
+    <string name="quit_menu">Chiudi applicazione</string>
+    <string name="quit_title">Chiudere NeReO?</string>
+    <string name="quit_confirm">Chiudi</string>
+
+    <!-- ===== Schermata Aspetto ===== -->
+    <string name="app_theme">Tema</string>
+    <string name="app_theme_system">Come il sistema</string>
+    <string name="app_theme_light">Chiaro</string>
+    <string name="app_theme_dark">Scuro</string>
+    <string name="app_material_you">Material You (colori dal wallpaper)</string>
+    <string name="app_button_colour">Colore Tasti</string>
+    <string name="app_button_colour_note"> (attivo quando Material You è spento)</string>
+    <string name="app_reading">Lettura articoli</string>
+    <string name="app_monospace">Corpo in monospazio</string>
+    <string name="app_text_size">Dimensione testo</string>
+    <string name="app_text_size_note">La dimensione vale per tutta l\'interfaccia, non solo per la lettura dei messaggi.</string>
+    <string name="app_collapse_blank">Fusione linee intelligente (elimina righe vuote consecutive)</string>
+    <string name="app_shorten_quotes">Accorcia il testo citato (tocca per espandere)</string>
+    <string name="app_shorten_threshold">Accorcia le citazioni più lunghe di:</string>
+    <string name="app_quote_style">Stile delle citazioni</string>
+    <string name="app_quote_bars">Barre verticali colorate</string>
+    <string name="app_quote_marks">Simboli « &gt; » (stile Usenet classico)</string>
+    <string name="app_quote_both">Entrambi (barre + « &gt; »)</string>
+    <string name="app_quote_note">I livelli di citazione (&gt;, &gt;&gt;, &gt;&gt;&gt;) hanno colori distinti a gradini; gli URL sono cliccabili e la firma è attenuata.</string>
+    <string name="app_numeric_quote_depth">Citazioni molto annidate: usa i numeri</string>
+    <string name="app_numeric_quote_depth_note">Oltre la profondità scelta, i simboli « &gt; » ripetuti vengono sostituiti dal numero del livello (es. oltre 8: \"9\", \"10\", \"11\"…) — ripetuti diventano illeggibili su schermo stretto. Solo resa visiva: il testo che arriva e quello che parte mantiene i simboli « &gt; » standard, quindi il livello di citazione resta leggibile correttamente ovunque.</string>
+    <string name="app_quote_threshold">Passa ai numeri oltre il livello…</string>
+    <string name="app_quote_levels_count">%1$d livelli</string>
+    <string name="app_mark_read_exit">Segna tutto letto uscendo dal gruppo</string>
+    <string name="app_bars_section">Barra di lettura</string>
+    <string name="app_bars_customize">Personalizza barra di lettura</string>
+    <string name="app_bars_note">Scegli quali icone mostrare nella barra in basso della schermata di lettura, e in che ordine.</string>
+    <string name="bars_editor_title">Personalizza barra di lettura</string>
+    <string name="bars_editor_phone_section">Barra di lettura (telefono)</string>
+    <string name="bars_editor_pane_section">Barra del riquadro di lettura (tablet / pannelli)</string>
+    <string name="bars_editor_pane_note">Qui «spento» non vuol dire nascosto: l\'azione si sposta nel menu ⋮, che c\'e\' sempre. Nulla diventa irraggiungibile — comodo quando il riquadro di lettura e\' stretto, come su un tablet tenuto in verticale.</string>
+    <string name="bars_editor_pane_in_menu">nel menu ⋮</string>
+    <string name="bars_editor_note">Usa l\'interruttore per mostrare o nascondere un\'azione, e le frecce per spostarla su o giù. Le frecce funzionano allo stesso modo con dito, penna o telecomando/D-pad.</string>
+    <string name="bars_editor_reset">Ripristina ordine predefinito</string>
+    <string name="bars_editor_move_up_cd">Sposta su</string>
+    <string name="bars_editor_move_down_cd">Sposta giù</string>
+    <string name="app_continuous_view">Vista continua: mostra tutti i post del thread uno sotto l\'altro</string>
+    <string name="app_unread_only">Le liste partono mostrando solo i non letti</string>
+    <string name="app_unread_only_note">L’icona a forma di busta in cima a una lista commuta fra «solo non letti» e «tutti i messaggi». È lo stesso interruttore: cambiandolo qui si muove anche l’icona, e viceversa.</string>
+    <string name="app_reading_background">Sfondo lettura</string>
+    <string name="app_reading_bg_note">Vale per la lettura dei messaggi. \"Predefinito\" (il primo) segue il tema.</string>
+    <string name="app_ui_tint">Tinta dell\'interfaccia</string>
+    <string name="app_ui_tint_note">Colora lo sfondo di tutta l\'app, non solo il corpo dei messaggi. Ogni tinta e\' gia\' chiara o scura per conto suo: sceglierne una sostituisce l\'impostazione Chiaro/Scuro qui sopra e i colori dinamici di sistema.</string>
+    <string name="app_pane_density">Densita\' del pannello discussioni</string>
+    <string name="app_pane_density_note">Vale SOLO per la colonna centrale del layout a pannelli, non per il corpo dei messaggi. Su schermi grandi e guardati da lontano (TV box, monitor) serve vedere tante intestazioni in un colpo d\'occhio senza rimpicciolire il testo che poi devi leggere.</string>
+    <string name="app_colour_read_state_note">Colora nelle liste i messaggi da leggere (rosso) e quelli letti (verde). I non letti restano comunque in grassetto.</string>
+    <string name="app_prefetch_note">Aprendo un messaggio, scarica in anticipo i corpi delle risposte dirette, così scorrere il thread è immediato. Disattivalo se hai traffico dati limitato.</string>
+    <string name="app_tap_op_expand">Tocca il messaggio per espandere il thread</string>
+    <string name="app_tap_op_expand_note">Toccare il testo del primo messaggio di una discussione la espande o la comprime, invece di aprirla — la stessa azione del +/-. Utile se il pulsante +/- è difficile da centrare (es. da lontano, col telecomando). Il messaggio resta comunque raggiungibile dal menu (tocco prolungato) → \"Apri\". Nel layout a pagina singola agisce solo nella vista RAGGRUPPATA: nella vista ad albero non c\'è un +/- da sostituire, e per andare dritto al primo non letto c\'è l\'opzione qui sotto.</string>
+    <string name="app_open_first_unread">Tocca la discussione per aprire il primo non letto</string>
+    <string name="app_open_first_unread_note">Sul telefono, toccare la testa di una discussione apre il primo messaggio non ancora letto di quella discussione, invece del primo post (se sono già tutti letti, apre il primo post). Vale nella vista ad albero e in quella raggruppata. Nella raggruppata, se è accesa anche l\'opzione qui sopra, espandere ha la precedenza.</string>
+    <string name="app_navigation">Navigazione</string>
+    <string name="app_gesture_note">Gesture fra i messaggi: scorri oltre il fondo per il successivo, oltre l\'inizio per il precedente; trascina in orizzontale per saltare avanti o indietro.</string>
+    <string name="app_gesture_debug_note">Diagnostica gesture: mostra in fondo alla lettura i valori misurati a ogni gesto (serve solo per il collaudo).</string>
+    <string name="app_pane_layout">Layout a pannelli (tablet e orizzontale)</string>
+    <string name="app_pane_auto">Automatico (schermi larghi e orizzontale)</string>
+    <string name="app_pane_always">Sempre attivo</string>
+    <string name="app_pane_never">Mai (usa sempre le pagine)</string>
+    <string name="app_pane_rows">Disposti su tre righe</string>
+    <string name="app_pane_cols">Disposti su tre colonne</string>
+    <string name="app_pane_ratios">Proporzioni dei pannelli</string>
+    <string name="app_pane_groups">Gruppi</string>
+    <string name="app_pane_threads">Discussioni</string>
+    <string name="app_pane_reading">Lettura</string>
+    <string name="app_reset_ratios">Ripristina proporzioni</string>
+    <string name="app_default">Predefinito</string>
+
+    <!-- ===== Dimensioni testo ===== -->
+    <string name="app_size_xs">Piccolissimo</string>
+    <string name="app_size_s">Molto piccolo</string>
+    <string name="app_size_m">Piccolo</string>
+    <string name="app_size_l">Normale</string>
+    <string name="app_size_xl">Grande</string>
+    <string name="app_size_xxl">Molto grande</string>
+
+    <!-- ===== Densita' pannello e ordinamenti ===== -->
+    <string name="app_density_normal">Normale</string>
+    <string name="app_density_compact">Compatta</string>
+    <string name="app_density_dense">Fitta</string>
+    <string name="app_density_verydense">Molto fitta</string>
+    <string name="app_density_max">Massima</string>
+    <string name="sort_activity_desc">Per messaggio piu\' recente del thread</string>
+    <string name="sort_activity_asc">Per messaggio piu\' vecchio del thread</string>
+    <string name="sort_opened_desc">Per apertura del thread, dai piu\' recenti</string>
+    <string name="sort_opened_asc">Per apertura del thread, dai piu\' vecchi</string>
+
+    <!-- ===== Tinte interfaccia e soglia righe ===== -->
+    <string name="tint_sepia">Sepia</string>
+    <string name="tint_cream">Crema</string>
+    <string name="tint_mint">Verde menta</string>
+    <string name="tint_sky">Azzurro chiaro</string>
+    <string name="tint_lavender">Lavanda</string>
+    <string name="tint_slate">Ardesia</string>
+    <string name="tint_night">Blu notte</string>
+    <string name="tint_forest">Verde bosco</string>
+    <string name="tint_charcoal">Carbone</string>
+    <string name="tint_purple">Purple</string>
+    <string name="app_lines_count">%d righe</string>
+
+    <!-- ===== Schermata Server ===== -->
+    <string name="srv_title">Server NNTP</string>
+    <string name="srv_add">Aggiungi server</string>
+    <string name="srv_cleartext_warning">Ultimo collegamento NON cifrato — la password viaggia in chiaro</string>
+    <string name="srv_starttls_alarm">Questo server offriva STARTTLS e adesso non lo annuncia più — RFC 4642 §5</string>
+    <string name="srv_ssl_suffix"> (SSL)</string>
+    <string name="srv_tap_edit">  ·  tocca per modificare</string>
+    <string name="srv_empty">Nessun server configurato.\nTocca + per aggiungerne uno (es. news.eternal-september.org, porta 563, SSL).</string>
+    <string name="srv_delete_title">Cancellare %1$s?</string>
+    <string name="srv_delete_body">Se ne vanno anche i suoi gruppi (%1$d) e tutti i messaggi scaricati (%2$d). Non si torna indietro: per riaverli bisognerebbe ri-aggiungere il server e riscaricare tutto da capo. Le identita’, i filtri e le bozze non vengono toccati.</string>
+    <string name="srv_new">Nuovo server</string>
+    <string name="srv_edit">Modifica server</string>
+    <string name="srv_preset">  Scegli da un server noto</string>
+    <string name="srv_name">Nome</string>
+    <string name="srv_host">Host</string>
+    <string name="srv_port">Porta</string>
+    <string name="srv_use_ssl">Usa SSL/TLS</string>
+    <string name="srv_user">Utente (opzionale)</string>
+    <string name="srv_pass_new">Password (opzionale)</string>
+    <string name="srv_pass_show">Mostra la password</string>
+    <string name="srv_pass_hide">Nascondi la password</string>
+    <string name="srv_pass_chars">%1$d caratteri</string>
+    <string name="srv_pass_edge_space">%1$d caratteri — inizia o finisce con uno spazio: è voluto?</string>
+    <string name="srv_pass_edit">Password (vuoto = invariata)</string>
+    <string name="common_edit">Modifica</string>
+
+    <!-- ===== Note dei server predefiniti ===== -->
+    <string name="srv_preset_free_reg">Registrazione gratuita sul sito</string>
+    <string name="srv_preset_no_reg">Nessuna registrazione</string>
+    <!-- 1.2.9 (voce E, roadmap NNTP): STARTTLS + override per-server -->
+    <string name="srv_starttls">STARTTLS (passa a cifrato dopo la connessione)</string>
+    <string name="srv_starttls_note">Per i server che restano su una porta in chiaro (di solito 119) ma offrono il passaggio a TLS subito dopo la connessione — RFC 4642. Ignorato se SSL/TLS qui sopra è già attivo.</string>
+    <string name="srv_auth_override">Autenticazione non cifrata su questo server</string>
+    <string name="srv_auth_override_global">Usa l\'impostazione globale (Manutenzione → Sicurezza)</string>
+    <string name="srv_auth_override_allow">Consenti sempre, anche senza cifratura</string>
+    <string name="srv_auth_override_block">Blocca sempre, anche se l\'impostazione globale la consente</string>
+    <!-- 1.2.9 (multi-identità) -->
+    <string name="srv_identity">Identità con cui pubblicare qui</string>
+    <string name="srv_identity_default_option">Usa l\'identità predefinita</string>
+
+    <string name="quit_body">L\'applicazione verra\' chiusa e rimossa dalle app recenti, liberando la memoria.\n\nEventuali scaricamenti in corso verranno interrotti: riprenderanno alla prossima apertura. Le bozze salvate non si perdono.</string>
+
+    <!-- ===== Testi lunghi delle schermate gia' tradotte ===== -->
+    <string name="about_desc">Newsreader Usenet (NNTP) solo testo per Android. Niente gruppi binari, niente allegati, niente pubblicita\', niente telemetria: solo discussioni.</string>
+    <string name="about_built_with">Costruito con</string>
+    <string name="about_tech_note">Allega questo blocco alle segnalazioni: dice esattamente quale versione stavi usando e su che dispositivo.</string>
+    <string name="drafts_empty">Nessuna bozza.\n\nMentre scrivi un messaggio puoi salvarlo qui\ncon il pulsante nella barra in alto.</string>
+    <string name="rn_whats_changed">Cosa cambia in questa versione</string>
+    <string name="rn_full_history">Lo storico completo di tutte le versioni è nel file README.</string>
+    <string name="unsub_body">Il gruppo sparisce dall\'elenco e non viene piu\' sincronizzato. Puoi sempre risottoscriverlo dalla directory del server con il +.</string>
+    <string name="unsub_delete_note">Libera spazio. Stato di lettura e contrassegni vanno persi.</string>
+    <string name="unsub_keep_note">I messaggi restano in memoria: risottoscrivendo li ritrovi come li avevi lasciati.</string>
+    <string name="groups_unread">Messaggi non letti</string>
+    <string name="groups_hint">Suggerimento: tieni premuto un gruppo per le sue azioni (scarica corpi, disiscrizione).</string>
+    <string name="groups_empty">Nessun gruppo sottoscritto.\nTocca + per sfogliare la directory dei gruppi.</string>
+
+    <!-- ===== Schermata Filtri ===== -->
+    <string name="flt_title">Filtri e punteggi</string>
+    <string name="flt_apply_now_cd">Applica i filtri ai messaggi gia\' scaricati</string>
+    <string name="flt_importexport_cd">Import/Export kill-file</string>
+    <string name="flt_new_rule_cd">Nuova regola</string>
+    <string name="flt_body_rule">corpo %1$s \"%2$s\"  →  plonk autore</string>
+    <string name="flt_empty">Nessuna regola.\nTocca + per crearne una: scegli un\'azione (Ignora, Evidenzia, Segui il thread…) e il pattern da cercare.\nPer i casi avanzati puoi ancora usare un punteggio numerico (le regole che matchano si sommano).</string>
+    <string name="flt_apply_title">Applicare i filtri ai messaggi gia\' scaricati?</string>
+    <string name="flt_apply_body">Le regole valgono normalmente per i messaggi NUOVI in arrivo. Con questo comando vengono applicate anche a quelli gia\' scaricati: chi ricade in una regola \"Elimina del tutto\" verra\' rimosso dal dispositivo, chi ricade in una regola \"Ignora (nascondi)\" verra\' nascosto (recuperabile con \"Mostra filtrati\"), e chi ricade in una regola \"Evidenzia\" — o in un punteggio messo a mano in modalita\' avanzata — riceve quel punteggio e appare evidenziato nell\'elenco delle discussioni.\n\nChi ricade in una regola \"Segui il thread\" riceve anche la stella. E nell\'altra direzione: un messaggio che nessuna regola attiva nasconde piu\' torna visibile, e la stella o il colore messi da una regola che non vale piu\' si tolgono (le stelle messe a mano restano). Lo stesso succede da solo quando cancelli o modifichi una regola. I messaggi eliminati restano sul server e si possono riscaricare.</string>
+    <string name="flt_apply_now">Applica ora</string>
+    <string name="flt_applied_title">Filtri applicati</string>
+    <string name="flt_applied_none">Nessun messaggio gia\' scaricato ricadeva in una regola attiva.</string>
+    <string name="flt_applied_summary">Eliminati: %1$d. Nascosti: %2$d. Punteggio aggiornato: %3$d.</string>
+    <string name="flt_applied_relaxed">Tornati visibili: %1$d. Stelle tolte: %2$d.</string>
+    <string name="flt_killfile_title">Kill-file (formato slrn-like)</string>
+    <string name="flt_killfile_note">Modifica o incolla un kill-file, poi Importa. Il testo qui sotto è l\'export delle regole attuali.</string>
+    <string name="flt_import">Importa</string>
+    <string name="common_close">Chiudi</string>
+    <string name="flt_rule_new">Nuova regola</string>
+    <string name="flt_rule_edit">Modifica regola</string>
+    <string name="flt_name_opt">Nome (opzionale)</string>
+    <string name="flt_pattern">Pattern</string>
+    <string name="flt_body_note">Regola CORPO: se il messaggio contiene questo pattern, l\'autore viene messo nella lista plonk (ignorato d\'ora in poi).</string>
+    <string name="flt_field_newsreader">Lettore</string>
+    <string name="flt_newsreader_note">Guarda il programma dichiarato dall\'autore (User-Agent, X-Newsreader, X-Mailer). Serve per chi cambia spesso nickname ma pubblica sempre dallo stesso lettore. Attenzione: quelle intestazioni non arrivano con l\'elenco dei messaggi, arrivano con il testo — quindi la regola scatta appena il messaggio viene scaricato, non prima. Con «prefetch risposte» acceso (predefinito) succede da solo. Abbinala a «Estendi alle risposte» per far cadere tutto il ramo.</string>
+    <string name="flt_action">Azione</string>
+    <string name="flt_score_label">Punteggio (es. -100, +50). Le regole che matchano si sommano.</string>
+    <string name="flt_scope">Scope gruppi (wildmat, * = tutti)</string>
+    <string name="flt_case">Case sensitive</string>
+    <string name="flt_act_ignore">Ignora (nascondi)</string>
+    <string name="flt_act_delete">Elimina del tutto</string>
+    <string name="flt_act_highlight">Evidenzia</string>
+    <string name="flt_act_follow">Segui il thread</string>
+    <string name="flt_act_advanced">Avanzato (punteggio a mano)</string>
+    <string name="flt_field_from">da</string>
+    <string name="flt_field_subject">oggetto</string>
+    <string name="flt_field_id">id</string>
+    <string name="flt_field_xpost">crosspost</string>
+    <string name="flt_field_body">corpo</string>
+    <string name="flt_field_references">riferimenti</string>
+    <string name="flt_followup">Estendi alle risposte</string>
+    <string name="flt_followup_note">Vengono nascoste anche le risposte ai post di questo autore, e tutto il ramo sottostante, chiunque le abbia scritte. Quelle persone restano perfettamente visibili altrove: in altre discussioni, nei rami non contaminati della stessa discussione e nei post che aprono loro.</string>
+    <string name="flt_followup_note_positiva">Anche le risposte ai post di questo autore, e tutto il ramo sottostante, ricevono lo stesso trattamento: vengono evidenziate, o seguite con la stella se l\'azione è «Segui il thread». Non viene nascosto niente.</string>
+    <string name="flt_followup_badge">anche le risposte</string>
+
+    <!-- ===== Schermata Manutenzione e backup ===== -->
+    <string name="mnt_title">Manutenzione e backup</string>
+    <string name="mnt_restored">Ripristinati %1$d server, %2$d gruppi, %3$d filtri.</string>
+    <string name="mnt_username_riparati">Corretti anche %1$d server che avevano come nome utente la parola &quot;null&quot;, lasciata li\' da un ripristino fatto con una versione precedente.</string>
+    <string name="mnt_import_err">Errore import: %s</string>
+    <string name="mnt_backup_enc_ok">Backup cifrato esportato</string>
+    <string name="mnt_backup_ok">Backup esportato (senza password server)</string>
+    <string name="mnt_export_err">Errore export: %s</string>
+    <string name="mnt_file_unreadable">File illeggibile</string>
+    <string name="mnt_file_unreadable_note">Il selettore ha consegnato il file, ma il sistema non e\' riuscito ad aprirlo. Non c\'entra il contenuto del backup: non e\' mai stato letto. Il dettaglio tecnico qui sotto e\' quello che serve a una segnalazione: copialo e allegalo.</string>
+    <string name="mnt_backup_section">Backup configurazione</string>
+    <string name="mnt_backup_note">Esporta o ripristina server, sottoscrizioni ai gruppi, filtri, impostazioni. Al ripristino i server con stesso host e porta vengono aggiornati, non duplicati. All\'esportazione ti verrà chiesta una password: se la imposti il file viene cifrato e include le password dei server; se la lasci vuota il file è in chiaro e senza password dei server.</string>
+    <string name="mnt_export">Esporta</string>
+    <string name="mnt_restore">Ripristina</string>
+    <string name="mnt_restore_how">Come ripristinare il backup?</string>
+    <string name="mnt_restore_how_note">Unisci conserva quello che hai gia\' e aggiorna cio\' che il backup contiene a sua volta: ripristinando due volte lo stesso file, la seconda volta non cambia nulla. Sostituisci cancella prima i filtri e le identita\' attuali, poi ripristina quelli del backup. Nessuna delle due opzioni tocca server, sottoscrizioni o articoli scaricati.</string>
+    <string name="mnt_restore_merge">Unisci</string>
+    <string name="mnt_restore_replace">Sostituisci</string>
+    <string name="mnt_autoclean">Pulizia automatica</string>
+    <string name="mnt_autoclean_note">Dopo ogni sincronizzazione elimina i messaggi GIÀ LETTI più vecchi della soglia. I non letti e i thread watched restano sempre. Ogni gruppo può avere una soglia propria (dalla sua lista messaggi, menù ⋮).</string>
+    <string name="mnt_never">Mai</string>
+    <string name="mnt_days_30">30 giorni</string>
+    <string name="mnt_days_90">90 giorni</string>
+    <string name="mnt_days_180">180 giorni</string>
+    <string name="mnt_year_1">1 anno</string>
+    <string name="mnt_cleaned">%1$d messaggi letti eliminati (oltre %2$d giorni)</string>
+    <string name="mnt_clean_now">Pulisci adesso</string>
+    <string name="mnt_headers_section">Intestazioni per sincronizzazione</string>
+    <string name="mnt_headers_note">Quante intestazioni scaricare al massimo per ogni sync di un gruppo. Valori bassi = sync più rapide su rete lenta; valori alti = più storico.</string>
+    <string name="mnt_headers_100">100 intestazioni</string>
+    <string name="mnt_headers_300">300 intestazioni</string>
+    <string name="mnt_headers_500">500 intestazioni</string>
+    <string name="mnt_headers_1000">1000 intestazioni</string>
+    <string name="mnt_headers_2000">2000 intestazioni</string>
+    <string name="mnt_headers_all">Tutti i messaggi (nessun limite)</string>
+    <string name="mnt_headers_all_note">\"Tutti i messaggi\" scarica l\'intero storico disponibile sul server: su gruppi attivi la prima sincronizzazione può richiedere parecchio tempo.</string>
+    <string name="mnt_bodies_section">Scaricamento automatico dei corpi</string>
+    <string name="mnt_bodies_switch">Scarica anche i corpi ad ogni apertura di un gruppo</string>
+    <string name="mnt_bodies_note">Oltre alle intestazioni, scarica anche il testo dei messaggi mancanti ogni volta che apri un gruppo — utile se \"Scarica tutti i corpi\" manuale (menu ⋮ del gruppo) è scomodo da usare spesso. Su gruppi grandi o connessioni lente può rallentare l\'apertura: da qui il tetto qui sotto.</string>
+    <string name="mnt_bodies_max">Max corpi per apertura</string>
+    <string name="mnt_alerts_section">Avvisi e controllo automatico</string>
+    <string name="mnt_syncstart_note">All\'apertura di NeReO scarica automaticamente i nuovi messaggi di tutti i gruppi sottoscritti.</string>
+    <string name="mnt_syncstart_note2">Equivale a tirare giù l\'elenco per aggiornare, ma automatico all\'avvio. Disattivalo se hai una connessione lenta o dati a consumo e preferisci aggiornare manualmente quando vuoi.</string>
+    <string name="mnt_syncgroupopen_note">Aggiorna automaticamente un gruppo quando lo apri (anche rientrando da un articolo che stavi leggendo).</string>
+    <string name="mnt_syncgroupopen_note2">Disattivalo se preferisci tenere tutto fermo finché non lanci tu il sync — utile per non perdere il segno delle discussioni lasciate a metà in mezzo a quelle appena arrivate. Il sync manuale (pulsante/tira giù per aggiornare) resta sempre disponibile, acceso o spento.</string>
+    <string name="mnt_sound_note">Suono quando arriva una risposta a un mio messaggio (riconosciuta dall\'email impostata in Identità).</string>
+    <string name="mnt_autocheck">Controllo automatico nuovi messaggi</string>
+    <string name="mnt_off">Disattivato</string>
+    <string name="mnt_every_3">Ogni 3 minuti</string>
+    <string name="mnt_every_5">Ogni 5 minuti</string>
+    <string name="mnt_every_10">Ogni 10 minuti</string>
+    <string name="mnt_autocheck_note">Il controllo automatico funziona mentre l\'app è aperta; sincronizza tutti i gruppi sottoscritti all\'intervallo scelto.</string>
+    <string name="mnt_backup_pass_title">Password del backup</string>
+    <string name="mnt_backup_pass_note">Imposta una password per cifrare il backup (consigliato: protegge le password dei server). Lascia vuoto per un backup in chiaro, senza password dei server.</string>
+    <string name="mnt_pass_empty">Password (vuoto = nessuna)</string>
+    <string name="mnt_backup_protected">Backup protetto</string>
+    <string name="mnt_backup_protected_note">Questo backup è cifrato. Inserisci la password impostata alla creazione.</string>
+    <string name="mnt_wrong_pass">Password errata o file danneggiato</string>
+
+    <!-- ===== Informazioni (completamento) ===== -->
+    <string name="about_package">Pacchetto: %s</string>
+    <string name="about_device">Dispositivo: %s</string>
+    <string name="about_version">versione %s</string>
+    <string name="about_dev">Sviluppo</string>
+    <string name="about_license">Licenza</string>
+    <string name="about_license_val">GNU GPL v3 o successiva</string>
+    <string name="about_protocol">Protocollo</string>
+    <string name="about_protocol_val">NNTP — RFC 3977, autenticazione RFC 4643</string>
+    <string name="about_tech">Dati tecnici</string>
+    <string name="about_tech_copied">Dati tecnici copiati</string>
+
+    <!-- ===== Identita' e firma (1.2.9: una riga = un'identità, non più le
+         preferenze generali — vedi IdentityScreen.kt) ===== -->
+    <string name="id_title">Modifica identità</string>
+    <string name="id_new_title">Nuova identità</string>
+    <string name="id_img_unreadable">Immagine illeggibile</string>
+    <string name="id_img_invalid">Immagine non valida: %s</string>
+    <string name="id_saved">Salvato</string>
+    <string name="id_nickname">Nickname</string>
+    <string name="id_nickname_note">Serve solo a riconoscere questa identità nell\'elenco e quando la assegni a un server — non viene mai inviato coi tuoi messaggi.</string>
+    <string name="id_name">Nome (visibile nei gruppi)</string>
+    <string name="id_email">Email</string>
+    <string name="id_default_switch">Identità predefinita</string>
+    <string name="id_default_switch_note">Usata automaticamente ovunque non ne sia assegnata una più specifica (un server senza identità propria, una Risposta/Followup avviata fuori da un gruppo).</string>
+    <string name="id_add_sig">Aggiungi la firma ai messaggi in uscita</string>
+    <string name="id_random_sig">Firma casuale: se ne inserisci più d\'una, ne estraggo una a sorte</string>
+    <string name="id_sig_label">Firma (senza il delimitatore \"-- \": lo aggiungo io)</string>
+    <string name="id_sig_note">Per più firme separale con una riga contenente %1$s. Ogni firma è limitata a %2$d righe di testo da %3$d colonne (netiquette Usenet); le righe vuote intercalate non contano nel limite. Segnaposto: %%versione%% → versione in uso; %%nereo%% → NeReO + versione.</string>
+    <string name="id_sig_note2">Netiquette: massimo 4 righe, 72 caratteri per riga. In composizione la firma resta modificabile come testo normale.</string>
+    <string name="id_privacy">Privacy</string>
+    <string name="id_useragent">User-Agent dichiarato nei post</string>
+    <string name="id_useragent_note">Lascia vuoto per non dichiarare nessun newsreader, o scrivi quello che preferisci. %1$s diventa la versione in uso al momento dell\'invio, così resta aggiornato da solo. La RFC 5536 vuole la versione attaccata con una barra: NeReO/1.3.2 (Android).</string>
+    <string name="id_noarchive">X-No-Archive: chiedi agli archivi di non conservare i tuoi post</string>
+    <string name="id_intro">Introduzione alla citazione</string>
+    <string name="id_intro_tpl">Modello (vuoto = \"%s\")</string>
+    <string name="id_intro_note">Segnaposto: %%autore%% %%email%% %%data%% %%ora%% %%gruppo%% %%oggetto%% %%messageid%%. Per più varianti separale con %s: ne verrà scelta una a caso.</string>
+    <string name="id_custom_headers">Intestazioni personalizzate</string>
+    <string name="id_custom_headers_lbl">Una per riga: Nome: valore</string>
+    <string name="id_custom_headers_note">Es.: Reply-To: tu@example.org · Organization: … Aggiunte a ogni messaggio (modificabili in composizione). Gli header vitali (From, Subject…) e quelli di controllo (Followup-To, Control, Sender, Expires…) non sono sovrascrivibili: se li scrivi qui NeReO te lo dice e li scarta.</string>
+    <string name="id_face">Face (avatar nei post)</string>
+    <string name="id_face_48">48×48 (consigliata)</string>
+    <string name="id_face_96">96×96 (pesante)</string>
+    <string name="id_face_warn">⚠ La Face 96×96 pesa circa 4 volte di più e viene ripetuta nell\'header di OGNI tuo messaggio. Per rispetto della tradizione Usenet e del traffico, è preferibile la 48×48. Scegli la grande solo se davvero necessario.</string>
+    <string name="id_face_note">La taglia scelta qui vale per la PROSSIMA immagine che scegli — non ridimensiona quella già impostata. La 48×48 è lo standard storico delle Face/X-Face ed è la scelta consigliata: leggera e universale. La 96×96 è più definita ma appesantisce ogni messaggio — un tempo era una questione seria di netiquette, oggi meno, ma resta buona educazione mantenere gli header snelli.</string>
+    <string name="id_face_current">Face attuale</string>
+    <string name="id_face_none">(nessuna)</string>
+    <string name="id_face_choose">Scegli immagine…</string>
+    <string name="id_face_remove">Rimuovi</string>
+    <string name="id_face_std_note">Standard \"Face:\" (PNG, come MesNews): l\'immagine scelta viene ridotta alla taglia sopra e inviata con ogni messaggio; i newsreader compatibili la mostrano accanto all\'autore.</string>
+
+    <!-- ===== Elenco identità (1.2.9) ===== -->
+    <string name="idl_title">Identità</string>
+    <string name="idl_add_cd">Nuova identità</string>
+    <string name="idl_empty">Nessuna identità ancora.\nTocca + per crearne una (nome, email, firma, Face…) — poi assegnala a un server da Server → modifica.</string>
+    <string name="idl_default_suffix">%s (predefinita)</string>
+
+    <!-- ===== Gruppi disponibili ===== -->
+    <string name="gd_title">Gruppi disponibili</string>
+    <string name="gd_updated">Elenco aggiornato: %d gruppi</string>
+    <string name="gd_reload_cd">Riscarica elenco dal server</string>
+    <string name="gd_server">Server: %s  ▾</string>
+    <string name="gd_reload_full">Riscarica elenco completo</string>
+    <string name="gd_download">Scarica elenco gruppi dal server</string>
+    <string name="gd_advanced">  Opzioni avanzate</string>
+    <string name="gd_wildmat">Scarica solo (vuoto = tutti; es. it.*, free.*)</string>
+    <string name="gd_wildmat_note">Serve solo su provider con feed completo (centinaia di migliaia di gruppi, binaries incluse) o con connessioni a consumo. Attenzione: ogni download sostituisce la cache, quindi qui vanno indicati TUTTI i rami che vuoi, non solo quello nuovo.</string>
+    <string name="gd_search">Cerca nella cache (es. it.tlc.c…)</string>
+    <string name="gd_error">Impossibile scaricare l\'elenco gruppi:\n%s</string>
+    <string name="gd_downloading">Download elenco gruppi in corso…</string>
+    <string name="gd_cache_info">%1$d gruppi in cache · %2$d risultati</string>
+    <string name="gd_subscribed_cd">Sottoscritto (tocca per rimuovere)</string>
+    <string name="gd_subscribe_cd">Sottoscrivi</string>
+    <string name="gd_no_match">Nessun gruppo corrisponde a \"%s\".</string>
+
+    <string name="gd_received">\n%d gruppi ricevuti</string>
+    <string name="gd_first_500"> (primi 500)</string>
+
+    <!-- ===== Messaggi comuni e schermata di scrittura ===== -->
+    <string name="msg_new_articles">%d nuovi articoli</string>
+    <string name="msg_no_new">Nessun nuovo articolo</string>
+    <string name="msg_error">Errore: %s</string>
+    <string name="msg_bodies_downloaded">Scaricati %d corpi</string>
+    <string name="msg_redownloaded">Riscaricati %d articoli</string>
+    <string name="cmp_reply">Rispondi</string>
+    <string name="cmp_new_thread">Nuovo thread</string>
+    <string name="cmp_crosspost_reply_cd">Gruppi di risposta (crosspost)</string>
+    <string name="cmp_crosspost_new_cd">Invia anche in altri gruppi (crosspost)</string>
+    <string name="cmp_trim_cd">Rifinisci citazione</string>
+    <string name="cmp_quotemode_cd">Modalità citazione</string>
+    <string name="cmp_quotemode_note">Cambiare modalità ricompone il messaggio</string>
+    <string name="cmp_draft_saved">Bozza salvata</string>
+    <string name="cmp_save_draft_cd">Salva come bozza</string>
+    <!-- 1.5.1: «Scarta» nella scrittura (T3 della bozza autosalvata) -->
+    <string name="cmp_discard_cd">Scarta</string>
+    <string name="cmp_discard_title">Scartare questo messaggio?</string>
+    <string name="cmp_discard_body">Il testo viene buttato e la sua bozza cancellata. Non si può annullare.</string>
+    <string name="cmp_discard_ok">Scarta</string>
+    <string name="cmp_rot13_all">ROT13 su tutto il messaggio</string>
+    <string name="cmp_rot13_sel">ROT13 sulla parte selezionata</string>
+    <string name="cmp_chars">%d caratteri</string>
+    <string name="cmp_send">Invia</string>
+    <string name="cmp_group">Gruppo: %s</string>
+    <string name="cmp_groups">Gruppi: %s</string>
+    <string name="cmp_followup_gruppi">L\'autore ha chiesto che le risposte proseguano in %1$s, quindi NeReO pubblichera\' li\' invece che in %2$s. Apri il selettore dei gruppi se vuoi decidere tu.</string>
+    <string name="cmp_followup_poster">L\'autore ha chiesto risposte per posta, non sul gruppo (Followup-To: poster). NeReO non manda posta, quindi questa risposta uscira\' comunque sul gruppo: ora lo sai, che e\' diverso dal non saperlo.</string>
+    <string name="cmp_followup_apri_posta">Apri con l\'app di posta</string>
+    <string name="tl_group_intro">Introduzione alla citazione per questo gruppo</string>
+    <string name="tl_group_intro_tip" formatted="false">Sostituisce l\'introduzione della tua identita\' quando rispondi in questo gruppo: non entra nel sorteggio. Serve tipicamente a scriverla nella lingua del gruppo. Lasciala vuota per usare quella dell\'identita\'. Valgono gli stessi segnaposto: %autore% %data% %gruppo% e gli altri.</string>
+    <string name="tl_group_intro_label">Riga di introduzione (vuota = usa l\'identita\')</string>
+    <string name="mnt_letto_messageid">Un messaggio crospostato letto in un gruppo risulta letto anche negli altri</string>
+    <string name="art_reload">Ricarica il messaggio</string>
+    <string name="tls_title">Identita\' TLS</string>
+    <string name="tls_none">Nessuna identita\' registrata per questo server. Se ne registra una da sola al primo collegamento cifrato.</string>
+    <string name="tls_state_trusted">APPROVATA - questa chiave e\' l\'identita\' attesa per questo server</string>
+    <string name="tls_state_pending">VISTA, NON FIDATA</string>
+    <string name="tls_state_valid">VALIDA - verificata dalle regole normali</string>
+    <string name="tls_valid_note">Il certificato di questo server supera i controlli normali: firmato da un\'autorita\' che Android riconosce, ed emesso per questo host. Non c\'e\' niente da approvare, e NeReO non te lo sta chiedendo. I valori qui sotto ci sono perche\' tu possa vederli, e perche\' NeReO possa avvisarti prima che il certificato scada. Se vuoi che da ora in poi NeReO pretenda esattamente QUESTA chiave, puoi appuntarla: e\' una scelta, non un obbligo.</string>
+    <string name="tls_trusted_note">Da ora NeReO pretende esattamente questa chiave a ogni connessione verso questo server. Se cambia, la connessione si ferma e ti vengono mostrate entrambe: non si accetta niente finche\' non torni qui.</string>
+    <string name="tls_pin_anyway">Appunta comunque questa chiave</string>
+    <string name="tls_pending_note">NeReO ha visto questa identita\' e se l\'e\' annotata, e basta: e\' un no con memoria, non un mezzo si\'. Leggi i valori qui sotto e approva solo se sono quelli che ti aspetti.</string>
+    <string name="tls_endpoint">Host e porta</string>
+    <string name="tls_subject">Intestatario</string>
+    <string name="tls_issuer">Emesso da</string>
+    <string name="tls_spki">Chiave pubblica (SHA-256 dello SPKI) - e\' questa che viene appuntata</string>
+    <string name="tls_cert">Certificato intero (SHA-256) - solo per diagnosi</string>
+    <string name="tls_valid">Validita\'</string>
+    <string name="tls_observed">Vista la prima volta</string>
+    <string name="tls_approved">Approvata il</string>
+    <string name="tls_expires_in">Il certificato scade fra %1$d giorni. Se questo server rinnova a mano, e\' adesso il momento di dirlo a chi lo gestisce.</string>
+    <string name="tls_expired">Il certificato e\' SCADUTO.</string>
+    <string name="tls_approve">Approva questa chiave</string>
+    <string name="tls_revoke">Dimenticala</string>
+    <string name="tls_probe_section">Guarda cosa presenta il server adesso</string>
+    <string name="tls_probe_note">Una connessione a se\' stante, senza autenticazione: non parte niente di tuo. Risponde alla domanda che vale la pena farsi prima di approvare, cioe\' se quella fotografia sia ancora attuale. Quello che non puo\' promettere: fra questa verifica e l\'handshake successivo l\'identita\' puo\' cambiare di nuovo. La verifica e\' onesta\', non una garanzia; la garanzia e\' il confronto della chiave a OGNI connessione.</string>
+    <string name="tls_probe">Verifica adesso</string>
+    <string name="tls_probe_failed">Identita\' non leggibile: %1$s</string>
+    <string name="tls_probe_same">Stessa chiave di quella registrata qui sopra.</string>
+    <string name="tls_probe_diff">DIVERSA dalla chiave registrata qui sopra.</string>
+    <string name="srv_cert_expiring">Il certificato scade fra %1$d giorni</string>
+    <string name="mnt_letto_messageid_note">Un messaggio crospostato e\' UN messaggio, anche se NeReO ne tiene una riga per gruppo. Con questa opzione attiva, segnarlo letto da qualunque parte lo segna letto ovunque: e\' quello che fa MesNews, ed e\' quello che significa "questo l\'ho gia\' visto". Le discussioni seguite e i filtri ragionavano gia\' per Message-ID: faceva eccezione solo il letto.</string>
+    <string name="cmp_hide_details">Nascondi dettagli</string>
+    <string name="cmp_show_details">Mittente e intestazioni</string>
+    <string name="cmp_name">Nome (visibile nel gruppo)</string>
+    <string name="cmp_email">Email</string>
+    <string name="cmp_headers">Intestazioni personalizzate (una per riga: Nome: valore)</string>
+    <string name="hdr_riservate_scartate">Riservate a NeReO, non verranno inviate: %1$s</string>
+    <string name="cmp_subject">Oggetto</string>
+    <string name="cmp_message">Messaggio</string>
+    <string name="cmp_send_failed">Invio fallito (il testo è salvato in Bozze): %s</string>
+
+    <!-- ===== Dialog minori e citazioni ===== -->
+    <string name="trim_title">Rifinisci citazione</string>
+    <string name="trim_none">Nessuna riga citata da rifinire.</string>
+    <string name="trim_note">Tocca la X per togliere una riga citata. Il resto del messaggio non viene toccato.</string>
+    <string name="trim_remove_cd">Togli questa riga citata</string>
+    <string name="trim_apply">Applica</string>
+    <string name="xp_title">Messaggio crosspostato</string>
+    <string name="xp_title_followup">Dove va la risposta</string>
+    <string name="xp_note_followup">L\'autore ha chiesto che le risposte proseguano in %1$s. Puoi aggiungere i gruppi dell\'originale (max %2$d gruppi).</string>
+    <string name="xp_group_autore">%s  (chiesto dall\'autore)</string>
+    <string name="xp_reply_only_in">Rispondi solo in %s</string>
+    <string name="xp_note">Questo messaggio è pubblicato in %1$d gruppi. Scegli dove far uscire la tua risposta (max %2$d gruppi).</string>
+    <string name="xp_this_group">%s  (questo gruppo)</string>
+    <string name="xp_max_reached">Raggiunto il massimo di %d gruppi.</string>
+    <string name="xp_default_all_section">Risposta ai crosspost</string>
+    <string name="xp_default_all_switch">Rispondi a tutti i gruppi per default</string>
+    <string name="xp_default_all_note">Se attivo, rispondendo a un messaggio crospostato vengono pre-selezionati tutti i gruppi dell’originale (fino al limite di 3) invece del solo gruppo corrente. Puoi comunque aggiustare la scelta prima di inviare.</string>
+    <string name="xp_reply_here">Rispondi solo qui</string>
+    <string name="xp_reply_n">Rispondi ai %d gruppi</string>
+    <string name="xp_new_title">Crosspost nuovo thread</string>
+    <string name="xp_new_note">Puoi inviare questo thread anche in altri gruppi (max %d extra). Il gruppo attuale è sempre incluso.</string>
+    <string name="xp_search_group">Cerca gruppo</string>
+    <string name="xp_only_here">Solo qui</string>
+    <string name="xp_send_n">Invia in %d gruppi</string>
+    <string name="unsub_del_n">Elimina anche i %d messaggi scaricati</string>
+    <string name="unsub_del">Elimina anche i messaggi scaricati</string>
+    <string name="body_more_lines">▼ … altre %d righe citate (tocca per espandere)</string>
+    <string name="body_quote_muted">▸ citazione nascosta (tocca per mostrarla)</string>
+    <string name="quote_below">Scrivi sotto la citazione (netiquette)</string>
+    <string name="quote_above">Scrivi sopra la citazione</string>
+    <string name="quote_trimmed">Citazione ridotta</string>
+    <string name="quote_none">Senza citazione</string>
+
+    <!-- ===== Ricerca ===== -->
+    <string name="srch_in_group">Cerca in %s</string>
+    <string name="srch_title">Cerca</string>
+    <string name="srch_field">Parola o frase da cercare</string>
+    <string name="srch_clear_cd">Cancella</string>
+    <string name="srch_tab_messages">Messaggi</string>
+    <string name="srch_tab_threads">Thread</string>
+    <string name="srch_note_group">Cerca in oggetto e autore dei messaggi di questo gruppo, e nel testo di quelli già aperti.</string>
+    <string name="srch_note_all">Cerca in oggetto e autore di tutti i messaggi in cache, e nel testo di quelli già aperti.</string>
+    <string name="srch_none">Nessun risultato per \"%s\".</string>
+    <string name="srch_threads_n">%d discussioni con almeno un messaggio corrispondente.</string>
+    <string name="srch_first_500">Primi 500 risultati.</string>
+    <string name="srch_results_n">%d risultati.</string>
+    <string name="srch_matches">%1$d messaggi corrispondenti  ·  %2$s</string>
+    <string name="srch_root_missing">  ·  inizio thread non in cache</string>
+
+    <!-- ===== Lettura articolo ===== -->
+    <string name="art_all_read">Hai già letto tutto qui!</string>
+    <string name="art_end_of_group">Questo è l\'ultimo messaggio del gruppo.</string>
+    <string name="art_start_of_group">Questo è il primo messaggio del gruppo.</string>
+    <string name="art_title">Articolo</string>
+    <string name="art_reply_cd">Rispondi</string>
+    <string name="art_tree_cd">Albero della discussione</string>
+    <string name="art_headers_cd">Intestazioni del messaggio</string>
+    <string name="art_mute_quotes_cd">Muta o mostra le citazioni</string>
+    <string name="art_more_cd">Altre opzioni</string>
+    <string name="art_unwatch">Non seguire più la discussione</string>
+    <string name="art_watch">Segui la discussione</string>
+    <string name="art_mark_unread">Segna come non letto</string>
+    <string name="art_rot13_orig">Mostra testo originale</string>
+    <string name="art_rot13_dec">Decodifica ROT13</string>
+    <string name="art_plonk_menu">Plonk autore…</string>
+    <string name="art_prev_msg">Messaggio precedente (in questa discussione)</string>
+    <string name="art_next_msg">Messaggio successivo (in questa discussione)</string>
+    <string name="art_next_unread">Primo non letto successivo</string>
+    <string name="art_prev_thread">Discussione precedente</string>
+    <string name="art_next_thread">Discussione successiva</string>
+    <string name="art_back_index">Torna all\'indice</string>
+    <string name="art_top">Inizio messaggio</string>
+    <string name="art_bottom">Fine messaggio</string>
+    <string name="art_crossposted">⚠ Crosspostato in %1$d gruppi: %2$s</string>
+    <string name="art_face_cd">Face dell\'autore</string>
+    <string name="art_face_big_cd">Face dell\'autore, ingrandita</string>
+    <string name="art_error">Errore: %s</string>
+    <string name="art_plonk_title">Plonk</string>
+    <string name="art_plonk_body">Mettere \"%s\" nel killfile?\n\nI suoi messaggi, futuri e già presenti, verranno nascosti. Qui sotto puoi scegliere se nascondere anche le risposte ai suoi post. Reversibile dalla gestione filtri.</string>
+    <string name="art_plonk_followup">Nascondi anche le risposte</string>
+    <string name="art_plonk_followup_on">Spariranno anche le risposte ai suoi post e tutto il ramo sottostante, chiunque le abbia scritte. Chi ha risposto resta visibile altrove: in altre discussioni, nei rami non contaminati e nei post che apre lui.</string>
+    <string name="art_plonk_followup_off">Plonk secco: sparisce solo lui. Le risposte ai suoi post restano visibili, e di solito ne citano il testo.</string>
+    <string name="art_this_author">questo autore</string>
+    <string name="art_headers_title">Intestazioni</string>
+    <string name="art_headers_none">Intestazioni non disponibili per questo messaggio.\nVengono salvate alla lettura: se il messaggio è stato scaricato con una versione precedente, riaprilo dopo un aggiornamento del gruppo.</string>
+    <string name="art_tree_title">Albero della discussione</string>
+    <string name="art_tree_none">Discussione non ricostruibile.</string>
+    <string name="gst_none_long">nessuna azione (gesto lungo)</string>
+    <string name="gst_next_thread">discussione successiva</string>
+    <string name="gst_prev_thread">discussione precedente</string>
+    <string name="gst_next_msg">messaggio successivo</string>
+    <string name="gst_prev_msg">messaggio precedente</string>
+    <string name="gst_none">nessuna azione</string>
+
+    <!-- ===== RC02: stringhe prima scritte direttamente nel codice =====
+         Aggiunte completando la traduzione dell'interfaccia: elenco
+         discussioni, layout a pannelli e voci minori. Le chiavi common_*
+         sono condivise fra ThreadListScreen e ThreePaneHome, che offrono
+         le stesse funzioni su telefono e su schermo largo. -->
+
+    <string name="tl_view_sequential">Sequenziale</string>
+    <string name="tl_view_grouped_threads">Discussioni raggruppate</string>
+    <string name="tl_view_tree">Ad albero</string>
+    <string name="tl_sync_failed">Sync fallita: %1$s</string>
+    <string name="tl_selected_count">%1$d selezionati</string>
+    <string name="tl_exit_selection">Esci dalla selezione</string>
+    <string name="tl_select_all">Seleziona tutto</string>
+    <string name="tl_mark_selected_read">Segna i selezionati come letti</string>
+    <string name="tl_mark_selected_unread">Segna i selezionati come non letti</string>
+    <string name="tl_mark_deletion">Contrassegna per l’eliminazione</string>
+    <string name="tl_restore_selected">Ripristina i selezionati</string>
+    <string name="tl_default_title">Thread</string>
+    <string name="common_showing_unread">Mostrando solo non letti</string>
+    <string name="tl_showing_all">Mostrando tutti</string>
+    <string name="common_marked_read">%1$d messaggi segnati come letti</string>
+    <string name="common_undo_upper">ANNULLA</string>
+    <string name="common_mark_all_read">Segna tutto letto</string>
+    <string name="tl_sync">Sincronizza</string>
+    <string name="tl_search_group">Cerca in questo gruppo…</string>
+    <string name="common_watched_threads_only">Solo discussioni seguite</string>
+    <string name="common_view">Vista</string>
+    <string name="common_thread_sort">Ordinamento delle discussioni</string>
+    <string name="common_expand_all_threads">Apri tutte le discussioni</string>
+    <string name="common_collapse_all_threads">Richiudi tutte le discussioni</string>
+    <string name="common_mark_all_unread">Segna tutto come da leggere</string>
+    <string name="common_redownload_group_menu">Riscarica il gruppo dal server…</string>
+    <string name="common_download_all_bodies_menu">Scarica tutti i corpi…</string>
+    <string name="common_hide_filtered">Nascondi i filtrati</string>
+    <string name="common_show_filtered">Mostra i filtrati</string>
+    <string name="common_group_retention_menu">Conservazione di questo gruppo…</string>
+    <string name="tl_all_read_empty">Tutto letto in questo gruppo.\nApri il menù ⋮ e scegli \"Mostra i filtrati\" o cambia vista.</string>
+    <string name="tl_no_articles">Nessun articolo. Tocca l’icona di sincronizzazione in alto.</string>
+    <string name="tl_restore_message">Ripristina questo messaggio</string>
+    <string name="tl_restore_all">Ripristina tutti (%1$d)</string>
+    <string name="common_open_message">Apri</string>
+    <string name="common_go_first_unread_reply">Vai alla prima risposta non letta ai miei messaggi (%1$d)</string>
+    <string name="common_go_first_reply">Vai alla prima risposta ai miei messaggi (%1$d)</string>
+    <string name="common_mark_message_unread">Segna il messaggio da leggere</string>
+    <string name="common_mark_message_read">Segna il messaggio come letto</string>
+    <string name="common_mark_thread_read">Segna la discussione come letta</string>
+    <string name="common_mark_thread_unread">Segna la discussione da leggere</string>
+    <string name="common_ignore_author">Plonk autore e risposte</string>
+    <string name="common_ignore_author_success">Plonk: %1$s — nascoste anche le risposte ai suoi post</string>
+    <string name="common_author_unidentified">Impossibile identificare l’autore</string>
+    <string name="common_delete_thread">Elimina questa discussione</string>
+    <string name="common_thread_deleted">Discussione eliminata (%1$d messaggi)</string>
+    <string name="common_no_message_deleted">Nessun messaggio eliminato</string>
+    <string name="tl_supersede">Sostituisci (supersede)…</string>
+    <string name="tl_cancel_post">Ritira dal server (cancel)…</string>
+    <string name="tl_cancel_title">Ritirare questo messaggio?</string>
+    <string name="tl_cancel_body">Invia un messaggio di controllo che chiede al server di ritirare il tuo articolo. In pratica agisce solo sul server su cui hai pubblicato: gli altri di solito tengono il messaggio, e molti provider ignorano del tutto le richieste di ritiro. NeReO interrogherà ognuno dei tuoi server e ti dirà cosa trova. La copia locale resta finché non risincronizzi il gruppo.</string>
+    <string name="tl_cancel_result_title">Esito del ritiro</string>
+    <string name="tl_cancel_checking">Richiesta inviata. Verifica sui server in corso…</string>
+    <string name="tl_cancel_line_sent">%1$s (richiesta inviata qui): %2$s</string>
+    <string name="tl_cancel_line_other">%1$s: %2$s</string>
+    <string name="tl_cancel_state_removed">ritirato</string>
+    <string name="tl_cancel_state_present">ancora presente</string>
+    <string name="tl_cancel_state_unknown">non verificabile</string>
+    <string name="tl_cancel_result_note">Il ritiro agisce, di norma, solo sul server su cui hai pubblicato: gli altri vengono soltanto interrogati, e «ancora presente» è la risposta abituale. Per far vedere una correzione dappertutto usa invece «Sostituisci».</string>
+    <string name="tl_cancel_confirm">Ritira</string>
+    <string name="art_missing_remove">Rimuovi la copia locale</string>
+    <string name="tl_delete_local_copy">Elimina la copia locale</string>
+    <string name="tl_select_multiple">Seleziona più messaggi…</string>
+    <string name="common_download_bodies_title">Scarica tutti i corpi</string>
+    <string name="common_download_bodies_body">Scarica il testo di TUTTI i messaggi di questo gruppo non ancora letti dal server, così potrai leggerli anche offline.\n\nPuò richiedere tempo e traffico dati se il gruppo è grande: è una richiesta per messaggio. I messaggi NON vengono segnati come letti.</string>
+    <string name="common_download">Scarica</string>
+    <string name="common_redownload_group_title">Riscarica il gruppo dal server</string>
+    <string name="common_redownload_group_body">Elimina la copia locale di questo gruppo e la riprende dal server da capo.\n\nAttenzione: non è la stessa cosa di \"segna tutto come da leggere\". Qui i messaggi vengono davvero buttati e riscaricati, quindi si perdono stato di lettura, contrassegni e corpi già in memoria; serve traffico dati e può volerci un po’.\n\nUsalo se i messaggi sono spariti per via della conservazione automatica o se la copia locale sembra incoerente.</string>
+    <string name="common_redownload">Riscarica</string>
+    <string name="common_redownload_group_window">Tornano solo gli ultimi %1$d messaggi che il server ha ancora, cioè quanti ne prevedono le tue impostazioni di sincronizzazione. Quelli più vecchi che hai in locale si perdono, e nessun riscarico li riporta indietro.</string>
+    <string name="tl_use_default">Usa il valore predefinito</string>
+    <string name="tl_never_keep_all">Mai (conserva tutto)</string>
+    <string name="tl_keep_latest_threads">ultime %1$d discussioni</string>
+    <string name="tl_group_retention">Conservazione del gruppo</string>
+    <string name="tl_retention_body">Dopo ogni sync elimina i messaggi già letti (non letti e seguiti restano). Puoi scegliere di conservare per TEMPO o per NUMERO di discussioni.</string>
+    <string name="tl_by_thread_count">Per numero di discussioni</string>
+    <string name="tl_thread_count_tip">Consigliato sui gruppi poco frequentati: non si svuotano col tempo.</string>
+    <string name="tl_by_time">Per tempo</string>
+    <string name="tl_selected">Selezionato</string>
+    <string name="tl_not_selected">Non selezionato</string>
+    <string name="common_collapse_thread">Richiudi la discussione</string>
+    <string name="common_expand_thread">Apri la discussione</string>
+    <string name="tl_watched">Seguita</string>
+    <string name="common_contains_my_message">Contiene un mio messaggio</string>
+    <string name="pane_configure_server">Configura un server (icona in alto a destra), poi sottoscrivi i gruppi con +.</string>
+    <string name="pane_refresh_hint">Suggerimento: tira giù l\'elenco per aggiornare tutti i gruppi.</string>
+    <string name="pane_refresh_group">Aggiorna il gruppo</string>
+    <string name="pane_hide_read_messages">Nascondi i messaggi letti</string>
+    <string name="pane_fullscreen_cd">Lettura a tutto schermo</string>
+    <string name="pane_fullscreen_exit_cd">Esci da tutto schermo</string>
+    <string name="pane_search_in_group">Cerca in questo gruppo</string>
+    <string name="pane_choose_group">Scegli un gruppo dalla colonna a sinistra.</string>
+    <string name="pane_no_articles">Nessun messaggio in questo gruppo.</string>
+    <string name="pane_no_unread">Nessun messaggio da leggere in questo gruppo.</string>
+    <string name="pane_go_to_replies_to_my_messages">Vai alle risposte ai miei messaggi</string>
+    <string name="pane_select_message">Seleziona un messaggio dalla colonna centrale.</string>
+    <!-- 1.2.5: controllo aggiornamenti (Bingo3331); 1.3.1: modalità a quattro vie (Bingo3331 + HAL) -->
+    <string name="upd_section">Aggiornamenti</string>
+    <string name="upd_mode_never">Mai</string>
+    <string name="upd_mode_daily">Una volta al giorno</string>
+    <string name="upd_mode_4h">Ogni 4 ore</string>
+    <string name="upd_mode_always">Ad ogni apertura</string>
+    <string name="upd_last_check_never">Nessun controllo ancora effettuato.</string>
+    <string name="upd_last_check_today_at">oggi alle %1$s</string>
+    <string name="upd_last_check_date_at">il %1$s alle %2$s</string>
+    <string name="upd_last_check_none_found">nessun aggiornamento trovato</string>
+    <string name="upd_last_check_version_found">trovata versione %1$s</string>
+    <string name="upd_last_check_prefix">Ultimo controllo: %1$s — %2$s</string>
+    <string name="upd_note">All’avvio, all’intervallo scelto, NeReO chiede a SourceForge se c’è una versione più recente e ti avvisa SOLO se c’è. È una sola richiesta a un indirizzo pubblico, senza inviare alcun dato. L’app non scarica né installa nulla da sé: apre la pagina e scarichi tu.</string>
+    <string name="upd_check_now">Controlla aggiornamenti</string>
+    <string name="upd_uptodate">Sei già all’ultima versione.</string>
+    <string name="upd_check_failed">Impossibile controllare ora (rete non disponibile).</string>
+    <string name="upd_available_title">Aggiornamento disponibile</string>
+    <string name="upd_available_msg">È disponibile NeReO %1$s. Aprire la pagina delle release per scaricarlo?</string>
+    <string name="upd_open_page">Apri pagina</string>
+    <string name="upd_later">Più tardi</string>
+    <string name="pane_reply_to_post">Rispondi a questo post</string>
+    <string name="pane_send_failed">Invio fallito: %1$s</string>
+    <string name="groups_all_read">Tutto letto</string>
+    <string name="groups_welcome">Benvenuto!\n1. Configura un server (icona in alto a destra)\n2. Sottoscrivi i gruppi col pulsante +</string>
+    <string name="drafts_no_subject">(senza oggetto)</string>
+    <string name="cmp_default_intro" formatted="false">%autore% ha scritto:</string>
+
+    <!-- ===== Note di versione (What's new) ===== -->
+    <string name="rn_m1_title">Plonk esteso alle risposte</string>
+    <string name="rn_m1_l1">Nell\'editor di una regola su «da» compare la casella «Estendi alle risposte»: oltre all\'autore filtrato spariscono anche le risposte ai suoi post e tutto il ramo sottostante, chiunque le abbia scritte.</string>
+    <string name="rn_m1_l2">Chi ha risposto resta perfettamente visibile altrove: in altre discussioni, nei rami non contaminati della stessa discussione e nei post che apre lui. Non esiste colpa per associazione fuori dal ramo.</string>
+    <string name="rn_m1_l3">Il plonk rapido dal menu contestuale nasce già esteso, e le regole «Plonk:» che avevi lo diventano al primo avvio. Le risposte vengono nascoste, non cancellate: togliendo la regola tornano da sole.</string>
+
+    <!-- ===== Rete di sicurezza database ===== -->
+    <string name="db_reset_title">Database reinizializzato</string>
+    <string name="db_reset_with_backup">Questa versione dell\'app non ha potuto aprire il database esistente (schema incompatibile), quindi è stato reinizializzato. Una copia dei dati precedenti è stata salvata qui:\n\n%1$s</string>
+    <string name="db_reset_no_backup">Questa versione dell\'app non ha potuto aprire il database esistente (schema incompatibile), quindi è stato reinizializzato. Il backup automatico non è stato creato.</string>
+
+    <!-- ===== Lingua dell'app (interruttore in-app) ===== -->
+    <string name="app_language">Lingua</string>
+    <string name="app_language_system">Predefinita di sistema</string>
+    <string name="app_language_it">Italiano</string>
+    <string name="app_language_en">English</string>
+
+    <!-- Diagnostica NNTP (scatola nera) -->
+    <string name="mnt_diag_section">Diagnostica</string>
+    <string name="mnt_diag_switch">Registra dialogo NNTP</string>
+    <string name="mnt_diag_note">Per diagnosticare un server. Da acceso, l\'app tiene in memoria le ultime ~400 righe del dialogo NNTP client/server, più righe di riepilogo calcolate (marcate \"D:\") come quante righe di overview sono davvero arrivate e quali numeri mancano, e un\'intestazione/piè di sessione coi tempi. Password e nome utente sono mascherati; nulla viene scritto su disco finché non esporti. Attivalo, fai una sola sincronizzazione, poi copia o esporta il log — e rispegnilo.</string>
+    <string name="mnt_diag_copy">Copia log</string>
+    <string name="mnt_diag_export">Esporta log</string>
+    <string name="mnt_diag_copied">Log NNTP copiato negli appunti</string>
+    <string name="mnt_diag_empty">Nessun dialogo registrato. Attiva l\'interruttore e fai una sincronizzazione.</string>
+    <string name="mnt_diag_saved">Log NNTP salvato</string>
+    <string name="mnt_diag_listgroup_note">Avanzato: per un gruppo sottoscritto, chiede al server l\'elenco vero degli articoli presenti (LISTGROUP) e lo confronta con l\'ultimo riepilogo overview. Utile per distinguere un buco nel database overview del server da articoli davvero non più presenti. Richiede l\'interruttore sopra acceso.</string>
+    <string name="mnt_diag_listgroup_btn">Diagnostica LISTGROUP…</string>
+    <string name="mnt_db_section">Diagnostica database</string>
+    <string name="mnt_db_note">Conta le righe di ogni tabella e mostra la versione dello schema e lo spazio occupato. Serve al confronto: prendi i numeri prima di un aggiornamento e di nuovo dopo, e se coincidono la migrazione non ha perso nulla. È anche la cosa più rapida da allegare a una segnalazione. Non viene calcolato niente finché non premi il pulsante.</string>
+    <string name="mnt_db_btn">Conta le righe</string>
+    <string name="mnt_db_err">Diagnostica non riuscita: %s</string>
+    <string name="mnt_diag_listgroup_need_switch">Accendi prima \"Registra dialogo NNTP\" qui sopra — altrimenti non finisce nulla nel log.</string>
+    <string name="mnt_diag_listgroup_no_groups">Nessun gruppo sottoscritto.</string>
+    <string name="mnt_diag_listgroup_running">In corso… su un gruppo grande può richiedere qualche istante.</string>
+    <string name="mnt_diag_listgroup_done">Diagnostica completata — vedi il log NNTP.</string>
+    <string name="mnt_diag_listgroup_cancelled">Diagnostica annullata — quello che era già stato registrato resta nel log NNTP.</string>
+    <string name="mnt_orphans_note">Righe rimaste indietro da un server cancellato con la 1.4.1 o prima: i suoi gruppi, i suoi messaggi, il suo catalogo dei gruppi e i suoi pin TLS restavano nel database, invisibili e irraggiungibili. Dalla 1.4.2 cancellare un server se li porta via; questo pulsante toglie quelli già presenti. Nient\'altro viene toccato.</string>
+    <string name="mnt_orphans_btn">Elimina le righe orfane</string>
+    <string name="mnt_orphans_none">Nessuna riga orfana: non c\'è niente da eliminare.</string>
+    <string name="mnt_orphans_title">Eliminare le righe orfane?</string>
+    <string name="mnt_orphans_confirm">Verranno tolte per sempre queste righe:\n\n%1$s\n\nNon appartengono a nessun server e a nessun gruppo, quindi non cambierà niente di ciò che vedi.</string>
+    <string name="mnt_orphans_confirm_btn">Elimina</string>
+    <string name="mnt_orphans_done">Fatto: %1$s righe rimosse.</string>
+    <!-- 1.2.9.b: log crash (Piano C.1, NeReO_bug_1.2.9.md voce X) -->
+    <string name="mnt_crash_section">Ultimo arresto anomalo</string>
+    <string name="mnt_crash_note">Sempre attivo: se l\'app dovesse mai chiudersi in modo improvviso, l\'ultimo arresto viene salvato qui da solo — nulla viene inviato da nessuna parte automaticamente. Se ti capita, copialo o esportalo e mandalo pure a chi sviluppa: è l\'unico modo per trovare davvero la causa e correggerla.</string>
+    <string name="mnt_crash_copy">Copia</string>
+    <string name="mnt_crash_export">Esporta</string>
+    <string name="mnt_crash_clear">Cancella</string>
+    <string name="mnt_crash_copied">Log crash copiato negli appunti</string>
+    <string name="mnt_crash_saved">Log crash salvato</string>
+    <string name="mnt_crash_cleared">Log crash cancellato</string>
+    <string name="mnt_crash_empty">Nessun arresto anomalo registrato — buon segno.</string>
+    <!-- Azioni long-press sul gruppo sottoscritto -->
+    <string name="groups_download_bodies">Scarica corpi (ultimi 300)</string>
+    <string name="groups_unsub_action">Annulla sottoscrizione\u2026</string>
+    <string name="groups_bodies_done">Scaricati %d corpi</string>
+    <!-- Note di rilascio 1.2 -->
+    <string name="rn_v12_compat_title">Va d\u2019accordo con più server</string>
+    <string name="rn_v12_compat_l1">Alcuni provider — Astraweb tra questi — rifiutano il comando OVER usato per scaricare le intestazioni, e la sincronizzazione si fermava con «Unrecognized command». Ora NeReO ripiega automaticamente su XOVER, così quei server tornano a funzionare.</string>
+    <string name="rn_v12_tablet_title">Lettura completa anche su tablet</string>
+    <string name="rn_v12_tablet_l1">La vista a pannelli (tre colonne) ora ha i pulsanti delle intestazioni complete e del ROT13, come la vista a pagina singola, e da lì si raggiungono anche le Bozze.</string>
+    <string name="rn_v12_tablet_l2">La vista continua ora si apre già posizionata sul messaggio scelto, senza il piccolo salto mentre arrivano i corpi.</string>
+    <string name="rn_v12_groups_title">Gruppi e corpi dei messaggi</string>
+    <string name="rn_v12_groups_l1">Tieni premuto un gruppo sottoscritto per scaricare in un colpo solo i corpi mancanti degli ultimi 300 messaggi — accanto al solito «Annulla sottoscrizione».</string>
+    <string name="rn_v12_groups_l2">«Segui la discussione» ora vale per l\u2019intera conversazione, non solo per il primo post, e i tuoi post vengono riconosciuti anche con le identità per-server.</string>
+    <string name="rn_v12_care_title">Backup, diagnostica e correzioni</string>
+    <string name="rn_v12_care_l1">Il backup ora è completo: identità per-server, tutte le impostazioni e le discussioni seguite. Il ripristino resta compatibile con i backup più vecchi.</string>
+    <string name="rn_v12_care_l2">Nuova diagnostica NNTP in Manutenzione (password sempre oscurata); la barra di icone in basso va a capo su due righe sugli schermi stretti invece di nascondere i pulsanti; e sparisce un errore spurio che compariva scorrendo veloce.</string>
+    <!-- Conferma invio + refresh automatico (richiesta Bingo3331) -->
+    <string name="cmp_sent">Messaggio inviato</string>
+    <string name="rn_v12_care_l3">Dopo l\u2019invio, NeReO ora conferma «Messaggio inviato» e aggiorna il gruppo da solo, così il tuo post compare senza refresh manuale — appena il server lo rende disponibile.</string>
+    <!-- Note di rilascio 1.2.9.b -->
+    <string name="rn_v1210_title">Versione 1.2.10</string>
+    <string name="rn_v1210_l1">Elenco articoli più robusto: un raro errore di lettura dal database, che poteva capitare uscendo da un gruppo mentre un sync era in corso, non manda più in crash l\'app — ora mostra l\'ultimo elenco valido invece di chiudersi.</string>
+    <string name="rn_v1210_l2">Nuova impostazione (Manutenzione → Notifiche): puoi disattivare il sync automatico all\'apertura di un gruppo, così le discussioni che stai ancora leggendo non si mescolano con quelle appena arrivate. Il sync manuale (pulsante/tira giù per aggiornare) funziona sempre comunque.</string>
+    <string name="art_copy_message">Copia il messaggio</string>
+    <string name="art_export_message">Esporta / condividi</string>
+    <string name="art_export_eml">Salva come file .eml</string>
+    <string name="art_eml_saved">Articolo salvato come .eml</string>
+    <string name="art_eml_failed">Non è stato possibile scrivere il file</string>
+    <!-- 1.4.9 (par. J3-C1): «conserva questo» - la cartella si sceglie una volta sola. -->
+    <string name="art_conserva">Conserva questo messaggio</string>
+    <string name="art_export_chooser">Condividi articolo</string>
+    <string name="art_copy_link">Copia link (usenet.id)</string>
+    <string name="art_show_in_list">Mostra nell\'elenco</string>
+    <string name="art_copy_msgid">Copia Message-ID</string>
+    <string name="art_copy_done">Copiato negli appunti</string>
+    <!-- 1.5 / 158: voce «Cita» nel menu di selezione del messaggio (ui/CitaSelezione.kt) -->
+    <string name="sel_cita">Cita</string>
+    <string name="sel_cita_rispondi">Cita e rispondi</string>
+    <string name="sel_cita_fatto">Citazione copiata negli appunti</string>
+    <string name="cmp_paste_cd">Incolla</string>
+    <string name="cmp_paste_empty">Gli appunti sono vuoti: non c\'e\' niente da incollare.</string>
+    <string name="rn_v143_title">Novità della 1.4.3</string>
+    <string name="rn_v148_title">Novità della 1.4.8</string>
+    <string name="rn_v148_l1">Il comando «Applica ora», nella schermata dei filtri, vale adesso anche per le regole che AGGIUNGONO. Una regola «Evidenzia», o un punteggio messo a mano in modalità avanzata, si applicava soltanto ai messaggi che arrivavano dopo: sul pregresso non si vedeva nulla. Segnalato da Cercaparole su Usenet. La causa non era un filtro che sbagliava a valutare, ma il fatto che il punteggio veniva salvato solo quando serviva a nascondere — e in NeReO «evidenziato» non è un contrassegno a sé, è il punteggio che l\'elenco delle discussioni legge per colorare la riga. Il motore calcolava giusto e il risultato veniva buttato via. Il riepilogo che compare alla fine ha percio\' una terza cifra, i messaggi con il punteggio aggiornato, accanto a eliminati e nascosti.</string>
+    <string name="rn_v148_l2">Limite dichiarato, per la metà che manca. Una regola «Segui il thread» applicata al pregresso dà ora il punteggio, quindi la riga si colora, ma non assegna ancora la stella delle discussioni seguite; e la casella «estendi alle risposte» continua a nascondere i rami qualunque sia l\'azione della regola, anche quando l\'azione è «segui». Sono scritture che toccano molte righe del database e si collaudano una per volta: arrivano nella prossima versione. I messaggi già nascosti e le discussioni che segui non vengono toccati, come prima.</string>
+    <string name="rn_v148_l3">Dai risultati della ricerca, il bersaglio «Mostra nell\'elenco» riporta alla discussione anche quando il messaggio è una RISPOSTA e non il primo post. Nella vista a discussioni raggruppate funzionava solo sui primi post; albero e vista sequenziale erano già a posto. Non era una differenza fra le viste: nella raggruppata una discussione chiusa è una riga sola, quindi per una risposta serve prima aprire la discussione, ed era proprio quel passaggio a saltare quando l\'elenco dei messaggi non era ancora arrivato dal database. Segnalato da BIG Umberto.</string>
+    <string name="rn_v148_l4">Nella ricerca, il trattino basso e il segno di percentuale cercano adesso sé stessi. Erano caratteri jolly del database: cercare _114 voleva dire «un carattere qualsiasi, poi 114», e fra i risultati comparivano messaggi che quel trattino non lo contenevano affatto. Un indizio che li tradiva: in quelle righe l\'evidenziazione gialla non compariva, perché nell\'oggetto il testo cercato non c\'era davvero. Segnalato da BIG Umberto. Nota: la ricerca guarda oggetto, autore e corpo dei messaggi scaricati, quindi un risultato senza giallo nell\'oggetto può aver trovato la parola nel testo.</string>
+    <string name="rn_v148_l5">Dopo «Mostra nell\'elenco», la freccia indietro non ripercorre più tutta la strada a ritroso. L\'elenco si apriva SOPRA il messaggio da cui si era partiti, e tornare indietro faceva riapparire quel messaggio prima di arrivare dove si voleva. Ora il messaggio esce di scena e la freccia riporta ai risultati della ricerca, da cui si può saltare al successivo. Segnalato da BIG Umberto.</string>
+    <string name="flw_section">Impaginazione dei messaggi che spedisci</string>
+    <string name="flw_switch">Usa Format=Flowed (RFC 3676)</string>
+    <string name="flw_note">I capoversi lunghi vengono spezzati con la rottura «debole» della RFC 3676 invece che con un a-capo fisso, e il messaggio lo dichiara. Chi legge con un programma che conosce questo formato vede il capoverso ricomposto alla larghezza del proprio schermo, anche su un telefono stretto; chi legge con un programma che non lo conosce vede righe andate a capo a 72 colonne, come adesso. La firma non viene toccata.</string>
+    <string name="flw_note2">Spento di default perché è la sola impostazione che cambia quello che esce da NeReO e finisce sugli schermi degli altri: un messaggio pubblicato non si ritira. Accendila, manda un paio di messaggi di prova in un gruppo di test e guarda come arrivano, prima di usarla per i messaggi veri.</string>
+    <string name="rn_v148_l6">In Manutenzione c\'è adesso un\'impostazione per impaginare in Format=Flowed (RFC 3676) i messaggi che spedisci: i capoversi lunghi escono con la rottura «debole» prevista dalla norma invece che con un a-capo fisso a 72 colonne, così chi li legge su uno schermo stretto li vede ricomposti e non a scaletta. È SPENTA di default, ed è l\'unica impostazione che cambia quello che esce da NeReO: un messaggio pubblicato non si ritira, quindi val la pena provarla in un gruppo di test prima di tenerla accesa. NeReO sa già LEGGERE questo formato dalla 1.4.6, e lo dichiara soltanto quando c\'è davvero qualcosa da ricomporre — dichiarare un formato e poi non usarlo lascia chi legge peggio di prima.</string>
+    <string name="rn_v147_title">Novità della 1.4.7</string>
+    <string name="rn_v147_l1">Il rientro dell\'albero e le sue rotaie verticali vengono ora da un punto solo, e le rotaie compaiono in tutte e tre le viste: elenco messaggi sul telefono, albero della discussione e vista a pannelli. Prima erano solo nei pannelli. Dave Royal ha chiesto se fosse una scelta: non lo era. La stessa formula del rientro era scritta in tre file diversi e soltanto uno disegnava anche le rotaie, quindi quella differenza non l\'aveva mai decisa nessuno. Adesso le tre viste condividono anche la geometria, non solo il codice.</string>
+    <string name="rn_v147_l2">Quella schermata si chiama ora albero della discussione, in tutte e due le lingue. Si chiamava albero della conversazione mentre il resto dell\'applicazione dice discussione dappertutto, e la schermata si contraddiceva da sola: il titolo diceva conversazione e il messaggio di errore diceva discussione. Dave Royal ha fatto notare che conversation non è una parola di Usenet. Ha ragione, e non solo per questione di stile: una conversazione è un insieme di messaggi stimato dagli oggetti, che è quello che fanno i programmi di posta; una discussione è un grafo di riferimenti dichiarati, che è quello che NeReO costruisce davvero.</string>
+    <string name="rn_v147_l3">In Aspetto c\'è ora un interruttore per mostrare solo i messaggi non letti. L\'impostazione è sempre esistita e nasce accesa, ma si poteva cambiare soltanto dall\'icona a forma di busta sopra una lista, e da nessuna parte nelle Impostazioni. Jeff, al primo giorno con NeReO, ha cercato dove l\'impostazione dovrebbe stare, non l\'ha trovata e ha concluso che l\'applicazione gli cancellasse i messaggi letti. Non è mai stato cancellato niente: l\'interruttore semplicemente non era dove chiunque lo cercherebbe. Cambiandolo in un posto si muove anche l\'altro.</string>
+    <string name="rn_v147_l4">Il riscarico di un gruppo dal server si può avviare anche dall\'elenco dei gruppi, tenendo premuto su un gruppo. Prima stava solo nel menu dentro al gruppo, mentre tutto il resto di quella famiglia — scarica corpi, annulla sottoscrizione, aggiorna tutti i gruppi di questo server — abitava già nell\'elenco dei gruppi. Jeff ha guardato lì per primo e si è scusato di non averlo trovato: fuori posto era il comando, non il posto dove ha cercato.</string>
+    <string name="rn_v147_l5">Il dialogo del riscarico dice ora quanti messaggi torneranno davvero. Riscaricare non ripristina: riprende dal server tante intestazioni quante ne prevedono le impostazioni di sincronizzazione, e quello che di più vecchio avevi in locale si perde per sempre. Un gruppo da 415 messaggi ne ha ripresi 298, perché l\'impostazione era 300. Il dialogo avvertiva su stato di lettura, contrassegni e corpi, ma non sul rischio di finire con meno messaggi di prima — e la riga che lo suggeriva come rimedio ai messaggi spariti per la pulizia automatica diceva l\'opposto.</string>
+    <string name="rn_v147_l6">L\'elenco dei gruppi ricorda dove eri. Scorrendo in basso per cercare i gruppi con messaggi nuovi, entrando in uno e tornando indietro la lista ripartiva dall\'inizio, e con decine di gruppi su due server voleva dire riscorrere tutto ogni volta. L\'elenco dei messaggi ce l\'ha da quando un collaudatore lo chiese; quello dei gruppi non l\'ha mai avuto. Segnalato da Jeff.</string>
+    <string name="rn_v146_title">Novità della 1.4.6</string>
+    <string name="rn_v146_l1">La schermata di scrittura dice ora il gruppo dove il messaggio andrà davvero. Quando l\'autore di un articolo aveva chiesto che le risposte proseguissero in un altro gruppo e ne aveva indicato uno solo, l\'intestazione della schermata mostrava ancora il gruppo che stavi leggendo: si leggeva «Gruppo: it.test» una riga sopra l\'avviso che diceva che la risposta sarebbe uscita su uk.test. Finché il Followup-To non è stato rispettato quei due valori erano sempre la stessa cosa, e la riga che li mostrava non aveva mai avuto bisogno di distinguerli. Il difetto era in tutte e due le viste, quindi la scelta è stata estratta in un punto solo invece di essere corretta due volte. Trovato da Dave Royal, con una prova documentata.</string>
+    <string name="rn_v146_l2">Nella vista a pannelli i gruppi scelti nel riquadro del crosspost non vengono più scartati. Sceglierli a mano e poi inviare poteva comunque far uscire il messaggio dove chiedeva l\'intestazione Followup-To dell\'articolo, e non dove avevi scelto tu: al pannello di scrittura arrivava l\'elenco dei gruppi ma non il fatto che quell\'elenco fosse una TUA decisione, così l\'intestazione continuava a vincere. La regola per cui una decisione umana non si scavalca con un\'intestazione era scritta e applicata nella vista a pagine, e mancava nei pannelli, dove il dialogo si apre in un altro punto. Trovato da Dave Royal, con una prova documentata.</string>
+    <string name="rn_v146_l3">Nella vista a pannelli, su un riquadro stretto l\'oggetto e la riga dell\'autore potevano ridursi a una colonna di lettere singole. In una riga di comandi la barra viene misurata per prima e si prende quello che chiede, mentre al testo tocca ciò che avanza — e su un riquadro più stretto della barra non avanzava niente. Un testo largo zero non sparisce: va a capo dopo ogni carattere. Il punto non era che la barra fosse lunga: era che a pagare fosse sempre l\'unica cosa che devi poter LEGGERE. Sotto una certa larghezza la barra scende ora sotto l\'intestazione invece di contendersela: niente viene schiacciato e niente viene tagliato. Sopra quella larghezza tutto è identico a prima. Trovato da Marco sulla configurazione che nessun collaudatore ha — i pannelli su un telefono tenuto in orizzontale, mentre chi usa i pannelli ha un box TV e dei tablet, che sono larghi. La barra stessa, poi, va a capo invece di farsi tagliare l\'ultima icona: che era il pulsante del menu, cioè la via per arrivare a tutto il resto.</string>
+    <string name="rn_v146_l4">Nella vista a pannelli arrivano i comandi di spostamento che finora esistevano solo nella vista a pagine: messaggio precedente e successivo, primo non letto, discussione precedente e successiva, inizio e fine del messaggio, e «ricarica». Fino a ieri, per passare al messaggio dopo, nei pannelli bisognava scorrere l\'elenco e toccare — e con un telecomando quello scorrimento è la parte difficile della giornata. Le voci nuove nascono nel menu ⋮, per non cambiare la barra sotto le dita a chi se l\'è già sistemata: due tocchi nell\'editor delle barre le portano fra le icone. Un comando che in un certo riquadro non si può usare — «inizio messaggio» nella vista continua, dove i messaggi scorrono tutti insieme — si presenta spento invece di non fare niente.</string>
+    <string name="rn_v146_l5">Rispondere a un messaggio il cui autore ha chiesto che la discussione prosegua altrove (l\'intestazione Followup-To) adesso funziona anche nei casi difficili. Il selettore dei gruppi parte da quelli che l\'autore ha indicato invece che dal gruppo che stai leggendo, e li mostra anche se non sei iscritto: li ha scelti qualcun altro, non puoi doverli sottoscrivere per rispondere dove ti e\' stato chiesto. Cosi\' una destinazione come «solo uk.test», che prima non era proprio esprimibile, si ottiene confermando senza aggiungere niente. E aprire il selettore per GUARDARE non butta piu\' via la richiesta dell\'autore: era il caso peggiore, perche\' il gesto di controllo distruggeva proprio quello che si voleva controllare. Infine l\'avviso in cima alla scrittura e la riga che dice dove uscira\' il messaggio leggono adesso lo stesso valore: prima potevano smentirsi a una riga di distanza. Segnalato da Dave Royal, con le prove 9A e 9B.</string>
+    <string name="rn_v146_l6">NeReO legge il Format=Flowed (RFC 3676), cioe\' il modo in cui quasi tutti i lettori moderni dicono dove finisce davvero un capoverso. Fino a ieri NeReO lo indovinava: stimava la larghezza con cui il messaggio era stato impaginato e univa le righe che sembravano appartenersi. Funzionava quasi sempre, e «sempre» e «quasi sempre» sono due cose diverse. Adesso, quando chi ha scritto lo dichiara, non si stima piu\' niente: le righe che continuano le ha marcate lui, una per una, e noi le leggiamo. Per i messaggi che non dichiarano nulla non cambia niente, l\'euristica resta quella di prima. Si vede sulle citazioni annidate, dove indovinare era piu\' difficile, e sulle firme: il separatore finisce con uno spazio e uno spazio in fondo alla riga, in questo formato, vuol dire «continua» — quindi una firma poteva attaccarsi all\'ultimo capoverso. La norma prevede l\'eccezione, e ora anche NeReO.</string>
+    <string name="rn_v146_l7">Dalla lettura di un messaggio c\'e\' una via per vedere DOVE sta: «Mostra nell\'elenco» porta all\'elenco del gruppo, apre la discussione che lo contiene e lo evidenzia. Nasce da BIG Umberto: «la ricerca funziona, ma ti apre il post, non ti fa vedere dove e\'» — e aveva ragione alla lettera, perche\' da un risultato si finiva dentro il messaggio senza sapere in quale discussione fosse ne\' chi gli stesse intorno. L\'evidenziazione si spegne al primo tocco: ha gia\' fatto il suo lavoro. E\' un\'azione di barra come le altre, quindi la si sposta nel menu o altrove dall\'editor delle barre. Nella vista a pannelli non c\'e\', e non per dimenticanza: li\' l\'elenco e\' gia\' accanto al messaggio.</string>
+    <string name="rn_v145_title">Novità della 1.4.5</string>
+    <string name="rn_v145_l1">«Segna tutto letto» torna nella barra della vista a pannelli, dove costa di nuovo un tocco invece di due. Era stata tolta nella 1.4.1 per una buona ragione — stava appiccicata al filtro dei non letti e si premeva per sbaglio — ma la vista a pagine aveva ricevuto una cura migliore per lo stesso problema: lì l’icona era stata SPOSTATA lontano dal filtro, non tolta. Ora i pannelli hanno la stessa cura, nella stessa posizione, e la voce esce dal menu: una strada sola per vista, e la stessa nelle due. «Segna tutto da leggere» resta nel menu, perché quella è rara davvero. Segnalato, due volte e su due cose diverse, da Dave Royal.</string>
+    <string name="rn_v145_l2">«Rispondi sempre a tutti i gruppi» funziona anche sul telefono. L’impostazione esiste dalla 1.2.7, ma veniva letta in un solo punto: l’apertura del dialogo del crosspost — e nella vista a pagine si va dritti in scrittura, senza passare da lì. Quindi l’impostazione era accesa e non faceva niente: la schermata di scrittura mostrava il solo gruppo che stavi leggendo, finché non aprivi il selettore a mano. Ora la risposta a un articolo crospostato nasce con tutti i gruppi dell’originale, fino al limite previsto, come già faceva la vista a pannelli. Se l’autore ha chiesto che si prosegua altrove, la sua richiesta continua a vincere. Segnalato da Dave Royal.</string>
+    <string name="rn_v145_l3">Un articolo si può salvare come file .eml, che un client di posta apre come un messaggio invece di trovarselo incollato dentro. È l’altra metà di una richiesta della 1.3.6: allora la risposta fu la condivisione dell’articolo grezzo a un’altra app, che serve a leggerlo altrove ma non a conservarlo. Il file viene scritto con le intestazioni di codifica riscritte per corrispondere a quello che contiene davvero — NeReO salva i corpi già decodificati, quindi ricopiare il Content-Type originale avrebbe fatto mentire il file su se stesso e ogni accento sarebbe uscito sbagliato. È un’azione di barra come le altre: la puoi spostare nel menu o togliere da Aspetto → Personalizza le barre. Richiesta da Adam H. Kerman.</string>
+    <string name="rn_v145_l4">L’introduzione alla citazione può ora portare anche l’OGGETTO del messaggio che stai citando, con %%oggetto%% (o %%subject%%). Si aggiunge ai segnaposto che c’erano già — autore, email, data, ora, gruppo e Message-ID — e vale anche nelle risposte normali, non solo citando da un altro gruppo. Richiesto da Ammammata.</string>
+    <string name="rn_v145_l5">Seguire una discussione ora segue anche il suo futuro, non solo il passato. Fino a ora «segui la discussione» marcava i messaggi che esistevano nel momento in cui lo premevi: le risposte che arrivavano dopo nascevano non seguite, cioè l’esatto contrario di quello che avevi chiesto. E non era solo la stella che mancava — il marcatore protegge anche dai filtri e dalla cancellazione automatica, quindi i messaggi più nuovi di una discussione che stavi seguendo erano MENO protetti dei vecchi, e la discussione poteva svuotarsi dal centro senza dire niente. Ora una risposta eredita il marcatore da un qualsiasi antenato seguito, a qualunque profondità, quindi regge anche se un messaggio in mezzo alla catena non è mai stato scaricato. Una nota: vale per i messaggi che arrivano d’ora in poi. Le risposte già in archivio restano come sono — per rimettere in pari una vecchia discussione, togli e rimetti il «segui». Segnalato da BIG Umberto, che l’aveva definito «solo questione estetica»: non lo era, e per capirlo sono serviti la sua segnalazione e uno screenshot.</string>
+    <string name="rn_v145_l6">Un grazie a Dave Royal, e non è una formalità. Dalla 1.4 in poi la maggior parte di ciò che è stato corretto in NeReO nasce da una sua segnalazione: il Followup-To, il menu di aggiornamento, i menu dei tre puntini che si aprivano nel posto sbagliato, il «segna tutto letto» nella vista a pannelli, le risposte ai crosspost sul telefono. Quello che le rende preziose non è il numero. Dice anche dove il difetto NON c’è, e fa risparmiare mezza indagine; ci corregge quando lo fraintendiamo invece di lasciar correre; accetta un compromesso e dice quale; manda disegni, non solo lamentele; e tiene casi di prova pronti su uk.test e it.test, così la correzione dopo si verifica sullo stesso terreno. Parecchie delle voci di queste note esistono perché è andato a cercare.</string>
+    <string name="rn_v144_title">Novità della 1.4.4</string>
+    <string name="rn_v144_l1">Il pulsante Incolla c’è ora anche nel pannello di scrittura della vista a PANNELLI, dove non era mai stato. Tutto il lavoro fatto su quel pulsante — chiesto nella 1.3.3, reso sempre visibile nella 1.4.1, e insegnato nella build 106 a leggere gli appunti sul clic invece che mentre la barra si disegna — era stato fatto solo sulla vista a pagine, perché nei pannelli quel pulsante non esisteva proprio e non c’era niente da correggere. Segnalato più volte da chi l’aveva chiesto per primo: aveva ragione tutte le volte.</string>
+    <string name="rn_v144_l2">«Ritira dal server (cancel)» compare ora anche nel menu contestuale della vista a pannelli. Nella 1.4.2 era stato lasciato fuori di proposito: si porta dietro tre dialoghi — conferma, attesa, esito per server — e ricopiarli sarebbe stato esattamente il difetto di cui parla questa versione. Sono stati spostati in un posto solo, condiviso, e ora le due viste eseguono lo stesso codice. Come prima compare solo sui tuoi messaggi, e come prima manda un messaggio di controllo su Usenet: la conferma continua a dire chiaramente cosa il server può farne e cosa no.</string>
+    <string name="rn_v144_l3">Con un solo server configurato l’icona di aggiornamento non chiede più quali server vuoi aggiornare: aggiorna e basta. Il menu continua a comparire quando i server sono più di uno, dove la scelta vuol dire qualcosa. Fino a ora si apriva comunque, offrendo due voci che facevano la stessa cosa e un dialogo in cui spuntare l’unico server che possiedi: non una scelta, una formalità.</string>
+    <string name="rn_v144_l4">Il menu dei tre puntini si apre sotto l’icona che hai toccato, anche nell’elenco delle discussioni della vista a pagine. Lì compariva all’estrema sinistra dello schermo — su un tablet, un palmo di distanza dall’icona. La causa: quelle azioni stanno in una riga tutta loro, larga quanto lo schermo, e un menu senza niente attorno si aggancia a chi lo contiene, quindi si misurava sulla riga intera. Nelle colonne strette della vista a pannelli lo stesso difetto era invisibile, ed è il motivo per cui nessuno l’aveva mai segnalato. Segnalato da Dave Royal; un censimento ha trovato dodici coppie icona+menu e otto senza un contenitore proprio: ora ce l’hanno tutte, non solo quella che lui ha trovato.</string>
+    <string name="rn_v144_l5">I gruppi che hanno lo stesso nome su server diversi tornano a distinguersi. Nella vista a pannelli la colonna dei gruppi era una lista unica che non diceva mai da quale server venisse un gruppo — e non era nemmeno ordinata per server, quindi i gruppi dei due server uscivano intercalati e due nomi identici potevano finire uno accanto all’altro. Ora ha un’intestazione per server, come la vista a pagine ha sempre avuto. E in entrambe le viste la barra sopra l’elenco delle discussioni dice il server sotto al nome del gruppo: fino a ora, una volta entrato nel gruppo, non c’era più niente a dirti quale dei due stavi leggendo. Con un solo server configurato non cambia nulla, perché non c’è niente da distinguere. Nello stesso giro due cose minori: l’intestazione mostra ora il nome che hai dato tu al server e non il suo host, che è l’unico a essere diverso se hai due account sullo stesso provider; e i gruppi rimasti orfani di un server cancellato non spariscono più dalla lista — si raccolgono in fondo sotto «?», dove la pulizia del database può trovarli. Segnalato da Roxy.</string>
+    <string name="rn_v143_l1">Le liste non diventano più sorde. Poteva capitare — quasi sempre su un gruppo grande, e subito dopo un aggiornamento — che la lista aperta smettesse di mostrare i messaggi nuovi: il pallino del gruppo li contava, il database li conteneva, ma l’elenco restava fermo finché non si usciva dal gruppo e si rientrava. Sotto c’era una lettura del database che falliva, e attorno una difesa scritta male: invece di rimettersi in ascolto, la lista si chiudeva per sempre. Ora si ripara da sola nel giro di un istante. Grazie a chi ha acceso il registro diagnostico e ha mandato il log — senza quello questo difetto sarebbe ancora un sospetto invece che una correzione.</string>
+    <string name="rn_v143_l2">Il pulsante Annulla della diagnostica LISTGROUP funziona. Era disabilitato per tutto il tempo dell’operazione, e su un gruppo da centosettantamila articoli quell’attesa supera il minuto e mezzo: l’unico modo di uscirne era chiudere l’app di forza. Ora interrompe davvero, e quello che era già stato registrato resta nel log.</string>
+    <string name="rn_v143_l3">Le righe rimaste orfane di un server cancellato con la 1.4.1 o prima si possono finalmente eliminare. La 1.4.2 si limitava a contarle, in fondo al rapporto della Diagnostica database: la misura è arrivata — tre gruppi e 99.906 righe di catalogo senza server sul telefono di un collaudatore, su un database da 36 MB — e con un numero vero davanti la pulizia ha smesso di essere un’idea mia. Il pulsante sta subito sotto il rapporto, e prima di cancellare qualunque cosa ti dice quante righe se ne vanno, voce per voce.</string>
+    <string name="rn_v142_title">Novità della 1.4.2</string>
+    <string name="rn_v142_l1">«Ricarica il messaggio» ricarica davvero. Nella 1.4 e nella 1.4.1 quel pulsante della barra di lettura CANCELLAVA l’articolo invece di riscaricarlo: spariva dall’elenco insieme allo stato letto, al «seguita» e a tutto il resto, e non tornava piu’ nemmeno aggiornando il gruppo, perche’ l’aggiornamento riparte dall’ultimo articolo gia’ scaricato. Ora viene azzerato il solo testo del messaggio, che viene richiesto di nuovo al server: la riga resta dov’e’ con tutto quello che le appartiene. Segnalato sul gruppo, con un’analisi tecnica precisa allegata — quel dettaglio ha fatto risparmiare l’intera diagnosi.</string>
+    <string name="rn_v142_l2">I tuoi post tornano «da leggere» come qualunque altro messaggio. La 1.4.1 li faceva nascere già letti: sembrava comodo e invece non lo è, perché dopo aver pubblicato si vuole ritrovare il proprio messaggio per vedere com’è venuto e dove si è agganciato nella discussione — e con il filtro «solo non letti» acceso semplicemente non c’era. Nessun altro lettore si comporta così: né PAN, né Thunderbird, né Piao Hong, né MesNews. In più la regola era più larga di quanto sembrasse: alla prima sincronizzazione di un gruppo marcava letto tutto il tuo storico lì dentro.</string>
+    <string name="rn_v142_l3">«Segna tutto letto» non si preme più per sbaglio. Un’azione rara e con conseguenze stava accanto a una frequente e innocua, il filtro dei non letti. Sul telefono si scambia di posto con «Aggiorna»; nella vista a pannelli, dove la barra è più fitta e la stessa azione era già nel menu dei tre puntini, l’icona in barra è stata tolta — era un doppione, e così il tocco per sbaglio diventa impossibile invece che meno probabile. Nei due layout le icone hanno ora lo stesso ordine.</string>
+    <string name="rn_v142_l4">Il crosspost funziona anche aprendo una discussione NUOVA dalla vista a pannelli. Il selettore dei gruppi c’era solo rispondendo a un messaggio gia’ crospostato: iniziando una discussione da zero non compariva, mentre nella vista a pagine c’e’ sempre. Stessa forma di difetto corretta nella 1.4 per le risposte, rimasta scoperta sull’altro ramo.</string>
+    <string name="rn_v142_l5">«Sostituisci (supersede)» compare ora anche nel menu contestuale della vista a PANNELLI, dove non c’era mai stata: esisteva solo nella vista a pagine. Come prima appare solo sui tuoi messaggi. «Ritira dal server (cancel)» resta per ora nella sola vista a pagine — quella parte va prima riorganizzata per non averne due copie, e manda messaggi di controllo sulla rete: merita un collaudo suo.</string>
+    <string name="rn_v142_l6">Cancellare un server ora porta via davvero quello che gli appartiene, e prima te lo chiede dicendo quanti gruppi e quanti messaggi se ne andranno. Fino alla 1.4.1 bastava un tocco sul cestino, senza domande, e spariva la sola riga del server: i suoi gruppi e tutti i suoi messaggi restavano nel database per sempre, invisibili e irraggiungibili, a occupare spazio e a gonfiare i numeri della diagnostica. Se ti e’ gia’ successo, la Diagnostica database in Manutenzione ora te lo dice: alla fine del rapporto compare un blocco «ORFANI» con i conteggi. Per ora li conta soltanto; toglierli sara’ il passo successivo, e voglio prima sapere di quali numeri parliamo.</string>
+    <string name="rn_v142_l7">Eliminando un’intera discussione il pallino dei non letti del gruppo scende subito. Prima restava fermo al numero di prima fino al successivo aggiornamento: era l’unica cancellazione che si dimenticava di ricalcolarlo.</string>
+    <string name="rn_v141_title">Versione 1.4.1</string>
+    <string name="rn_v141_l1">Il &quot;letto&quot; che segue il Message-ID ora funziona davvero. Era annunciato nella 1.4 e non funzionava per nessuno: la regola era collegata solo alle voci di menu &quot;segna letto&quot;, e non all\'unica cosa che fanno tutti, cioe\' leggere un messaggio. Ora ogni punto che marca un messaggio come letto passa da un posto solo, quindi un crosspost letto in un gruppo risulta letto negli altri comunque lo si sia letto. Vale anche al contrario: &quot;segna tutto da leggere&quot; propaga a sua volta, e puo\' quindi riportare a non letti messaggi in altri gruppi. Segnalato da Dave Royal, confermato da Marco.</string>
+    <string name="rn_v141_l2">I tuoi post non tornano piu\' &quot;da leggere&quot;. Dopo un invio riuscito il tuo articolo arriva dal server come tutti gli altri e compariva in rosso: l\'avevi appena scritto tu. Nello stesso giro e\' stato irrobustito il criterio &quot;e\' mio?&quot; nei tre punti rimasti indietro rispetto all\'audit di sicurezza della 1.2.12: ora l\'indirizzo viene estratto dalla riga From e confrontato, invece di essere cercato dentro la riga. Fino a ora bastava un From con il tuo indirizzo nel nome visualizzato per marcare come tua la discussione di un estraneo. I conteggi calcolati nei sync precedenti restano quelli finche\' quel gruppo non viene risincronizzato.</string>
+    <string name="rn_v141_l3">Rispondere non fa piu\' perdere il segno. Rispondevi al 23esimo messaggio di una discussione, inviavi o annullavi, e tornavi al primo post: l\'app non stava conservando su quale messaggio eri. Segnalato e confermato da BIG Umberto con una prova A/B fatta come si deve.</string>
+    <string name="rn_v141_l4">Tre correzioni negli elenchi, tutte da Dave Royal. L\'albero a comparsa ora segue &quot;mostra i filtrati&quot; come fa la lista del gruppo, e questo corregge anche il falso &quot;impossibile ricostruire la discussione&quot; quando lo aprivi da un post filtrato, e l\'avanti/indietro che su quei post non faceva niente. In una discussione aperta il primo messaggio mostra ora il proprio stato invece di quello dell\'intera discussione, quindi non vedi piu\' due righe rosse quando il messaggio non letto e\' uno solo. E il conteggio dopo un aggiornamento dice quanti dei nuovi sono stati filtrati, invece di annunciare arrivi che non vedrai mai.</string>
+    <string name="rn_v141_l5">Il pulsante Incolla nella schermata di scrittura c\'e\' sempre, e ora funziona dove prima no. Le cose sbagliate erano due. Compariva solo se negli appunti c\'era gia\' del testo, e Roxy, che quel pulsante l\'aveva chiesto lui nella 1.3.3, ha passato settimane a cercarlo concludendo che non esistesse. E NeReO leggeva gli appunti mentre disegnava la schermata invece che quando premi il pulsante: da Android 10 un\'app puo\' LEGGERE gli appunti solo mentre ha il focus di input, mentre scriverli le riesce sempre. Sul telefono non si e\' mai visto, perche\' la comparsa della tastiera fa ridisegnare la barra e la seconda lettura riesce. Su un dispositivo senza tastiera a schermo quella seconda lettura non avviene mai, e il pulsante spariva per sempre. Ora gli appunti si leggono alla pressione, e si leggono nel modo tollerante che usano tutte le altre app, cosi\' arriva anche il testo copiato come HTML o come link. Diagnosi da due misure di Roxy: copiare da NeReO verso un\'altra app ha sempre funzionato, il contrario mai.</string>
+    <string name="rn_v141_l6">Gia\' nella 1.4, ma non l\'avevamo scritto: quando un server chiede la password e non ce n\'e\' nessuna salvata, NeReO lo dice chiaramente invece di mandarne una vuota.</string>
+    <string name="rn_v141_l7">Due righe di diagnostica per una segnalazione aperta. Con il log NNTP acceso, NeReO registra quante righe riceve la lista dei messaggi e se una lettura dal database fallisce: quando succede, quella lista smette di aggiornarsi finche\' non esci dal gruppo e rientri. Il sintomo e\' stato misurato da BIG Umberto, la causa non e\' stabilita, e queste due righe servono a stabilirla. A log spento non viene registrato niente.</string>
+    <string name="rn_v141_l8">Le intestazioni personalizzate che NeReO si riserva vengono dette PRIMA di inviare. Alcune non sono sovrascrivibili — quelle vitali (From, Subject…) e quelle di controllo (Followup-To, Control, Sender, Expires…), che esistono perché un testo incollato da fonte esterna non diventi un messaggio di controllo per distrazione. Finora venivano scartate in silenzio: si scriveva una riga valida, si inviava, e quella riga non c’era. Ora l’editor le elenca mentre scrivi, e la stessa regola alimenta l’avviso e l’invio, così i due non possono divergere.</string>
+    <string name="rn_v141_l9">«Segna tutto letto» e «Aggiorna» si scambiano di posto nella barra della lista messaggi. Un’azione rara e con conseguenze stava accanto a una frequente e innocua (il filtro dei non letti), e veniva premuta per sbaglio. Spostarla nel menu sarebbe costato un tocco al giorno a chi la usa ogni sera; scambiarle non costa niente a nessuno.</string>
+    <string name="msg_no_new_filtered">Nessun nuovo messaggio. (%d filtrati)</string>
+    <string name="msg_new_articles_filtered">%1$d nuovi articoli (%2$d filtrati)</string>
+    <string name="tl_my_post_with_replies">C\'e\' un mio messaggio in questa discussione, con %d risposte</string>
+    <string name="rn_v14_title">Versione 1.4</string>
+    <string name="rn_v14_l1">Lo STARTTLS ora rispetta entrambe le meta\' della RFC 4642, invece di una sola. Se un server rifiuta lo STARTTLS prima dell\'handshake, NeReO puo\' proseguire in chiaro come lo standard consente, e questo non cambia. Ma se il server accetta (382) e poi l\'handshake fallisce, la RFC 4642 chiede a entrambe le parti di chiudere la connessione (SHOULD: raccomandazione forte, non obbligo assoluto), mentre fino a ora NeReO proseguiva in chiaro. Quel ripiego probabilmente non funzionava nemmeno, perche\' il ClientHello TLS era gia\' stato scritto sul socket, ma il punto e\' che non doveva essere tentato. Una connessione cosi\' ora fallisce con un messaggio esplicito invece di proseguire in silenzio senza cifratura.</string>
+    <string name="rn_v14_l2">Il database e\' stato aggiornato (schema versione 12). Server, gruppi, articoli, filtri, identita\' e bozze vengono migrati sul posto e non viene cancellato nulla: e se mai NeReO trovasse una versione che non sa migrare, ne fa prima una copia fisica e te lo dice. Le strutture nuove non sono ancora usate da niente: ci sono per il lavoro su fiducia e certificati che arriva in questa stessa release. Come sempre prima di una versione che tocca il database, un backup da Manutenzione non costa nulla.</string>
+    <string name="rn_v14_l3">Un ripristino poteva assegnare a un server un nome utente che non aveva mai avuto. I server senza account finivano nel backup correttamente, come valore vuoto, ma venivano riletti come la parola null: quattro caratteri, che NeReO usava poi diligentemente per autenticarsi su server che non vogliono alcuna autenticazione. Il server rispondeva 381 Enter password, NeReO mandava una password vuota, e il server replicava con un errore di sintassi che non diceva nulla a nessuno. Il difetto stava in un solo controllo mancante, ed era li\' almeno dalla versione 1.2.8. Ora il ripristino e\' corretto, e i server che si portano ancora dietro quel nome utente finto vengono riparati al primo ripristino di un backup: il messaggio dice quanti. In piu\', NeReO non manda piu\' una password vuota quando un server la chiede: dice chiaramente che per quel server non ne e\' salvata nessuna, e suggerisce di cancellare il nome utente se il server non richiede un account.</string>
+    <string name="rn_v14_l4">In Manutenzione c\' e\' un nuovo riquadro Diagnostica database. Conta le righe di ogni tabella e mostra la versione dello schema e lo spazio occupato, con un pulsante Copia. Esiste perche\' una migrazione del database che SI APRE non e\' la stessa cosa di una migrazione che ha FUNZIONATO: una migrazione puo\' essere formalmente corretta e aver comunque svuotato una tabella, e l\'app si aprirebbe benissimo — sarebbe il tuo archivio a non esserci piu\'. Prendi i numeri prima di un aggiornamento e di nuovo dopo: se coincidono, non si e\' perso niente. È anche la cosa piu\' rapida da allegare a una segnalazione, cosi\' nessuno deve descrivere il proprio archivio a parole. Non viene calcolato niente finche\' non premi il pulsante.</string>
+    <string name="rn_v14_l5">Rispondendo a un crosspost ora si vede dove il messaggio andra\' davvero. Fino a ora la schermata di scrittura mostrava solo il gruppo che stavi leggendo, anche quando la risposta era impostata per uscire su tre: non c\'era modo di controllare prima di premere Invia. Con questo sono caduti altri due difetti: riaprire il selettore dei gruppi per CONTROLLARE la scelta la riportava in silenzio al valore predefinito — il caso peggiore possibile, perche\' il gesto di controllo distruggeva cio\' che controllava — e nella vista a pannelli il pulsante del crosspost non esisteva affatto, quindi per cambiare i gruppi bisognava abbandonare la risposta e ricominciare. Tutti e tre segnalati da Dave Royal.</string>
+    <string name="rn_v14_l6">"Tutti i messaggi" ora funziona anche sui server ad alta ritenzione. Chiedere l\'intero storico di un gruppo molto grande faceva richiedere a NeReO tutto l\'intervallo in una volta sola, e la risposta poteva superare il tetto di 64 MB che protegge l\'app dall\'esaurire la memoria: il risultato era un errore e nessun messaggio scaricato. Ora l\'elenco si chiede a fette, e ogni fetta viene salvata prima di chiedere la successiva. Il tetto resta esattamente dov\'era — alzarlo avrebbe spostato il muro, non tolto — e in piu\' si guadagnano due cose: una sincronizzazione interrotta a meta\' riprende invece di ricominciare, e la memoria usata non dipende piu\' da quanto e\' grande il gruppo. Segnalato da Bingo3331.</string>
+    <string name="rn_v14_l7">La fiducia TLS ora si CONCEDE, non si subisce. Il percorso normale non cambia: controllo del certificato di Android piu\' verifica del nome host, esattamente come prima. Cambia cosa succede quando fallisce: invece di un vicolo cieco, NeReO annota l\'identita\' che il server ha presentato (chi l\'ha emessa, per chi, l\'impronta della chiave, le date di validita\') e la segna VISTA, NON FIDATA. La connessione fallisce lo stesso. L\'approvi dopo, con calma, da Server &gt; Identita\' TLS, con i valori sotto gli occhi: mai in un dialogo in mezzo a un aggiornamento, perche\' un avviso di sicurezza che ti interrompe e\' quello che si clicca senza leggere. Cio\' che viene appuntato e\' lo SHA-256 della chiave pubblica del certificato foglia, mai di un intermedio: appuntare un intermedio vorrebbe dire fidarsi di tutto cio\' che quell\'autorita\' firmera\' in futuro, cioe\' quasi il contrario del punto. Da quel momento quella chiave viene confrontata a OGNI connessione, e se cambia NeReO si ferma e te le mostra tutte e due, senza nessun pulsante &quot;accetta la nuova&quot; dentro l\'avviso. L\'attrito e\' la funzione. C\'e\' anche un\'eccezione per riga server per il certificato SCADUTO, che rilassa le date e nient\'altro: catena e nome host restano pretesi, e il giorno in cui il server rinnova l\'eccezione diventa inerte da sola.</string>
+    <string name="rn_v14_l8">NeReO ora avvisa quando il certificato di un server sta per scadere. Visto che il lavoro sulla fiducia qui sopra fa vedere il certificato a ogni connessione, la data di scadenza e\' gratis: non usarla sarebbe stato sprecare un dato gia\' in mano. I server il cui certificato scade entro 30 giorni lo dicono accanto al nome, e lo dice anche la schermata dell\'identita\' TLS. Esiste per un caso vero: l\'amministratore di uno dei server che usiamo rinnova a mano, e un certificato Let\'s Encrypt vive 90 giorni, quindi quella situazione non e\' chiusa, e\' ciclica. Un avviso in tempo la trasforma in un messaggio all\'amministratore invece che in una mattina senza notizie.</string>
+    <string name="rn_v14_l9">Gli accenti non si rompono piu\' negli articoli il cui set di caratteri manca o e\' dichiarato male. Prima NeReO prendeva la dichiarazione per buona; misurato su sette casi reali, cinque perdevano il testo. Il peggiore non era la dichiarazione mancante ma quella SBAGLIATA: li\' non compariva nemmeno un carattere di errore, solo spazzatura dall\'aria plausibile, che NeReO poi ripubblicava in UTF-8 impeccabile. La regola ora ha tre passi: byte che sono UTF-8 valido in senso stretto e con almeno una sequenza multi-byte SONO UTF-8, qualunque cosa dica la dichiarazione; altrimenti il set dichiarato, che tiene corretti cirillico e giapponese; altrimenti lo stesso ripiego che le intestazioni usano da sempre. Dieci casi vengono verificati automaticamente a ogni compilazione. Siccome NeReO salva il testo GIA\' DECODIFICATO, questo non ripara cio\' che e\' gia\' in archivio: per quello c\'e\' una nuova azione &quot;Ricarica il messaggio&quot; per la barra dell\'articolo (Aspetto &gt; Personalizza barre), che butta la copia locale e la riscarica.</string>
+    <string name="rn_v14_l10">Un messaggio crospostato letto in un gruppo ora risulta letto anche negli altri. E\' un messaggio solo, anche se NeReO ne tiene una riga per gruppo, ed e\' quello che fa MesNews. Le discussioni seguite e i filtri ragionavano gia\' cosi\': faceva eccezione solo il letto. Predefinito acceso, con interruttore in Manutenzione.</string>
+    <string name="rn_v14_l11">NeReO ora legge e rispetta il Followup-To. Quando l\'autore di un articolo chiede che le risposte proseguano in un altro gruppo, la risposta va LI\' - e\' quello che quell\'intestazione significa - e la schermata di scrittura lo dice chiaramente, perche\' dirottare un messaggio senza avvisare sostituirebbe una scortesia con una sorpresa. Se apri il selettore dei gruppi e scegli tu, vince la tua scelta: una decisione umana non si scavalca con un\'intestazione. Il caso particolare Followup-To: poster, che chiede risposte private, non blocca la pubblicazione (NeReO non ha una posta sua) ma avvisa senza equivoci e offre l\'indirizzo dell\'autore, da copiare o da aprire con l\'app di posta. Era l\'unico criterio GNKSA che NeReO non rispettava.</string>
+    <string name="rn_v14_l12">Ogni gruppo puo\' avere la sua introduzione alla citazione. SOSTITUISCE quella dell\'identita\' invece di entrare nel sorteggio, perche\' il punto e\' una scelta mirata - tipicamente scriverla nella lingua del gruppo - e un\'introduzione italiana sorteggiata su un gruppo inglese e\' il difetto, non la funzione. Si imposta dal menu del gruppo, nello stesso dialogo della conservazione dei messaggi; lasciandola vuota si torna a quella dell\'identita\'. Valgono gli stessi segnaposto.</string>
+    <string name="rn_v137_title">Versione 1.3.7</string>
+    <string name="rn_v137_l1">Il ripristino di un backup non duplica piu\' filtri e identita\'. Lo ha segnalato Dave Royal, notando che il ripristino aggiungeva i suoi filtri invece di sostituirli; guardando il codice e\' emerso che le identita\' avevano lo stesso difetto. Ora il ripristino e\' idempotente: ripristinare due volte lo stesso file lascia esattamente lo stesso stato. I filtri si riconoscono da nome, campo, tipo di confronto, pattern e ambito dei gruppi; le identita\' dal loro nickname.</string>
+    <string name="rn_v137_l2">Il ripristino ora chiede come procedere: Unisci o Sostituisci. Unisci conserva quello che hai e aggiorna il resto; Sostituisci cancella prima i filtri e le identita\' attuali. Nessuna delle due tocca server, sottoscrizioni o articoli scaricati: cancellare un server porterebbe via con se\' i suoi gruppi e i suoi messaggi, e un ripristino non deve poter distruggere per sbaglio mesi di articoli.</string>
+    <string name="rn_v137_l3">Un backup cifrato che veniva decifrato correttamente ma non riusciva a importare segnalava "password errata", mandando a cercare la causa sbagliata. Ora i due passi sono separati e ciascuno segnala il proprio errore.</string>
+    <string name="rn_v137_l4">Quando una riga lunga viene spezzata in invio, la riga spezzata non finisce piu\' con uno spazio. Uno spazio in coda e\' il marcatore di rottura debole del Format=Flowed (RFC 3676): un lettore che lo interpreta avrebbe riunito quella riga con la successiva, disfacendo proprio l\'a-capo appena messo. Succedeva solo quando la rottura cadeva su un doppio spazio, cosa tutt\'altro che rara dopo un punto. I doppi spazi dentro la riga restano esattamente come li hai scritti, e il delimitatore della firma conserva lo spazio finale che la convenzione richiede. Domanda di Adam H. Kerman.</string>
+    <string name="rn_v137_l5">"File illeggibile" ora dice anche perche\'. Quando un backup non si apriva, il messaggio era quelle due parole e nient\'altro: un file mancante, un permesso negato e uno stream vuoto sembravano la stessa cosa. Ora il dettaglio tecnico compare in un dialogo con un pulsante per copiarlo, perche\' e\' quello che serve a una segnalazione. Lo ha fatto emergere Dave Royal, che ha ripetuto la stessa prova sei volte su due versioni dell\'app senza poterci dire nulla di piu\' di "file illeggibile" - che era tutto quello che gli mostravamo.</string>
+    <string name="rn_v136_title">Versione 1.3.6</string>
+    <string name="rn_v136_l1">Gli oggetti lunghi con lettere accentate o non latine vengono ora codificati correttamente. La RFC 2047 ammette al massimo 75 caratteri per parola codificata; NeReO ne produceva una sola di lunghezza qualunque — un oggetto italiano normale usciva a 140 caratteri. Un decodificatore ha il diritto di farne un pasticcio, e quello che finisce negli archivi altrui non si corregge più. Ora la codifica viene spezzata e piegata come vuole lo standard, tagliando solo fra caratteri interi perché emoji e simboli multi-byte restino intatti.</string>
+    <string name="rn_v136_l2">Un articolo il cui corpo è di puro ASCII viene ora dichiarato come tale (us-ascii, 7bit) invece di dichiarare sempre UTF-8. Il controllo avviene dopo che la firma è entrata nel corpo, che è dove deve avvenire: deciderlo un passo prima significherebbe dichiarare ASCII puro e poi spedire una firma con dentro una lettera accentata.</string>
+    <string name="rn_v136_l3">Nuova azione di barra: Esporta / condividi. Consegna l\'articolo — intestazioni complete comprese — a un\'altra app a tua scelta, così puoi archiviarlo o rispondere all\'autore per posta, cosa che NeReO non sa fare da sé. Sostituisce una funzione di condivisione sparita in sordina con la 1.3.4 insieme al vecchio menu di selezione, e che avevamo erroneamente annotato come ancora disponibile altrove.</string>
+    <string name="rn_v136_l4">Due nuove azioni di barra: Copia link (usenet.id) e Copia Message-ID. La prima costruisce un indirizzo web che punta all\'articolo che stai leggendo — https://usenet.id/ seguito dal suo Message-ID — così puoi mandare qualcuno a leggere proprio quel messaggio da una chat, una mail o un forum. La seconda mette negli appunti il Message-ID stesso, nella forma canonica: finora si poteva ottenere solo aprendo le intestazioni complete e selezionandolo a mano. NeReO non contatta mai usenet.id: compone il testo e lo copia, senza nessuna connessione e senza nessun permesso nuovo. Richiesta di ObiWan. Entrambe le azioni si spostano o si nascondono da Impostazioni → Personalizza le barre.</string>
+    <string name="rn_v136_l5">Preimpostazione corretta: OVH (news.usenet.ovh) torna sulla porta 119 con STARTTLS, invece della 563 con TLS implicito. La 1.3.5 aveva spostato sulla 563 tutti e tre i server che richiedono un account, ma OVH non offre TLS su quella porta: sceglierlo dall\'elenco integrato produceva quindi una configurazione che non poteva funzionare. Il suo amministratore ha abilitato STARTTLS sulla porta 119 il 14 settembre 2026, e quella combinazione e\' stata verificata su un dispositivo reale. Per i server gia\' configurati non cambia nulla.</string>
+    <string name="rn_v135_title">Versione 1.3.5</string>
+    <string name="rn_v135_l1">I messaggi d\'errore che arrivano dal livello di rete di NeReO sono ora in inglese per tutti. Finora erano in italiano: un utente che usa l\'app in inglese si è visto rispondere in italiano quando il suo server ha rifiutato la connessione, e si è ragionevolmente chiesto cosa avesse sbagliato. Quei messaggi stanno sotto il sistema di traduzione — quella parte dell\'app non accede ai testi tradotti e non può seguire la lingua scelta — quindi, se una lingua sola deve valere per tutti, l\'inglese è almeno la lingua di Usenet e quella predefinita dell\'app.</string>
+    <string name="rn_v135_l2">Cosa comporta per chi usa NeReO in italiano: meno di dieci messaggi, tutti errori di rete, arrivano ora in inglese mentre il resto dell\'app resta nella tua lingua. È un ripiego, non una traduzione. Far seguire a quei testi la lingua dell\'interfaccia significa passarli dall\'esterno di quel livello: è una modifica più profonda e si farà quando quella parte del codice verrà riaperta per altri motivi.</string>
+    <string name="rn_v135_l3">Una segnalazione su Solani ha fatto emergere un difetto che meritava una correzione. L\'indirizzo del server veniva già ripulito dagli spazi di troppo prima dell\'uso; il nome utente no. Uno spazio arrivato da un incolla o da un suggerimento della tastiera veniva spedito al server, che lo contava — e l\'unico riscontro era «autenticazione fallita». Il nome utente viene ora ripulito, esattamente come già l\'indirizzo. La password invece NON viene ripulita di proposito: può legittimamente iniziare o finire con uno spazio, e l\'app non ha il diritto di modificarla in silenzio.</string>
+    <string name="rn_v135_l4">Il campo password ha ora il pulsante per rivelarla — chiesto dallo stesso utente — e sotto un conteggio dei caratteri aggiornato mentre scrivi. Il conteggio c\'è perché coglie ciò che rivelare la password non può: uno spazio finale è invisibile anche in chiaro. Se sai che la tua password ha undici caratteri e il campo ne segna dodici, hai trovato il problema in un secondo. E se davvero inizia o finisce con uno spazio, l\'app te lo dice in rosso invece di correggerti d\'autorità.</string>
+    <string name="rn_v135_l5">Il registro diagnostico NNTP annota ora la FORMA di ogni credenziale inviata — quanti caratteri, se ci sono spazi ai bordi, se contiene caratteri non ASCII — e mai il valore. È la differenza fra diagnosticare un accesso rifiutato leggendo un log e tirare a indovinare in tre scambi di messaggi.</string>
+    <string name="rn_v135_l6">Scegliendo un server dall\'elenco integrato, per i tre che richiedono un account (Eternal September, Solani, OVH) vengono ora compilate la porta 563 e la cifratura. Finora l\'elenco proponeva a tutti la 119 in chiaro, quei tre compresi — e siccome NeReO si rifiuta di mettere una password su una connessione non cifrata, il primo tentativo falliva sempre con un 483. Non era un caso limite: era il percorso normale, e chi sceglie un server da un elenco lo fa proprio per non dover decidere la porta. I due server aperti, che non richiedono password, restano sulla 119. Per i server che hai già configurato non cambia nulla.</string>
+    <string name="rn_v135_l7">Due segnalazioni, un difetto solo. «Apri il primo non letto» a volte tornava al post iniziale — già letto — pur essendoci messaggi da leggere; e marcando una discussione come letta ogni tanto restava visibile. Venivano dallo stesso posto: NeReO rispondeva alla domanda «quali messaggi stanno in questa discussione» in tre modi diversi, e uno solo dei tre era il motore di threading che disegna davvero lo schermo. Gli altri due confrontavano il testo dell\'intestazione References, e divergevano dallo schermo ogni volta che il post iniziale non era mai stato scaricato oppure che un messaggio elencava il solo padre diretto. Ora tutta l\'app chiede al motore di threading, e un menu non può più vedere una discussione diversa da quella che hai davanti.</string>
+    <string name="rn_v135_l8">Una nota per chi ha segnalato il primo: le risposte orfane erano esattamente la causa. I cambi di oggetto no — il motore di threading di NeReO non guarda mai l\'oggetto, quindi rinominare un messaggio non può influenzare il raggruppamento.</string>
+    <string name="rn_v135_l9">La firma può ora contenere righe vuote fra una riga di testo e l\'altra. Quattro righe intercalate da righe vuote perdevano le ultime due, perché il limite contava le righe fisiche; ora conta le righe di testo, con un tetto complessivo perché una firma non possa essere gonfiata di spazio vuoto. Da sapere: la netiquette classica di Usenet conta quattro righe fisiche, vuote comprese — questa è una tolleranza di NeReO, quindi un altro lettore potrebbe comunque troncare una firma così.</string>
+    <string name="rn_v134_title">Versione 1.3.4</string>
+    <string name="rn_v134_l1">Release tecnica: del codice dell\'app non è cambiata una riga rispetto alla 1.3.3. È cambiato tutto ciò su cui NeReO poggia — la catena di compilazione (Android Gradle plugin 8.7.3 → 9.3.0, Gradle 8.9 → 9.5.0, Kotlin 2.0.21 → 2.2.10) e soprattutto Jetpack Compose, il motore grafico, dalla 1.7.6 alla 1.12: venti mesi in un colpo solo.</string>
+    <string name="rn_v134_l2">Perché esce da sola, senza nient\'altro dentro: venti mesi di Compose toccano il disegno del testo, lo scorrimento, la tastiera e le animazioni — cioè tutta l\'app. Se dopo questo aggiornamento qualcosa si comporta male, dev\'esserci un solo sospettato possibile. È la stessa regola con cui la 1.2.14 è uscita da sola.</string>
+    <string name="rn_v134_l3">Cosa speriamo: nella 1.12 di Compose ci sono lavori espliciti sulla selezione del testo col mouse e sulla barra di selezione. Su un dispositivo senza schermo tattile, guidato da un puntatore, quella barra non è mai comparsa — si seleziona il testo ma nessuno propone di copiarlo. Questo è l\'unico modo per sapere se il problema fosse già risolto a monte. È una speranza, non una promessa: se la barra continuerà a non comparire, sapremo almeno che quella strada non bastava.</string>
+    <string name="rn_v134_l4">Se noti qualunque cosa che si comporta diversamente dalla 1.3.3 — testo, scorrimento, tastiera, animazioni, qualsiasi cosa — segnalala, anche se ti sembra una sciocchezza. È esattamente a questo che serve questa versione.</string>
+    <string name="rn_v134_l5">Per strada si è perso qualcosa, ed è giusto dirlo: selezionando il testo di un messaggio non compaiono più «Cerca sul web» e «Condividi». Quelle due erano state aggiunte nella 1.2.8 su richiesta di Dave Royal, sostituendo il menu di selezione con uno nostro. Compose 1.12 non passa più da quel meccanismo — il menu ora è quello della piattaforma, e il nostro veniva ignorato in silenzio. L\'API nuova permette a un\'app di aggiungere voci a quel menu, ma non le dice quale testo sia selezionato, quindi quelle due azioni al momento non si possono ricostruire. Copia e Seleziona tutto non sono toccate, e l\'azione «Copia il messaggio» nella barra di lettura resta.</string>
+    <string name="rn_v133_title">Versione 1.3.3</string>
+    <string name="rn_v133_l1">Quando una connessione cifrata fallisce, NeReO dice ora QUALE dei due problemi possibili sia, perché i rimedi sono diversi. Se il certificato non è firmato da un\'autorità che Android riconosce, o è scaduto, il messaggio lo dice e avverte chiaramente che l\'opzione di sicurezza non può servire — fino alla 1.3.2 la suggeriva in ogni caso, mandando a cercare una via d\'uscita che non esiste. Se invece il certificato è valido ma emesso per un altro indirizzo, l\'opzione serve davvero e il messaggio ci indirizza. Quando l\'errore non corrisponde a nessuno dei due, NeReO lo dice invece di inventarsi una diagnosi, e mostra il testo grezzo. Segnalato da Bingo3331 su Paganini.</string>
+    <string name="rn_v133_l2">L\'opzione di sicurezza è stata rinominata con quello che fa davvero: «Non verificare il nome host sul certificato». Il vecchio nome prometteva più di quanto mantenesse — non ha mai fatto accettare a NeReO un certificato autofirmato, di un\'autorità sconosciuta o scaduto, e ora la sua nota lo dice esplicitamente. Il comportamento non cambia: ciò che passava prima passa ancora, ciò che veniva rifiutato viene rifiutato ancora.</string>
+    <string name="rn_v133_l3">Nuova azione «Copia il messaggio» nella barra di lettura (sia sul telefono sia nel riquadro di lettura del layout a pannelli): un clic copia l\'intero messaggio negli appunti, senza dover prima selezionare nulla. È personalizzabile come tutte le altre azioni, quindi si può spostare nel menu ⋮ o spegnere. Insieme, un pulsante «Incolla» nella barra della schermata di scrittura. Nascono entrambi da Roxy, che legge da un dispositivo senza schermo tattile: lì selezionare il testo funziona, ma la barra flottante Copia/Cerca/Condividi non compare — è legata al percorso a tocco — e su Android il tasto destro è BACK, quindi non c\'è nemmeno un menu contestuale su cui ripiegare.</string>
+    <string name="rn_v133_l4">Se hai una tastiera collegata, Ctrl+C e Ctrl+V funzionano già dentro NeReO, anche dove la barra flottante non compare: per copiare UNA PARTE di un messaggio resta la via più rapida. L\'azione «Copia il messaggio» copia invece il testo INTERO — per un pezzo bisogna ancora selezionarlo.</string>
+    <string name="rn_v132b_title">Versione 1.3.2</string>
+    <string name="rn_v132b_l1">Nuova opzione facoltativa (Aspetto → «Tocca la discussione per aprire il primo non letto»): sul telefono, toccare la testa di una discussione porta direttamente al primo messaggio non letto di quella discussione invece che al primo post. È l\'equivalente per telefono di quanto la 1.3.1 ha portato nel layout a pannelli, e funziona anche nella vista ad albero — dove finora non esisteva nulla di simile. Spenta di default: se non la si accende non cambia nulla.</string>
+    <string name="rn_v132b_l2">Lo User-Agent dichiarato nei post segue ora la RFC 5536 §3.2.13: NeReO/1.3.2 (Android), con la versione attaccata da una barra. Fino alla 1.3.1 era «NeReO 1.3.1 (Android)», con lo spazio — non illegale, ma diceva un\'altra cosa: la grammatica lo legge come DUE prodotti, uno di nome «NeReO» e uno di nome «1.3.1», quindi chi raccoglie statistiche sui newsreader vedeva un software inesistente. Le identità che hanno ancora uno dei nostri vecchi predefiniti vengono aggiornate una volta sola in automatico; uno User-Agent scritto da te non viene mai toccato, campo vuoto compreso. Segnalato da Dave Royal.</string>
+    <string name="rn_v132b_l3">Corretto: se l\'ultimo articolo di un gruppo veniva cancellato, ogni aggiornamento di quel gruppo segnalava «423 No articles in …» e non scaricava nulla finché qualcuno non postava di nuovo. Il 423 non è un errore — la RFC 3977 §8.3 lo definisce «nessun articolo in quell\'intervallo», ed è la risposta giusta quando l\'ultimo articolo non c\'è più ma il numero alto dichiarato dal gruppo resta dov\'era. NeReO lo trattava come fatale: l\'errore arrivava a schermo, la connessione condivisa veniva buttata e riaperta per i gruppi rimanenti, e il segnalibro non avanzava — quindi l\'aggiornamento dopo richiedeva lo stesso intervallo morto. Trovato da BIG Umberto con un test deliberato su alt.test.a, riprodotto su tre server diversi.</string>
+    <string name="rn_v131b_title">Versione 1.3.1</string>
+    <string name="rn_v131b_l1">Nel layout a pannelli, con «Tocca l\'OP per espandere» attivo, toccare una discussione ora la espande E apre nel riquadro di lettura il primo messaggio non letto di quella discussione (o il primo post, se sono gia\' tutti letti). Prima espandeva soltanto: su un dispositivo senza schermo tattile — un Box TV col telecomando — questo rendeva il primo post di qualunque discussione con risposte impossibile da aprire, perche\' li\' il menu a pressione prolungata non esiste. Segnalato da Roxy.</string>
+    <string name="rn_v131b_l2">Sempre nel layout a pannelli, ogni riga dell\'elenco discussioni porta ora un pulsante «⋮» che apre il suo menu contestuale con un solo clic. La pressione prolungata continua a funzionare esattamente come prima: questa e\' una via in piu\', non una sostituzione. Nasce dalla stessa segnalazione: su un dispositivo guidato da un puntatore tenere premuto un tasto e\' tecnicamente possibile ma cosi\' lento che — parole del segnalante — «passerebbe la voglia di usarlo».</string>
+    <string name="rn_v131b_l3">Anche la barra del riquadro di lettura nei pannelli e\' ora personalizzabile, come quella del telefono (Aspetto → Personalizza barra di lettura). Cio\' che spegni si sposta nel menu ⋮ invece di sparire. Nasce gia\' con ROT13 e Intestazioni nel menu: su un tablet tenuto in verticale il riquadro e\' stretto, e cinque pulsanti non lasciavano quasi spazio all\'oggetto del messaggio. Suggerimento di Dave Royal, gia\' chiesto in precedenza da Roxy.</string>
+    <string name="rn_v130_title">Versione 1.3</string>
+    <string name="rn_v130_l1">Corretta una lacuna della versione precedente: «Invia la password solo quando il server la chiede» non veniva applicata all\'invio di un messaggio né allo scaricamento dell\'elenco gruppi, che continuavano ad autenticarsi subito. I quattro punti che aprivano una connessione sono stati unificati in uno solo, così la regola ora vale ovunque per costruzione.</string>
+    <string name="rn_v130_l2">Questa è la versione stabile che raccoglie tutta la linea 1.2.12–1.2.17: il giro di irrobustimento sulla sicurezza, la verifica del nome host TLS, ritiro e sostituzione con esito server per server, e tutto ciò che è emerso dalle prove sul campo su tre provider.</string>
+    <string name="rn_v1217_title">Versione 1.2.17</string>
+    <string name="rn_v1217_l1">Nuova opzione «Invia la password solo quando il server la chiede» (Manutenzione → Sicurezza), spenta di default. Su un server che non riesce a cifrare la connessione, la password attraversa la rete solo quando pubblichi qualcosa, invece che ad ogni singola sincronizzazione.</string>
+    <string name="rn_v1217_l2">Nell\'elenco dei server compare ora, sotto quelli il cui ultimo collegamento non era cifrato, l\'avviso che la password viaggia in chiaro. Si basa su quello che è successo davvero, non sulle impostazioni: un server può essere configurato per cifrare, dichiararlo, e non riuscirci.</string>
+    <string name="rn_v1217_l3">Il registro diagnostico non conta più come errori le risposte attese — un ritiro riuscito chiudeva la sessione con «1 errori».</string>
+    <string name="rn_v1216_title">Versione 1.2.16</string>
+    <string name="rn_v1216_l1">Dopo aver ritirato un messaggio, NeReO interroga ora tutti i server configurati e non solo quello su cui hai pubblicato, mostrando l\'esito per ciascuno — la risposta che altrimenti dovresti andare a cercare a mano su un altro computer.</string>
+    <string name="rn_v1216_l2">Il dialogo di conferma dice ora chiaramente cosa un ritiro può e non può fare: in pratica agisce solo sul server su cui hai pubblicato. Per far vedere una correzione dappertutto, lo strumento che funziona è «Sostituisci».</string>
+    <string name="rn_v1215_title">Versione 1.2.15</string>
+    <string name="rn_v1215_l1">Dopo aver ritirato un messaggio (cancel), NeReO chiede al server se è davvero sparito e ti riferisce la risposta, invece di dire soltanto che la richiesta è partita. Alcuni server ignorano del tutto i ritiri: ora lo scopri subito.</string>
+    <string name="rn_v1215_l2">Un messaggio che sul server non esiste più (scaduto, o ritirato dal suo autore) viene segnalato come tale, con un pulsante per togliere la copia locale rimasta — invece di un errore di rete e basta.</string>
+    <string name="rn_v1215_l3">Quando un messaggio ne sostituisce un altro (supersede), il sostituito viene nascosto anche qui, a patto che i due vengano dallo stesso indirizzo. È nascosto, non eliminato: «Mostra nascosti» lo riporta.</string>
+    <string name="rn_v1215_l4">Corretta una riconnessione inutile: una normale risposta «articolo non trovato» veniva scambiata per una connessione caduta, con un giro di rete in più. I server indicati con l\'indirizzo IP non producono più un errore incomprensibile, e cambiando gli interruttori di sicurezza viene ora chiusa la connessione aperta con le impostazioni precedenti.</string>
+    <string name="rn_v1214_title">Versione 1.2.14</string>
+    <string name="rn_v1214_l1">Le connessioni cifrate (TLS) ora verificano anche che il certificato presentato dal server appartenga davvero all\'indirizzo a cui ti stai collegando. Fino a ieri il traffico era cifrato ma nessuno controllava chi ci fosse dall\'altra parte, quindi una rete ostile avrebbe potuto interporsi. Se un server ha il certificato configurato male la connessione ora fallisce con un messaggio esplicito: per collegarti lo stesso accendi "Consenti certificati non verificabili" in Manutenzione → Sicurezza, spento di default, che disattiva il controllo su tutti i server.</string>
+    <string name="rn_v1213_title">Versione 1.2.13</string>
+    <string name="rn_v1213_l1">Corretto l\'errore di rete che poteva comparire al posto del corpo di un messaggio passando in fretta da uno all\'altro: la connessione tenuta aperta per la lettura viene ora ristabilita in silenzio quando il server l\'ha lasciata cadere, invece di mostrare il guasto.</string>
+    <string name="rn_v1213_l2" formatted="false">Un\'identità nuova nasce con il campo User-Agent già compilato (%nereo%, che al momento dell\'invio diventa il nome dell\'app e la versione in uso). Svuotalo se preferisci non dichiarare nulla: restare anonimi resta possibile, ma ora è una scelta e non una distrazione. Le identità già esistenti non vengono toccate.</string>
+    <string name="rn_v1212_title">Versione 1.2.12</string>
+    <string name="rn_v1212_l1">Giro di irrobustimento: NeReO regge senza scomporsi articoli e risposte del server malformati o costruiti apposta (messaggi fuori misura, intestazioni rotte, immagini anomale), invece di comportarsi male. Nell\'uso normale non cambia nulla.</string>
+    <string name="rn_v1212_l2">«Sostituisci (supersede)…» compare ora solo sui tuoi messaggi, e accanto c\'è il nuovo «Ritira dal server (cancel)…»: chiede al server di ritirare un articolo che hai pubblicato. Molti server ignorano queste richieste — il dialogo lo dice chiaramente.</string>
+    <string name="rn_v1211_title">Versione 1.2.11</string>
+    <string name="rn_v1211_l1">Aggiornata la libreria del database interno a una versione più recente, che irrobustisce alcuni casi limite rari di concorrenza. Nessun cambiamento visibile — è un aggiornamento di affidabilità dietro le quinte.</string>
+    <string name="rn_v1211_l2">Estesa anche alla ricerca la stessa protezione anti-crash già introdotta nella 1.2.10, che aveva lo stesso rischio raro ma non ne era ancora coperta.</string>
+    <string name="rn_v129c_title">Versione 1.2.9.c</string>
+    <string name="rn_v129c_l1">Sincronizzazione più robusta: eliminata una possibile corsa a tempo fra il controllo automatico dei nuovi messaggi e altre sincronizzazioni in corso, che poteva contribuire a un arresto anomalo occasionale.</string>
+    <string name="rn_v129b_title">Versione 1.2.9.b</string>
+    <string name="rn_v129b_l1">Ricerca: la lista dei risultati non si azzera più riaprendo un risultato — tornando da un messaggio aperto dalla ricerca, la query e i risultati restano quelli di prima.</string>
+    <string name="rn_v129b_l2">"Mostra filtrati" è ora un audit completo: anche i messaggi già scaricati che corrispondono a una regola "Ignora" vengono marcati e mostrati in grigio, non solo quelli con "Elimina del tutto".</string>
+    <string name="rn_v129b_l3">User-Agent vuoto ora significa davvero un post anonimo, esattamente come il testo di aiuto ha sempre promesso.</string>
+    <string name="rn_v129b_l4">Novità: Manutenzione ora conserva sul dispositivo l’ultimo arresto anomalo (nulla viene inviato da solo) — se l’app dovesse mai chiudersi in modo improvviso, copialo o esportalo e mandalo pure a chi sviluppa.</string>
+    <!-- Note di rilascio 1.2.9 -->
+    <string name="rn_v129_title">Versione 1.2.9</string>
+    <string name="rn_v129_l1">Multi-identità vera: crea quante identità vuoi (nome, email, firma, User-Agent, X-No-Archive, intestazioni personalizzate, introduzione alla citazione, Face) e assegna ciascuna a un server preciso — scrivi come \"MCSM\" su Astraweb e come \"TAF\" su Eternal September, ognuna con il proprio indirizzo e la propria Face.</string>
+    <string name="rn_v129_l2">STARTTLS: i server che restano su una porta in chiaro possono ora passare a una connessione cifrata subito dopo la connessione (RFC 4642), accanto al TLS implicito già esistente.</string>
+    <string name="rn_v129_l3">Override per server di \"consenti autenticazione non cifrata\": forzalo attivo o bloccato su un singolo server, indipendentemente dall\'impostazione globale in Manutenzione → Sicurezza.</string>
+    <string name="rn_v129_l4">Lettura più veloce: leggendo un thread, il corpo degli articoli riusa ora la stessa connessione invece di riconnettersi a ogni singolo articolo.</string>
+    <string name="rn_v129_l5">Le CAPABILITIES dichiarate dal server vengono ora lette alla connessione e registrate nella diagnostica NNTP.</string>
+    <string name="rn_v129_l6">Backup e ripristino portano ora anche le identità e le nuove opzioni per server.</string>
+    <!-- Note di rilascio 1.2.6 -->
+    <string name="rn_v13_title">Versione 1.2.8</string>
+    <string name="rn_v13_l1">Barra di lettura personalizzabile: scegli in Impostazioni → Aspetto quali icone mostrare nella barra in basso della lettura e in che ordine (nuovo editor "Personalizza barra di lettura").</string>
+    <string name="rn_v13_l2">Aggiornamento selettivo: dall’icona di aggiornamento ora puoi scegliere di aggiornare solo alcuni server, e dal menu su ogni server scegliere anche solo alcuni dei suoi gruppi — invece di scaricare sempre tutto.</string>
+    <string name="rn_v13_l3">Lettura a tutto schermo nei pannelli (tablet): mentre leggi, un tocco nasconde temporaneamente le colonne gruppi e discussioni per concentrarti sul testo.</string>
+    <string name="rn_v13_l4">Cerca/Condividi sul testo selezionato: selezionando del testo in un articolo, oltre a Copia e Seleziona tutto compaiono anche Cerca (ricerca web) e Condividi.</string>
+    <string name="rn_v132_l1">Diagnostica NNTP potenziata: attivando "Registra dialogo NNTP" ora si registra anche quante righe di overview arrivano davvero a ogni sincronizzazione e quali numeri di articolo mancano, più i tempi per comando e un\'intestazione/piè di sessione — utile per capire i buchi nel backfill di un provider (es. Astraweb).</string>
+    <string name="rn_v132_l2">Nuova diagnostica manuale (Manutenzione → Diagnostica → "Diagnostica LISTGROUP…"): chiede al server l\'elenco vero degli articoli di un gruppo e, per i numeri assenti dall\'overview, verifica con STAT se esistono davvero — distinguendo un buco nel database overview del server da articoli davvero non più presenti.</string>
+    <string name="rn_v131_l1">Controllo aggiornamenti a quattro modalità: in Manutenzione → Aggiornamenti scegli fra Mai / Una volta al giorno / Ogni 4 ore / Ad ogni apertura. Sotto il selettore compare sempre "Ultimo controllo: …", così vedi che funziona anche quando non trova nulla di nuovo (nessun avviso in quel caso, solo quel testo).</string>
+    <string name="rn_v131_l2">Corretto un bug: il vecchio limite "una volta al giorno" era per giorno di calendario, non per tempo trascorso — chi apriva l\'app anche una sola volta prima che una nuova versione fosse pubblicata restava "bloccato" fino al giorno dopo, qualunque numero di volte riaprisse l\'app nel frattempo.</string>
+    <string name="rn_v127_title">Versione 1.2.7</string>
+    <string name="rn_v127_l1">Server non sicuro: se un server rifiuta la password su una connessione non cifrata, ora un messaggio chiaro offre due vie d’uscita — passa quel server a SSL (consigliato) oppure consenti l’autenticazione non cifrata (sconsigliato).</string>
+    <string name="rn_v127_l2">Nuova impostazione: rispondi ai crosspost su tutti i gruppi dell’originale per default (spenta di default — continui a rispondere solo al gruppo corrente finché non la attivi).</string>
+    <string name="rn_v127_l3">Vista continua: un separatore più spesso segna ora l’inizio di ogni nuova sotto-discussione, così la conversazione si legge meglio a colpo d’occhio.</string>
+    <string name="rn_v126_title">Novità 1.2.6</string>
+    <string name="rn_v126_l1">Sicurezza: la password non viene più inviata su una connessione non cifrata (viaggerebbe in chiaro). Se hai un vecchio server che lo richiede, puoi consentirlo consapevolmente in Manutenzione.</string>
+    <string name="rn_v126_l2">«Controlla aggiornamenti» ora è anche nel menu principale, accanto a Informazioni e Novità (prima solo in Manutenzione).</string>
+    <string name="rn_v126_l3">Vista a pannelli: menu ⋮ su ogni post con il plonk dell’autore — prima si poteva solo passando alla vista a schermo intero.</string>
+    <string name="rn_v126_l4">Vista a pannelli: si possono riordinare i gruppi anche qui (icona «riordina» in cima alla colonna gruppi), non più solo a schermo intero.</string>
+    <string name="rn_v126_l5">Il backup ora salva l’ordine dei gruppi: al ripristino non torna più tutto in ordine alfabetico.</string>
+    <string name="rn_v126_l6">Vista Intestazioni più pulita: il lungo codice di Face/X-Face non viene più mostrato (la faccina resta accanto all’autore).</string>
+    <string name="rn_v126_l7">Nuovo pulsante per mutare le citazioni: nascondi il testo citato con un tocco per concentrarti sul messaggio nuovo (un tocco sul segnaposto lo rimostra).</string>
+    <string name="rn_v126_l8">In modalità tablet/due pannelli, scorri su o giù nel pannello di lettura per saltare al post non letto successivo o precedente della discussione.</string>
+    <!-- Note di rilascio 1.2.5 (correzioni) -->
+    <string name="rn_v125_title">Correzioni 1.2.5</string>
+    <string name="rn_v125_l1">Vista continua: aprendo un thread lungo non vengono più segnati come letti in blocco i messaggi successivi al selezionato. Ora si marca letto solo ciò che appare davvero sotto gli occhi: il messaggio scelto all’apertura, e poi ogni messaggio man mano che lo porti in cima scorrendo.</string>
+    <string name="rn_v125_l2">Vista continua: i gruppi del crosspost sono ora mostrati (in rosso) su ogni post, non solo nella vista a singolo articolo.</string>
+    <string name="rn_v125_l3">Con il filtro «solo non letti» attivo, se non c’è nulla da leggere l’elenco ora lo dice esplicitamente («Nessun messaggio da leggere»).</string>
+    <string name="rn_v125_l4">Nuovo controllo aggiornamenti: NeReO può avvisare quando c’è una versione più recente su SourceForge (automatico una volta al giorno, disattivabile; più un pulsante in Manutenzione). Solo avviso e link: l’app non scarica né installa nulla da sé.</string>
+    <!-- Note di rilascio 1.2.4 (correzioni) -->
+    <string name="rn_v124_title">Correzioni 1.2.4</string>
+    <string name="rn_v124_l1">Riflusso testo: ora unisce anche le righe «orfane» di una-due parole rimaste in mezzo a un capoverso (prima qualcuna restava isolata anche con il riflusso attivo). Sulla propria riga restano solo etichette, saluti e frasi brevi che finiscono con punteggiatura. Sempre spento di default; solo in lettura.</string>
+    <!-- Note di rilascio 1.2.3 (correzioni) -->
+    <string name="rn_v123_title">Correzioni 1.2.3</string>
+    <string name="rn_v123_l1">Nell’albero i messaggi che aprono una discussione non risultano più «già letti» quando non lo sono: il colore segue ora lo stato reale del post, in accordo con «vai al prossimo non letto».</string>
+    <string name="rn_v123_l2">Vista continua: rispondendo a un messaggio crosspostato ora compare l’avviso per scegliere in quali gruppi rispondere, come già nella vista a singolo articolo — prima la risposta finiva solo nel primo gruppo, senza avviso.</string>
+    <string name="rn_v123_l3">Vista continua: aprendo più messaggi non letti non compare più «Error: connection reset» al posto del testo — i corpi si scaricano una richiesta per volta, invece di aprire molte connessioni insieme.</string>
+    <string name="rn_v123_l4">Vista a pannelli: l’aggiornamento usa di default l’icona in cima alla colonna; lo swipe «tira giù» non ruba più il primo scorrimento verso l’alto. Lo swipe resta riattivabile in Aspetto. Sul telefono nulla cambia.</string>
+    <string name="rn_v123_l5">Riflusso testo: ora agisce anche sui post che vanno a capo stretto (intorno alle 38-40 colonne), che prima venivano ignorati del tutto e restavano con parole orfane. Sempre solo in lettura, da attivare in Aspetto.</string>
+    <string name="rn_v123_l6">Vista continua: aprendo un thread su un messaggio in mezzo, i messaggi in testa che vengono solo attraversati non vengono più segnati come «letti». La marcatura vale dal messaggio scelto in giù, non su ciò che scorre via all’apertura.</string>
+    <!-- Note di rilascio 1.2.2 (correzioni) -->
+    <string name="rn_v122_title">Correzioni 1.2.2</string>
+    <string name="rn_v122_l1">Su tablet/orizzontale, selezionando un messaggio dall\u2019albero ora si posiziona di nuovo correttamente in cima e ci resta — nella 1.2 poteva finire in un punto casuale.</string>
+    <string name="rn_v122_l2">Il cerchietto «aggiorna» non resta più appeso in cima all\u2019albero: lo scorrimento torna immediato.</string>
+    <string name="rn_v122_l3">Connessioni SSL/TLS: aggiunto il timeout di lettura che mancava, così una connessione cifrata che si blocca non lascia più l\u2019app in attesa infinita.</string>
+    <!-- 1.2.2: aggiornamento più veloce + striscia conteggio sull'icona -->
+    <string name="rn_v122_l4">L\u2019aggiornamento è molto più veloce: una sola connessione per server invece di una per gruppo. E la striscia col numero di nuovi messaggi ora compare anche premendo l\u2019icona di aggiornamento, non solo col «tira giù».</string>
+    <!-- Riflusso testo (de-wrap) -->
+    <string name="app_reflow_text">Riflusso testo (ricompone i capoversi)</string>
+    <string name="app_reflow_text_note">Ricompone le righe spezzate dall\u2019a-capo classico a 72 colonne, così i capoversi riempiono lo schermo; le righe corte volute (elenchi, versi) restano. Solo in lettura.</string>
+    <!-- 1.2.2: riflusso testo -->
+    <string name="rn_v122_l5">Nuova opzione «Riflusso testo» (Aspetto): ricompone i capoversi spezzati dall\u2019a-capo classico a 72 colonne, così i post si leggono ordinati su schermo stretto invece di mostrare righe orfane di una-due parole. Spenta di default.</string>
+    <!-- 1.2.2: fix vista a pannelli (Dave Royal) -->
+    <string name="rn_v122_l6">Vista a pannelli (tablet): nella vista continua la terza colonna segue ora lo stesso ordine-albero della colonna centrale, non più l\u2019ordine di data.</string>
+    <string name="rn_v122_l7">Vista a pannelli (tablet): scrivendo un post l\u2019editor si apre ora a tutto schermo, così la tastiera non copre più l\u2019area di scrittura in orizzontale.</string>
+    <!-- Vista a pannelli: solo icona per aggiornare (disattiva swipe) -->
+    <string name="app_pane_refresh_icon_only">Aggiorna solo con l\u2019icona (disattiva lo swipe) nella vista a pannelli</string>
+    <string name="app_pane_refresh_icon_only_note">Nella vista a pannelli disattiva il gesto \u201ctira giù per aggiornare\u201d sulla colonna delle discussioni e lascia solo l\u2019icona Aggiorna in cima al pannello. Utile in orizzontale, dove il pannello basso tiene il gesto sempre armato e il cerchietto può restare appeso.</string>
+    <string name="rn_v122_l8">Nuova opzione (Aspetto → layout a pannelli): aggiorna solo con l\u2019icona e disattiva il gesto \u201ctira giù\u201d — comodo in orizzontale, dove il cerchietto poteva restare appeso nella colonna discussioni.</string>
+    <!-- 1.4.9 (par. J1, Jeff): le rotaie del rientro, distinte dalle barre citazioni. -->
+    <string name="app_tree_rails">Rotaie verticali del rientro negli elenchi</string>
+    <string name="app_tree_rails_note">Le righe verticali grigie che segnano un livello di rientro ciascuna negli elenchi delle discussioni e nell\'albero della discussione. Non sono le barre delle citazioni, che stanno dentro il messaggio e prendono il colore del loro livello: queste sono tutte dello stesso grigio. Spegnendole il rientro resta — spariscono solo le linee.</string>
+    <!-- 1.4.9 (par. J3-C1): la cartella di «conserva questo». -->
+    <string name="cns_section">Messaggi conservati</string>
+    <string name="cns_folder_none">Nessuna cartella scelta.</string>
+    <string name="cns_folder_current">Cartella: %1$s</string>
+    <string name="cns_folder_choose">Scegli la cartella</string>
+    <string name="cns_folder_change">Cambia cartella</string>
+    <string name="cns_note">L\'azione «Conserva» — nella barra di lettura, o nel menu ⋮ nella vista a pannelli — scrive il messaggio in questa cartella come file .eml. La cartella si sceglie una volta sola; dopo, conservare un messaggio è un tocco. Il file resta tuo, e niente di quello che avviene dentro NeReO lo tocca più: né la pulizia automatica, né una disiscrizione, né un riscarico.</string>
+    <string name="cns_note_search">⚠ La ricerca di NeReO non vede i messaggi conservati: cerca nell\'archivio locale, e un messaggio conservato ne è uscito. Per rileggerlo si apre il file con un\'altra app.</string>
+    <string name="cns_saved">Messaggio conservato</string>
+    <string name="cns_failed">Non è stato possibile conservare il messaggio</string>
+    <string name="cns_folder_lost">La cartella dei messaggi conservati non è più disponibile: scegline un\'altra.</string>
+    <string name="cns_folder_set">Cartella impostata</string>
+    <!-- 1.4.9 (par. J1 e J3-C1, Jeff): note di versione. -->
+    <string name="rn_v149_title">Novità della 1.4.9</string>
+    <string name="rn_v149_l1">In Aspetto, subito sotto lo stile delle citazioni, c\'è adesso un interruttore per le rotaie verticali del rientro negli elenchi: le righe grigie che segnano un livello di profondità ciascuna. Nasce ACCESA, perché è l\'aspetto che NeReO ha dalla 1.4.7 e quelle rotaie erano state chieste. Quello che risolve è una confusione, non un difetto: chi aveva scelto lo stile citazioni «solo i >» vedeva comunque righe verticali e le prendeva per le barre delle citazioni. Sono due ornamenti diversi che si somigliano, e ora hanno due interruttori. Spegnendo le rotaie il rientro resta: spariscono soltanto le linee. Segnalato da Jeff.</string>
+    <string name="rn_v149_l2">Nuova azione «Conserva questo messaggio» nella barra di lettura, e nel menu ⋮ nella vista a pannelli. Scrive il messaggio come file .eml in una cartella che scegli UNA VOLTA SOLA, in Manutenzione → Messaggi conservati; da quel momento conservare è un tocco. «Salva come file .eml» resta al suo posto e continua a chiedere ogni volta dove mettere il file, che è la forma giusta per il giro occasionale verso un client di posta. Un messaggio conservato esce dall\'archivio locale di NeReO e diventa un file tuo: non lo porta via la pulizia automatica, né una disiscrizione, né un riscarico. In cambio, la ricerca di NeReO non lo vede più - cerca nell\'archivio locale, e quel messaggio ne è uscito; per rileggerlo si apre il file con un\'altra app. Nasce da una domanda di Jeff, «NeReO conserva i post?»: la risposta era no, e adesso è «se glielo chiedi».</string>
+    <string name="rn_v149_l3">Su uno schermo piccolo, con i caratteri grandi e una tastiera alta, il campo del messaggio poteva essere schiacciato al punto che le lettere scritte si vedevano tagliate a metà. Segnalato da un utente su Samsung J6, e riprodotto qui alzando la dimensione del testo e aprendo «Mittente e intestazioni». Non era la tastiera a coprire il campo: era il campo a ricevere quasi nessuna altezza, perché il modulo di scrittura non scorreva e il campo prendeva «quello che avanza». Adesso il modulo scorre e il campo conserva un\'altezza minima vera, così quello che scrivi si vede sempre. Se la tua tastiera lascia pochissimo spazio, la pagina scorre invece di tagliare il testo.</string>
+    <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
+    <string name="rn_v154_title">Novità della 1.5.4</string>
+    <string name="rn_v154_l1">«Cita e rispondi»: selezionando del testo in un messaggio, il menu offre accanto a «Cita» un comando che apre la risposta con quella citazione già dentro, il cursore sotto e la tua firma in fondo.</string>
+    <string name="rn_v154_l2">Aprendo un gruppo i messaggi nuovi non sfuggono più. La lista tornava dove l\'avevi lasciata prima che i nuovi arrivassero in cima; ora, se arrivano mentre non hai ancora toccato la lista, sale in cima a mostrarli.</string>
+    <string name="rn_v154_l3">Controllo aggiornamenti «Una volta al giorno»: ora controlla alla prima apertura di ogni nuovo giorno, e comunque dopo 24 ore. Prima aspettava 24 ore dall\'ultimo controllo, e una versione nuova poteva essere notata anche un giorno dopo.</string>
+    <string name="rn_v153_title">Novità della 1.5.3</string>
+    <string name="rn_v153_l1">Cancellando o modificando una regola dei filtri, ora si annulla quello che aveva fatto: i messaggi che nascondeva tornano visibili senza riscaricarli, e il colore o la stella che aveva dato se ne vanno — a meno che un\'altra regola attiva valga ancora. Le stelle messe a mano restano. «Applica ora» fa lo stesso.</string>
+    <string name="rn_v153_l2">Il log di diagnostica ora registra cosa fanno i filtri: ogni regola salvata o cancellata, e quanti messaggi sono tornati visibili, hanno perso la stella o hanno cambiato punteggio.</string>
+    <string name="rn_v152_title">Novità della 1.5.2</string>
+    <string name="rn_v152_l1">Un\'app più leggera. NeReO si portava dietro l\'intera libreria di icone Material, più di undicimila icone, di cui ne usa 75: ora porta solo quelle, e l\'APK è molto più piccolo. A schermo non cambia niente: le icone sono le stesse, verificate una per una.</string>
+    <string name="rn_v151_title">Novità della 1.5.1</string>
+    <string name="rn_v151_l1">La bozza si salva da sola. Un secondo e mezzo dopo che hai smesso di scrivere, e di nuovo quando esci dalla schermata o l\'app va in secondo piano: uscire senza toccare «Salva bozza» non fa più perdere il testo, e lo ritrovi in Bozze. Una risposta aperta e lasciata com\'era non diventa una bozza, e dopo un invio riuscito la bozza non ricompare.</string>
+    <string name="rn_v151_l2">«Scarta», nella barra in basso della scrittura: butta il testo e cancella la sua bozza, dopo una conferma. Con il salvataggio automatico, è il modo per uscire senza lasciare traccia.</string>
+    <string name="rn_v151_l3">La schermata a righe per chi usa il telecomando, annunciata nella 1.5, per ora non arriva: «Cita» funziona con la selezione del testo, e la schermata si farà se servirà davvero a qualcuno.</string>
+    <string name="rn_v151_l4">Filtri: «Estendi alle risposte» su una regola «Segui il thread» o «Evidenzia» non nasconde più le risposte — le segue con la stella o le evidenzia, come la regola. E «Applica ora» mette la stella anche ai messaggi già scaricati che ricadono in una regola «Segui il thread». Per le regole che nascondono non cambia niente. Cancellando o modificando una regola che evidenziava, il colore si toglie; le stelle restano, perché potresti averle messe tu.</string>
+    <string name="rn_v15_title">Novità della 1.5</string>
+    <string name="rn_v15_l1">Sotto il cofano, e per te non cambia ancora niente: questa è la prima pietra del pacchetto citazioni chiesto da Ammammata e allargato da Bingo3331. La parte che descrive una citazione — chi l\'ha scritta, dove, quando, con quale oggetto, e le righe che hai scelto — adesso è tenuta separata dal testo che poi ne esce. È proprio quella separazione il punto: è ciò che renderà economico raccogliere più citazioni, anche da gruppi diversi, e inserirle tutte insieme. E la riga che mette il «&gt; » davanti al testo citato adesso vive in un posto solo, invece che dentro la funzione che prepara le risposte.</string>
+    <string name="rn_v15_l2">Prima novità visibile del pacchetto citazioni, ed è quella chiesta da Ammammata alla lettera: seleziona una parte di un messaggio, e nel menu che compare sopra la selezione c\'è «Cita». Negli appunti finisce una citazione completa — la tua introduzione, le righe scelte col «&gt; » davanti e, in coda, il Message-ID col link permanente, così chi legge può risalire all\'originale. Si citano sempre le righe ORIGINALI, intere: se la selezione comincia a metà riga si allarga alla riga, e ciò che nel messaggio era già citato conserva i suoi livelli anche se a schermo li vedi come barre. Vale nella lettura a schermo intero e nella vista a pannelli; una schermata a righe per chi usa il telecomando arriva in un passo successivo.</string>
+    <string name="rn_v15_l3">Dal collaudo di Marco: se citi righe che nel messaggio erano già a loro volta citate — la frase di Giangi dentro la risposta di Roberto — la citazione non attribuisce più quelle parole a Roberto. Usa la riga che nel messaggio le introduce («Il 05/10, Giangi ha scritto:») e toglie i livelli di «&gt;» in più. Se quella riga non c\'è o non si riconosce, resta il comportamento di prima.</string>
+    <string name="rn_v1411_title">Novità della 1.4.11</string>
+    <string name="rn_v1411_l1">NeReO adesso ricorda quali server offrono STARTTLS — il passaggio da una connessione in chiaro a una cifrata — e ti avvisa, accanto al nome del server, se un server che lo offriva smette di annunciarlo. Chi si mette in mezzo al collegamento può cancellare quella sola riga dalla risposta del server, e un lettore che non sa niente di meglio non prova nemmeno a cifrare. La RFC 4642 suggerisce esattamente questa difesa, ed è altrettanto chiara sul suo limite: protegge solo DOPO un collegamento pulito, quindi la primissima volta che parli con un server non c\'è niente da confrontare. E resta zitto di proposito nei due casi in cui griderebbe al lupo: quando il server non risponde affatto alla domanda sulle capability, e sui server già cifrati dal primo byte, che non hanno ragione di annunciare il passaggio. Chiesto da ObiWan.</string>
+    <string name="rn_v1410_title">Novità della 1.4.10</string>
+    <string name="rn_v1410_l1">Nell\'elenco dei gruppi, un nome lungo adesso si accorcia come già faceva altrove nell\'applicazione — togliendo il mezzo della gerarchia invece di tagliare la fine con i puntini — e solo quando davvero non ci sta. I nomi corti restano intatti, e i gruppi con messaggi non letti restano in grassetto. Il componente condiviso che fa questo lavoro era già usato una sessantina di righe più sotto nella stessa schermata: era rimasto fuori solo questo punto.</string>
+    <string name="rn_v1410_l2">Sotto il cofano, e per te non cambia niente: una chiamata deprecata al database sostituita con l\'equivalente che la libreria stessa prescrive, e i due file che si occupano dell\'andata a capo e del Format=Flowed spostati in un package loro — stavano fra le schermate, e il livello dati andava a pescare lì dentro. Entrambe lasciano il comportamento identico. Questa versione non l\'ha chiesta nessuno: paga debiti nostri, ed è giusto dirlo.</string>
+    <string name="rn_v1410_l3">Tenendo premuto su un messaggio si apre un pannello di azioni. Quando nella discussione c\'erano messaggi tuoi compariva una voce in più, e le ultime azioni — fra cui «Ritira dal server» — restavano tagliate fuori in basso senza modo di raggiungerle. Il pannello non si bloccava: semplicemente non scorreva. Adesso scorre. Segnalato da Macchia, che ha anche capito da solo la condizione: succedeva solo quando compariva quella voce in più. Lo stesso pannello nella vista a pannelli aveva lo stesso difetto ed è corretto anche quello.</string>
+    <string name="rn_v1410_l4">Nella vista a discussioni raggruppate, il «+» apre adesso tutta la discussione, comprese le risposte che hai già letto. Con «solo non letti» acceso, una discussione con le risposte tutte lette mostrava comunque il «+» e il numero delle risposte, ma toccandolo non compariva nulla. Il filtro decide che cosa mostra l\'ELENCO; toccare il «+» è una richiesta esplicita di vedere una discussione, e adesso il gesto esplicito vince. Segnalato in cinque parole da un utente che pensava di sbagliare lui: non sbagliava.</string>
+</resources>

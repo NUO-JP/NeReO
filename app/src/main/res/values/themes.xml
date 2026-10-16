@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose gestisce il tema reale; questo serve solo al Manifest -->
+    <style name="Theme.OpenUsenet" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- beta13: tema dello splashscreen (API SplashScreen). Sfondo viola
+         dell'app, logo NR centrato. Al termine passa a Theme.OpenUsenet. -->
+    <style name="Theme.OpenUsenet.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.OpenUsenet</item>
+    </style>
+</resources>
