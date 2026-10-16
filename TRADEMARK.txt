@@ -1,0 +1,55 @@
+NeReO - TRADEMARK NOTICE / AVVISO SUL MARCHIO
+Applies to all versions of NeReO / Vale per tutte le versioni di NeReO
+Notice dated 16 October 2026 / Avviso del 16 ottobre 2026
+
+========================================================================
+ENGLISH
+========================================================================
+
+The source code of NeReO is free software, licensed under the GNU
+General Public License version 3 or later (GPL-3.0-or-later). The full
+license text is in LICENSE.txt and is not modified by this notice.
+
+The name "NeReO" and the NeReO logo are used by the author (MCSM) to
+identify the original project. In accordance with sections 7(c) and
+7(e) of the GPLv3, the following additional terms apply:
+
+- No rights are granted to use the name "NeReO" or its logo to
+  identify any modified version.
+
+- Modified versions must be distributed under a different name and
+  with a different Android applicationId (the original one is
+  "org.openusenet.reader"), and must not suggest that they are
+  endorsed by the author.
+
+- Unmodified copies may be redistributed under the original name.
+
+Official releases are published only at:
+https://sourceforge.net/projects/nereo/
+
+========================================================================
+ITALIANO
+========================================================================
+
+Il codice sorgente di NeReO e' software libero, distribuito con
+licenza GNU General Public License versione 3 o successiva
+(GPL-3.0-or-later). Il testo completo della licenza e' in LICENSE.txt
+e non viene modificato da questo avviso.
+
+Il nome "NeReO" e il logo di NeReO sono usati dall'autore (MCSM) per
+identificare il progetto originale. In base alle sezioni 7(c) e 7(e)
+della GPLv3 valgono questi termini aggiuntivi:
+
+- Non e' concesso alcun diritto di usare il nome "NeReO" o il suo
+  logo per identificare versioni modificate.
+
+- Le versioni modificate devono essere distribuite con un nome
+  diverso e con un applicationId Android diverso (quello originale
+  e' "org.openusenet.reader"), e non devono far credere di essere
+  approvate dall'autore.
+
+- Le copie non modificate possono essere ridistribuite con il nome
+  originale.
+
+Le versioni ufficiali sono pubblicate solo su:
+https://sourceforge.net/projects/nereo/
