@@ -8,7 +8,7 @@
 
 Written from scratch in Kotlin + Jetpack Compose. Its interface follows Piao Hong's *Newsreader* (MOD 17); its goal is to combine that familiarity with the depth of configuration of MesNews.
 
-**Latest version: 1.5.4** (versionCode 168) — 15 October 2026 · Android 8.0 or later
+**Latest version: 1.5.5** (versionCode 173) — 18 October 2026 · Android 8.0 or later
 
 ## Download
 
@@ -21,11 +21,12 @@ If you are updating, install the new APK over the existing one: do **not** unins
 ## Features
 
 - **Multiple NNTP servers** with implicit SSL/TLS **or STARTTLS** (RFC 3977, RFC 4643, RFC 4642) and authentication, **certificate host name verification** (RFC 6125), automatic IPv6/IPv4 fallback; an **alarm if a server that used to offer STARTTLS stops advertising it** (RFC 4642 §5)
+- Search in subject, author and body, with an excerpt when the match is in the text
 - Group search and subscription; incremental header sync with `OVER`, falling back to `XOVER` on servers that do not recognise `OVER`
 - Thread views: tree (JWZ algorithm on References), sequential, grouped; continuous thread view
 - **Real multiple identities**: name, e-mail, signature, User-Agent, X-No-Archive, custom headers, quote introduction and Face, each one assignable to a specific server
 - Writing: replies with quoting (four modes), **"Quote" and "Quote and reply" from a text selection**, crossposting, signatures, local drafts **that save themselves**
-- RFC 2047 headers, quoted-printable, base64, multiple charsets; **Face** (PNG, as in MesNews) for reading and sending (black-and-white X-Face is **not** supported); **Format=Flowed** (RFC 3676) for reading, optional for sending
+- RFC 2047 headers, quoted-printable, base64, multiple charsets; **Face** (PNG, as in MesNews) for reading and sending, black-and-white **X-Face** for reading; coloured initials when an author has neither; **Format=Flowed** (RFC 3676) for reading, optional for sending
 - **Customisable reading bars** in both views: twenty-one actions, each movable between bar and menu
 - **"Keep this message"**: writes a message as an `.eml` file into a folder you choose once
 - **Score-based filter engine** in the slrn/Gnus style: contains / wildcard / regex on From, Subject, Message-ID, Xpost and Body, with per-group scope (wildmat), expiry, kill/hide/highlight/watch thresholds; removing a rule undoes its effect; text kill-file import/export
@@ -48,3 +49,4 @@ The name **"NeReO"** and its logo are reserved by the author (MCSM): modified ve
 ## Reports
 
 For a useful report, three things are enough: what you were doing when it happened; a screenshot, if the problem is visible; the block from **About → Technical data** (there is a Copy button).
+
