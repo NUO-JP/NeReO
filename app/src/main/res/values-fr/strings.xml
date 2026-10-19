@@ -1,4 +1,1076 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    NeReO — stringhe dell'interfaccia, FRANCESE ESPLICITO.
+    Traduction française par Jean-Paul - contact@usenet.ovh
+
+    Perché questo file esiste, visto che values/ contiene già l'inglese:
+    dichiarando in locales_config solo "en", un telefono impostato su una
+    VARIANTE regionale (en-GB, en-US...) non sempre ripiega su values/ e
+    poteva restare sull'italiano. Con values-en/ la corrispondenza è
+    esplicita per qualunque variante dell'inglese.
+
+    values/ resta come rete di sicurezza per lingue diverse da it ed en.
+    Il contenuto di questo file deve essere IDENTICO a values/strings.xml
+    (tranne app_name, che non si traduce e sta solo nel default).
+-->
 <resources>
-    <!-- French locale resources placeholder -->
+    <string name="common_back">Retour</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="common_save">Sauvegarder</string>
+    <string name="common_delete">Supprimer</string>
+    <string name="common_copy">Copier</string>
+    <string name="common_ok">OK</string>
+    <string name="about_title">A propos</string>
+    <string name="drafts_title">Brouillons</string>
+    <string name="drafts_title_group">Brouillons — %1$s</string>
+    <string name="drafts_delete">Supprimer brouillon</string>
+    <string name="drafts_filter_this_group">Ce groupe</string>
+    <string name="drafts_filter_all_groups">Tous les groupes</string>
+    <string name="releasenotes_title">Quoi de neuf ?/string>
+    <string name="unsubscribe_title">Se désabonner du groupe?</string>
+    <string name="unsubscribe_confirm">Se désabonner</string>
+
+    <!-- ===== Schermata gruppi e menu principale ===== -->
+    <string name="menu_servers">Serveurs</string>
+    <string name="menu_filters">Filtrer</string>
+    <string name="menu_identity">Identité et signature</string>
+    <string name="menu_appearance">Préférences</string>
+    <string name="menu_maintenance">Maintenance et sauvegarde</string>
+    <string name="menu_more">Plus</string>
+    <string name="groups_refresh_all">Actualiser tous les groupes</string>
+    <string name="sel_refresh_all">Actualiser tout</string>
+    <string name="sel_refresh_choose_servers">Choisir le serveur à utiliser pour actualiser…</string>
+    <string name="sel_refresh_server_cd">Actualiser %1$s</string>
+    <string name="sel_refresh_server_all">Actualiser tous les groupes de ce serveur</string>
+    <string name="sel_refresh_server_choose">Choisir quel groupe actualiser…</string>
+    <string name="sel_pick_servers_title">Choisir quel serveur actualiser</string>
+    <string name="sel_pick_groups_title">Choisir les groupes à actualiser (%1$s)</string>
+    <string name="groups_search">Rechercher un message</string>
+    <string name="groups_subscribe">S'abonner à des groupes</string>
+    <string name="groups_move_up">Monter</string>
+    <string name="groups_reorder_toggle">Réorganiser les groupes</string>
+    <string name="groups_move_down">Descendre</string>
+    <string name="sec_section">Sécurité</string>
+    <string name="sec_plain_auth">Allow unencrypted authentication</string>
+    <string name="sec_lazy_auth">Send the password only when the server asks</string>
+    <string name="sec_lazy_auth_note">Normally NeReO authenticates as soon as it connects. With this on, it waits for the server to ask, then sends the credentials and repeats the command. On a server that cannot encrypt the connection this means the password crosses the network only when you publish, instead of at every sync. Off by default because it changes how every server is contacted: if one stops working, turn it back off.</string>
+    <string name="sec_cert_unverified">Do not check the host name on the certificate</string>
+    <string name="sec_cert_unverified_note">NeReO checks that a server\'s certificate really belongs to the host it is connecting to. Turn this on only if your provider has a misconfigured certificate and you accept the risk: the connection stays encrypted but is no longer authenticated, so anyone in the middle could read everything, credentials included.\n\nWhat it does NOT do: it does not make NeReO accept a certificate that is self-signed, issued by an authority Android does not know, or expired. Those are refused regardless, and this switch cannot change that.</string>
+    <string name="sec_plain_auth_note">Risky: when on, on a server without SSL/TLS your password is sent IN CLEAR over the network. Leave it off unless you have an old server that only accepts auth on an unencrypted port. Always prefer the SSL port (usually 563).</string>
+    <string name="sec_unsafe_title">Insecure connection</string>
+    <string name="sec_unsafe_msg">The server “%1$s” refuses to send your password over an unencrypted connection — and that’s a good thing. Two ways forward: switch that server to SSL (recommended, usually port 563), or allow unencrypted authentication for all servers (not recommended).</string>
+    <string name="sec_unsafe_use_ssl">Switch to SSL</string>
+    <string name="sec_unsafe_allow">Allow unencrypted (not recommended)</string>
+    <string name="quit_menu">Quit application</string>
+    <string name="quit_title">Quit NeReO?</string>
+    <string name="quit_confirm">Quit</string>
+
+    <!-- ===== Schermata Aspetto ===== -->
+    <string name="app_theme">Theme</string>
+    <string name="app_theme_system">As system</string>
+    <string name="app_theme_light">Light</string>
+    <string name="app_theme_dark">Dark</string>
+    <string name="app_material_you">Material You (colours from wallpaper)</string>
+    <string name="app_button_colour">Button colour</string>
+    <string name="app_button_colour_note"> (active when Material You is off)</string>
+    <string name="app_reading">Reading articles</string>
+    <string name="app_monospace">Monospaced body</string>
+    <string name="app_text_size">Text size</string>
+    <string name="app_text_size_note">The size applies to the whole interface, not just to message reading.</string>
+    <string name="app_collapse_blank">Smart line merging (removes consecutive blank lines)</string>
+    <string name="app_shorten_quotes">Shorten quoted text (tap to expand)</string>
+    <string name="app_shorten_threshold">Shorten quotes longer than:</string>
+    <string name="app_quote_style">Quote style</string>
+    <string name="app_quote_bars">Coloured vertical bars</string>
+    <string name="app_quote_marks">« &gt; » marks (classic Usenet style)</string>
+    <string name="app_quote_both">Both (bars + « &gt; »)</string>
+    <string name="app_quote_note">Quote levels (&gt;, &gt;&gt;, &gt;&gt;&gt;) get distinct graded colours; URLs are tappable and the signature is dimmed.</string>
+    <string name="app_numeric_quote_depth">Very nested quotes: use numbers</string>
+    <string name="app_numeric_quote_depth_note">Beyond the chosen depth, the repeated « &gt; » marks are replaced by the level number (e.g. beyond 8: \"9\", \"10\", \"11\"…) — repeated marks become unreadable on a narrow screen. Display only: the text sent and received keeps the standard « &gt; » marks, so quote depth still reads correctly everywhere.</string>
+    <string name="app_quote_threshold">Switch to numbers beyond level…</string>
+    <string name="app_quote_levels_count">%1$d levels</string>
+    <string name="app_mark_read_exit">Mark all read when leaving the group</string>
+    <string name="app_bars_section">Reading bar</string>
+    <string name="app_bars_customize">Customize reading bar</string>
+    <string name="app_bars_note">Choose which icons to show in the bottom bar of the reading screen, and their order.</string>
+    <string name="bars_editor_title">Customize reading bar</string>
+    <string name="bars_editor_phone_section">Reading bar (phone)</string>
+    <string name="bars_editor_pane_section">Reading pane bar (tablet / panels)</string>
+    <string name="bars_editor_pane_note">Here "off" does not mean hidden: the action moves into the ⋮ menu, which is always there. Nothing becomes unreachable — useful when the reading pane is narrow, as on a tablet held upright.</string>
+    <string name="bars_editor_pane_in_menu">in the ⋮ menu</string>
+    <string name="bars_editor_note">Use the switch to show or hide an action, and the arrows to move it up or down. Arrows work with touch, stylus and remote/D-pad alike.</string>
+    <string name="bars_editor_reset">Reset to default order</string>
+    <string name="bars_editor_move_up_cd">Move up</string>
+    <string name="bars_editor_move_down_cd">Move down</string>
+    <string name="app_continuous_view">Continuous view: show all posts of the thread one below the other</string>
+    <string name="app_unread_only">Lists start showing unread messages only</string>
+    <string name="app_unread_only_note">The envelope icon at the top of a list switches between unread only and all messages. This is the same switch: change it here and the icon follows, and the other way round.</string>
+    <string name="app_reading_background">Reading background</string>
+    <string name="app_reading_bg_note">Applies to message reading. \"Default\" (the first) follows the theme.</string>
+    <string name="app_ui_tint">Interface tint</string>
+    <string name="app_ui_tint_note">Colours the background of the whole app, not just the message body. Each tint is already light or dark on its own: choosing one overrides the Light/Dark setting above and the system dynamic colours.</string>
+    <string name="app_pane_density">Thread panel density</string>
+    <string name="app_pane_density_note">Applies ONLY to the centre column of the panel layout, not to the message body. On large screens viewed from a distance (TV boxes, monitors) it helps to see many headers at a glance without shrinking the text you then have to read.</string>
+    <string name="app_colour_read_state_note">Colours unread messages (red) and read ones (green) in the lists. Unread ones stay bold anyway.</string>
+    <string name="app_prefetch_note">When opening a message, pre-downloads the bodies of direct replies, so scrolling the thread is instant. Turn it off if you have limited data.</string>
+    <string name="app_tap_op_expand">Tap the message to expand the thread</string>
+    <string name="app_tap_op_expand_note">Tapping the text of a thread\'s first message expands or collapses it, instead of opening it — same action as the +/-. Useful if the +/- button is hard to aim at (e.g. from a distance, with a remote). The message stays reachable from the menu (long press) → \"Open\". In the single-page layout it only acts in the GROUPED view: the tree view has no +/- for it to replace, and to go straight to the first unread there is the option below.</string>
+    <string name="app_open_first_unread">Tap the thread to open the first unread</string>
+    <string name="app_open_first_unread_note">On the phone, tapping the head of a thread opens the first message you have not read yet in that thread, instead of the first post (if you have read them all, it opens the first post). It works in the tree and grouped views. In the grouped view, if the option above is also on, expanding takes precedence.</string>
+    <string name="app_navigation">Navigation</string>
+    <string name="app_gesture_note">Gestures between messages: scroll past the bottom for the next one, past the top for the previous; drag horizontally to jump forward or back.</string>
+    <string name="app_gesture_debug_note">Gesture diagnostics: shows the measured values at the bottom of the reading view on every gesture (for testing only).</string>
+    <string name="app_pane_layout">Panel layout (tablet and landscape)</string>
+    <string name="app_pane_auto">Automatic (wide screens and landscape)</string>
+    <string name="app_pane_always">Always on</string>
+    <string name="app_pane_never">Never (always use pages)</string>
+    <string name="app_pane_rows">Arranged in three rows</string>
+    <string name="app_pane_cols">Arranged in three columns</string>
+    <string name="app_pane_ratios">Panel proportions</string>
+    <string name="app_pane_groups">Groups</string>
+    <string name="app_pane_threads">Threads</string>
+    <string name="app_pane_reading">Reading</string>
+    <string name="app_reset_ratios">Reset proportions</string>
+    <string name="app_default">Default</string>
+
+    <!-- ===== Dimensioni testo ===== -->
+    <string name="app_size_xs">Tiny</string>
+    <string name="app_size_s">Very small</string>
+    <string name="app_size_m">Small</string>
+    <string name="app_size_l">Normal</string>
+    <string name="app_size_xl">Large</string>
+    <string name="app_size_xxl">Very large</string>
+
+    <!-- ===== Densita' pannello e ordinamenti ===== -->
+    <string name="app_density_normal">Normal</string>
+    <string name="app_density_compact">Compact</string>
+    <string name="app_density_dense">Dense</string>
+    <string name="app_density_verydense">Very dense</string>
+    <string name="app_density_max">Maximum</string>
+    <string name="sort_activity_desc">By most recent message in thread</string>
+    <string name="sort_activity_asc">By oldest message in thread</string>
+    <string name="sort_opened_desc">By thread start, newest first</string>
+    <string name="sort_opened_asc">By thread start, oldest first</string>
+
+    <!-- ===== Tinte interfaccia e soglia righe ===== -->
+    <string name="tint_sepia">Sepia</string>
+    <string name="tint_cream">Cream</string>
+    <string name="tint_mint">Mint green</string>
+    <string name="tint_sky">Light blue</string>
+    <string name="tint_lavender">Lavender</string>
+    <string name="tint_slate">Slate</string>
+    <string name="tint_night">Midnight blue</string>
+    <string name="tint_forest">Forest green</string>
+    <string name="tint_charcoal">Charcoal</string>
+    <string name="tint_purple">Purple</string>
+    <string name="app_lines_count">%d lines</string>
+
+    <!-- ===== Schermata Server ===== -->
+    <string name="srv_title">NNTP servers</string>
+    <string name="srv_add">Add server</string>
+    <string name="srv_cleartext_warning">Last connection was NOT encrypted — the password travels in clear</string>
+    <string name="srv_starttls_alarm">This server used to offer STARTTLS and no longer advertises it — RFC 4642 §5</string>
+    <string name="srv_ssl_suffix"> (SSL)</string>
+    <string name="srv_tap_edit">  ·  tap to edit</string>
+    <string name="srv_empty">No server configured.\nTap + to add one (e.g. news.eternal-september.org, port 563, SSL).</string>
+    <string name="srv_delete_title">Delete %1$s?</string>
+    <string name="srv_delete_body">Its groups (%1$d) and every downloaded message (%2$d) go with it. There is no undo: getting them back would mean adding the server again and downloading everything from scratch. Identities, filters and drafts are left untouched.</string>
+    <string name="srv_new">New server</string>
+    <string name="srv_edit">Edit server</string>
+    <string name="srv_preset">  Choose from a known server</string>
+    <string name="srv_name">Name</string>
+    <string name="srv_host">Host</string>
+    <string name="srv_port">Port</string>
+    <string name="srv_use_ssl">Use SSL/TLS</string>
+    <string name="srv_user">User (optional)</string>
+    <string name="srv_pass_new">Password (optional)</string>
+    <string name="srv_pass_show">Show password</string>
+    <string name="srv_pass_hide">Hide password</string>
+    <string name="srv_pass_chars">%1$d characters</string>
+    <string name="srv_pass_edge_space">%1$d characters — starts or ends with a space: is that intended?</string>
+    <string name="srv_pass_edit">Password (empty = unchanged)</string>
+    <string name="common_edit">Edit</string>
+
+    <!-- ===== Note dei server predefiniti ===== -->
+    <string name="srv_preset_free_reg">Free registration on the website</string>
+    <string name="srv_preset_no_reg">No registration</string>
+    <!-- 1.2.9 (voce E, roadmap NNTP): STARTTLS + override per-server -->
+    <string name="srv_starttls">STARTTLS (upgrade to encrypted after connecting)</string>
+    <string name="srv_starttls_note">For servers that stay on a plaintext port (usually 119) but offer an upgrade to TLS right after connecting — RFC 4642. Ignored if SSL/TLS above is already enabled.</string>
+    <string name="srv_auth_override">Plaintext authentication on this server</string>
+    <string name="srv_auth_override_global">Use the global setting (Maintenance → Security)</string>
+    <string name="srv_auth_override_allow">Always allow, even without encryption</string>
+    <string name="srv_auth_override_block">Always block, even if the global setting allows it</string>
+    <!-- 1.2.9 (multi-identità) -->
+    <string name="srv_identity">Identity used to post here</string>
+    <string name="srv_identity_default_option">Use the default identity</string>
+
+    <string name="quit_body">The application will be closed and removed from recent apps, freeing memory.\n\nAny downloads in progress will be interrupted: they will resume next time you open the app. Saved drafts are not lost.</string>
+
+    <!-- ===== Testi lunghi delle schermate gia' tradotte ===== -->
+    <string name="about_desc">Text-only Usenet (NNTP) newsreader for Android. No binary groups, no attachments, no advertising, no telemetry: discussions only.</string>
+    <string name="about_built_with">Built with</string>
+    <string name="about_tech_note">Attach this block to your reports: it says exactly which version you were using and on which device.</string>
+    <string name="drafts_empty">No drafts.\n\nWhile writing a message you can save it here with the button in the top bar.</string>
+    <string name="rn_whats_changed">What changed in this version</string>
+    <string name="rn_full_history">The full history of all versions is in the README file.</string>
+    <string name="unsub_body">The group disappears from the list and is no longer synchronised. You can always re-subscribe from the server directory with +.</string>
+    <string name="unsub_delete_note">Frees space. Read state and marks are lost.</string>
+    <string name="unsub_keep_note">Messages stay in memory: re-subscribing you find them as you left them.</string>
+    <string name="groups_unread">Unread messages</string>
+    <string name="groups_hint">Tip: long-press a group for its actions (download bodies, unsubscribe).</string>
+    <string name="groups_empty">No subscribed groups.\nTap + to browse the server directory.</string>
+
+    <!-- ===== Schermata Filtri ===== -->
+    <string name="flt_title">Filters and scores</string>
+    <string name="flt_apply_now_cd">Apply filters to already downloaded messages</string>
+    <string name="flt_importexport_cd">Import/Export kill-file</string>
+    <string name="flt_new_rule_cd">New rule</string>
+    <string name="flt_body_rule">body %1$s \"%2$s\"  →  plonk author</string>
+    <string name="flt_empty">No rules.\nTap + to create one: choose an action (Ignore, Highlight, Follow the thread…) and the pattern to look for.\nFor advanced cases you can still use a numeric score (matching rules add up).</string>
+    <string name="flt_apply_title">Apply filters to already downloaded messages?</string>
+    <string name="flt_apply_body">Rules normally apply to NEW incoming messages. With this command they are applied to those already downloaded too: anything matching a \"Delete completely\" rule will be removed from the device, anything matching an \"Ignore (hide)\" rule will be hidden (recoverable with \"Show filtered\"), and anything matching a \"Highlight\" rule — or any score set by hand in advanced mode — gets that score and shows up highlighted in the thread list.\n\nAnything matching a \"Follow the thread\" rule also gets the star. And the other way round: a message that no active rule hides any more comes back into view, and a star or highlight set by a rule that no longer applies is removed (stars you set by hand stay). The same happens on its own when you delete or edit a rule. Deleted messages stay on the server and can be downloaded again.</string>
+    <string name="flt_apply_now">Apply now</string>
+    <string name="flt_applied_title">Filters applied</string>
+    <string name="flt_applied_none">No already downloaded message matched an active rule.</string>
+    <string name="flt_applied_summary">Deleted: %1$d. Hidden: %2$d. Rescored: %3$d.</string>
+    <string name="flt_applied_relaxed">Back in view: %1$d. Stars removed: %2$d.</string>
+    <string name="flt_killfile_title">Kill-file (slrn-like format)</string>
+    <string name="flt_killfile_note">Edit or paste a kill-file, then Import. The text below is the export of the current rules.</string>
+    <string name="flt_import">Import</string>
+    <string name="common_close">Close</string>
+    <string name="flt_rule_new">New rule</string>
+    <string name="flt_rule_edit">Edit rule</string>
+    <string name="flt_name_opt">Name (optional)</string>
+    <string name="flt_pattern">Pattern</string>
+    <string name="flt_body_note">BODY rule: if the message contains this pattern, the author is put in the plonk list (ignored from now on).</string>
+    <string name="flt_field_newsreader">Newsreader</string>
+    <string name="flt_newsreader_note">Matches the program the author declares (User-Agent, X-Newsreader, X-Mailer). It is meant for someone who keeps changing nickname but always posts from the same reader. Note: those headers do not arrive with the message list, they arrive with the text — so the rule fires as soon as a message is downloaded, not before. With \'prefetch replies\' on (the default) that happens on its own. Pair it with \'Extend to replies\' to drop the whole branch.</string>
+    <string name="flt_action">Action</string>
+    <string name="flt_score_label">Score (e.g. -100, +50). Matching rules add up.</string>
+    <string name="flt_scope">Group scope (wildmat, * = all)</string>
+    <string name="flt_case">Case sensitive</string>
+    <string name="flt_act_ignore">Ignore (hide)</string>
+    <string name="flt_act_delete">Delete completely</string>
+    <string name="flt_act_highlight">Highlight</string>
+    <string name="flt_act_follow">Follow the thread</string>
+    <string name="flt_act_advanced">Advanced (manual score)</string>
+    <string name="flt_field_from">from</string>
+    <string name="flt_field_subject">subject</string>
+    <string name="flt_field_id">id</string>
+    <string name="flt_field_xpost">crosspost</string>
+    <string name="flt_field_body">body</string>
+    <string name="flt_field_references">references</string>
+    <string name="flt_followup">Extend to replies</string>
+    <string name="flt_followup_note">Replies to this author’s posts — and the whole branch below them — are hidden too, whoever wrote them. Those people stay fully visible everywhere else: in other threads, in uncontaminated branches of the same thread, and in their own posts.</string>
+    <string name="flt_followup_note_positiva">Replies to this author\'s posts, and the whole branch below them, get the same treatment: they are highlighted, or followed with a star if the action is «Follow the thread». Nothing is hidden.</string>
+    <string name="flt_followup_badge">replies too</string>
+
+    <!-- ===== Schermata Manutenzione e backup ===== -->
+    <string name="mnt_title">Maintenance and backup</string>
+    <string name="mnt_restored">Restored %1$d servers, %2$d groups, %3$d filters.</string>
+    <string name="mnt_username_riparati">Also fixed %1$d server(s) whose user name was the word &quot;null&quot;, left there by a restore made with an earlier version.</string>
+    <string name="mnt_import_err">Import error: %s</string>
+    <string name="mnt_backup_enc_ok">Encrypted backup exported</string>
+    <string name="mnt_backup_ok">Backup exported (without server passwords)</string>
+    <string name="mnt_export_err">Export error: %s</string>
+    <string name="mnt_file_unreadable">Unreadable file</string>
+    <string name="mnt_file_unreadable_note">The file picker handed the file over, but the system could not open it. This is not about the backup\'s contents: it was never read. The technical detail below is what a bug report needs - copy it and send it along.</string>
+    <string name="mnt_backup_section">Configuration backup</string>
+    <string name="mnt_backup_note">Export or restore servers, group subscriptions, filters and settings. On restore, servers with the same host and port are updated, not duplicated. When exporting you will be asked for a password: if you set one the file is encrypted and includes server passwords; if you leave it empty the file is in clear text and without server passwords.</string>
+    <string name="mnt_export">Export</string>
+    <string name="mnt_restore">Restore</string>
+    <string name="mnt_restore_how">How should the backup be restored?</string>
+    <string name="mnt_restore_how_note">Merge keeps what you already have and updates anything the backup also contains, so restoring the same file twice changes nothing the second time. Replace deletes your current filters and identities first, then restores those in the backup. Neither option touches your servers, subscriptions or downloaded articles.</string>
+    <string name="mnt_restore_merge">Merge</string>
+    <string name="mnt_restore_replace">Replace</string>
+    <string name="mnt_autoclean">Automatic cleanup</string>
+    <string name="mnt_autoclean_note">After each sync, deletes ALREADY READ messages older than the threshold. Unread ones and watched threads always stay. Each group can have its own threshold (from its message list, ⋮ menu).</string>
+    <string name="mnt_never">Never</string>
+    <string name="mnt_days_30">30 days</string>
+    <string name="mnt_days_90">90 days</string>
+    <string name="mnt_days_180">180 days</string>
+    <string name="mnt_year_1">1 year</string>
+    <string name="mnt_cleaned">%1$d read messages deleted (older than %2$d days)</string>
+    <string name="mnt_clean_now">Clean now</string>
+    <string name="mnt_headers_section">Headers per sync</string>
+    <string name="mnt_headers_note">How many headers to download at most for each group sync. Low values = faster syncs on slow networks; high values = more history.</string>
+    <string name="mnt_headers_100">100 headers</string>
+    <string name="mnt_headers_300">300 headers</string>
+    <string name="mnt_headers_500">500 headers</string>
+    <string name="mnt_headers_1000">1000 headers</string>
+    <string name="mnt_headers_2000">2000 headers</string>
+    <string name="mnt_headers_all">All messages (no limit)</string>
+    <string name="mnt_headers_all_note">\"All messages\" downloads the entire history available on the server: on busy groups the first sync can take a long time.</string>
+    <string name="mnt_bodies_section">Automatic body download</string>
+    <string name="mnt_bodies_switch">Also download bodies when opening a group</string>
+    <string name="mnt_bodies_note">Besides headers, also downloads the text of missing messages every time you open a group — useful if the manual \"Download all bodies\" (group ⋮ menu) is awkward to use often. On large groups or slow connections it can slow down opening: hence the cap below.</string>
+    <string name="mnt_bodies_max">Max bodies per opening</string>
+    <string name="mnt_alerts_section">Alerts and automatic check</string>
+    <string name="mnt_syncstart_note">When NeReO opens, automatically downloads new messages from all subscribed groups.</string>
+    <string name="mnt_syncstart_note2">Same as pulling down the list to refresh, but automatic at startup. Turn it off if you have a slow connection or metered data and prefer to refresh manually when you want.</string>
+    <string name="mnt_syncgroupopen_note">Automatically sync a group when you open it (including when you come back from an article you were reading).</string>
+    <string name="mnt_syncgroupopen_note2">Turn it off if you\'d rather keep everything still until you trigger a sync yourself — useful for not losing track of threads you left half-read among newly arrived ones. Manual sync (button/pull-to-refresh) is always still available, on or off.</string>
+    <string name="mnt_sound_note">Sound when a reply to one of my messages arrives (recognised by the email set in Identity).</string>
+    <string name="mnt_autocheck">Automatic new message check</string>
+    <string name="mnt_off">Off</string>
+    <string name="mnt_every_3">Every 3 minutes</string>
+    <string name="mnt_every_5">Every 5 minutes</string>
+    <string name="mnt_every_10">Every 10 minutes</string>
+    <string name="mnt_autocheck_note">The automatic check works while the app is open; it syncs all subscribed groups at the chosen interval.</string>
+    <string name="mnt_backup_pass_title">Backup password</string>
+    <string name="mnt_backup_pass_note">Set a password to encrypt the backup (recommended: it protects server passwords). Leave empty for a clear-text backup, without server passwords.</string>
+    <string name="mnt_pass_empty">Password (empty = none)</string>
+    <string name="mnt_backup_protected">Protected backup</string>
+    <string name="mnt_backup_protected_note">This backup is encrypted. Enter the password set when it was created.</string>
+    <string name="mnt_wrong_pass">Wrong password or damaged file</string>
+
+    <!-- ===== Informazioni (completamento) ===== -->
+    <string name="about_package">Package: %s</string>
+    <string name="about_device">Device: %s</string>
+    <string name="about_version">version %s</string>
+    <string name="about_dev">Development</string>
+    <string name="about_license">Licence</string>
+    <string name="about_license_val">GNU GPL v3 or later</string>
+    <string name="about_protocol">Protocol</string>
+    <string name="about_protocol_val">NNTP — RFC 3977, RFC 4643 authentication</string>
+    <string name="about_tech">Technical data</string>
+    <string name="about_tech_copied">Technical data copied</string>
+
+    <!-- ===== Identita' e firma (1.2.9: una riga = un'identità, non più le
+         preferenze generali — vedi IdentityScreen.kt) ===== -->
+    <string name="id_title">Edit identity</string>
+    <string name="id_new_title">New identity</string>
+    <string name="id_img_unreadable">Unreadable image</string>
+    <string name="id_img_invalid">Invalid image: %s</string>
+    <string name="id_saved">Saved</string>
+    <string name="id_nickname">Nickname</string>
+    <string name="id_nickname_note">Only to recognize this identity in the list and when assigning it to a server — it is never sent with your posts.</string>
+    <string name="id_name">Name (visible in groups)</string>
+    <string name="id_email">Email</string>
+    <string name="id_default_switch">Default identity</string>
+    <string name="id_default_switch_note">Used automatically wherever no more specific identity is assigned (a server without one of its own, a Reply/Followup started outside any group).</string>
+    <string name="id_add_sig">Add the signature to outgoing messages</string>
+    <string name="id_random_sig">Random signature: if you enter more than one, I pick one at random</string>
+    <string name="id_sig_label">Signature (without the \"-- \" delimiter: I add it)</string>
+    <string name="id_sig_note">For several signatures separate them with a line containing %1$s. Each signature is limited to %2$d lines of text at %3$d columns (Usenet netiquette); blank lines in between do not count toward the limit. Placeholders: %%versione%% → version in use; %%nereo%% → NeReO + version.</string>
+    <string name="id_sig_note2">Netiquette: maximum 4 lines, 72 characters per line. While composing, the signature stays editable as normal text.</string>
+    <string name="id_privacy">Privacy</string>
+    <string name="id_useragent">User-Agent declared in posts</string>
+    <string name="id_useragent_note">Leave empty to declare no newsreader, or write whatever you prefer. %1$s becomes the version in use at posting time, so it stays up to date on its own. RFC 5536 wants the version attached with a slash: NeReO/1.3.2 (Android).</string>
+    <string name="id_noarchive">X-No-Archive: ask archives not to keep your posts</string>
+    <string name="id_intro">Quote introduction</string>
+    <string name="id_intro_tpl">Template (empty = \"%s\")</string>
+    <string name="id_intro_note">Placeholders: %%author%% %%email%% %%date%% %%time%% %%group%% %%subject%% %%messageid%% (the Italian names %%autore%% %%data%% %%ora%% %%gruppo%% %%oggetto%% still work). For several variants separate them with %s: one will be picked at random.</string>
+    <string name="id_custom_headers">Custom headers</string>
+    <string name="id_custom_headers_lbl">One per line: Name: value</string>
+    <string name="id_custom_headers_note">E.g.: Reply-To: you@example.org · Organization: … Added to every message (editable while composing). Vital headers (From, Subject…) and control headers (Followup-To, Control, Sender, Expires…) cannot be overridden: if you write one here NeReO tells you and drops it.</string>
+    <string name="id_face">Face (avatar in posts)</string>
+    <string name="id_face_48">48×48 (recommended)</string>
+    <string name="id_face_96">96×96 (heavy)</string>
+    <string name="id_face_warn">⚠ The 96×96 Face weighs about 4 times more and is repeated in the header of EVERY message you send. Out of respect for Usenet tradition and bandwidth, 48×48 is preferable. Choose the large one only if really necessary.</string>
+    <string name="id_face_note">The size chosen here applies to the NEXT image you pick — it does not resize the one already set. 48×48 is the historical Face/X-Face standard and the recommended choice: light and universal. 96×96 is sharper but makes every message heavier — once a serious netiquette matter, less so today, but keeping headers slim is still good manners.</string>
+    <string name="id_face_current">Current Face</string>
+    <string name="id_face_none">(none)</string>
+    <string name="id_face_choose">Choose image…</string>
+    <string name="id_face_remove">Remove</string>
+    <string name="id_face_std_note">Standard \"Face:\" (PNG, like MesNews): the chosen image is reduced to the size above and sent with every message; compatible newsreaders show it next to the author.</string>
+
+    <!-- ===== Elenco identità (1.2.9) ===== -->
+    <string name="idl_title">Identities</string>
+    <string name="idl_add_cd">New identity</string>
+    <string name="idl_empty">No identity yet.\nTap + to create one (name, email, signature, Face…) — then assign it to a server from Servers → edit.</string>
+    <string name="idl_default_suffix">%s (default)</string>
+
+    <!-- ===== Gruppi disponibili ===== -->
+    <string name="gd_title">Available groups</string>
+    <string name="gd_updated">List updated: %d groups</string>
+    <string name="gd_reload_cd">Reload list from server</string>
+    <string name="gd_server">Server: %s  ▾</string>
+    <string name="gd_reload_full">Reload full list</string>
+    <string name="gd_download">Download group list from server</string>
+    <string name="gd_advanced">  Advanced options</string>
+    <string name="gd_wildmat">Download only (empty = all; e.g. it.*, free.*)</string>
+    <string name="gd_wildmat_note">Only needed on providers with a full feed (hundreds of thousands of groups, binaries included) or on metered connections. Note: each download replaces the cache, so list ALL the branches you want here, not just the new one.</string>
+    <string name="gd_search">Search in cache (e.g. it.tlc.c…)</string>
+    <string name="gd_error">Cannot download the group list:\n%s</string>
+    <string name="gd_downloading">Downloading group list…</string>
+    <string name="gd_cache_info">%1$d groups in cache · %2$d results</string>
+    <string name="gd_subscribed_cd">Subscribed (tap to remove)</string>
+    <string name="gd_subscribe_cd">Subscribe</string>
+    <string name="gd_no_match">No group matches \"%s\".</string>
+
+    <string name="gd_received">\n%d groups received</string>
+    <string name="gd_first_500"> (first 500)</string>
+
+    <!-- ===== Messaggi comuni e schermata di scrittura ===== -->
+    <string name="msg_new_articles">%d new articles</string>
+    <string name="msg_no_new">No new articles</string>
+    <string name="msg_error">Error: %s</string>
+    <string name="msg_bodies_downloaded">%d bodies downloaded</string>
+    <string name="msg_redownloaded">%d articles re-downloaded</string>
+    <string name="cmp_reply">Reply</string>
+    <string name="cmp_new_thread">New thread</string>
+    <string name="cmp_crosspost_reply_cd">Reply groups (crosspost)</string>
+    <string name="cmp_crosspost_new_cd">Post to other groups too (crosspost)</string>
+    <string name="cmp_trim_cd">Trim quote</string>
+    <string name="cmp_quotemode_cd">Quote mode</string>
+    <string name="cmp_quotemode_note">Changing mode recomposes the message</string>
+    <string name="cmp_draft_saved">Draft saved</string>
+    <string name="cmp_save_draft_cd">Save as draft</string>
+    <!-- 1.5.1: «Scarta» nella scrittura (T3 della bozza autosalvata) -->
+    <string name="cmp_discard_cd">Discard</string>
+    <string name="cmp_discard_title">Discard this message?</string>
+    <string name="cmp_discard_body">The text is thrown away and its draft deleted. This cannot be undone.</string>
+    <string name="cmp_discard_ok">Discard</string>
+    <string name="cmp_rot13_all">ROT13 on the whole message</string>
+    <string name="cmp_rot13_sel">ROT13 on the selected part</string>
+    <string name="cmp_chars">%d characters</string>
+    <string name="cmp_send">Send</string>
+    <string name="cmp_group">Group: %s</string>
+    <string name="cmp_groups">Groups: %s</string>
+    <string name="cmp_followup_gruppi">The author asked for follow-ups to continue in %1$s, so NeReO will post there instead of %2$s. Open the groups selector if you want to decide yourself.</string>
+    <string name="cmp_followup_poster">The author asked for replies by e-mail, not on the group (Followup-To: poster). NeReO does not send mail, so this reply will still go out on the group - now you know it, which is different from not knowing.</string>
+    <string name="cmp_followup_apri_posta">Open in mail app</string>
+    <string name="tl_group_intro">Quote intro for this group</string>
+    <string name="tl_group_intro_tip" formatted="false">Replaces the intro of your identity when replying in this group - it does not join the random draw. Typically used to write it in the language of the group. Leave it empty to use your identity\'s intro. The same placeholders work here: %autore% %data% %gruppo% and the rest.</string>
+    <string name="tl_group_intro_label">Intro line (empty = use identity)</string>
+    <string name="mnt_letto_messageid">A crossposted message read in one group counts as read in the others</string>
+    <string name="art_reload">Reload message</string>
+    <string name="tls_title">TLS identity</string>
+    <string name="tls_none">No identity recorded for this server yet. One is recorded by itself the first time NeReO connects over TLS.</string>
+    <string name="tls_state_trusted">APPROVED - this key is the expected identity for this server</string>
+    <string name="tls_state_pending">SEEN, NOT TRUSTED</string>
+    <string name="tls_state_valid">VALID - checked by the normal rules</string>
+    <string name="tls_valid_note">This server\'s certificate passes the normal checks: signed by an authority Android trusts, and issued for this host. There is nothing to approve, and NeReO is not asking you to. The values below are here so you can see them - and so NeReO can warn you before the certificate expires. If you want NeReO to demand exactly THIS key from now on, you can pin it: it is a choice, not a requirement.</string>
+    <string name="tls_trusted_note">From now on NeReO demands exactly this key on every connection to this server. If it ever changes, the connection stops and you are shown both - and nothing is accepted until you come back here.</string>
+    <string name="tls_pin_anyway">Pin this key anyway</string>
+    <string name="tls_pending_note">NeReO has seen this identity and written it down, and that is all: it is a no with a memory, not half a yes. Read the values below, and approve only if they are what you expect.</string>
+    <string name="tls_endpoint">Host and port</string>
+    <string name="tls_subject">Subject</string>
+    <string name="tls_issuer">Issuer</string>
+    <string name="tls_spki">Public key (SHA-256 of the SPKI) - this is what is pinned</string>
+    <string name="tls_cert">Whole certificate (SHA-256) - for diagnosis only</string>
+    <string name="tls_valid">Valid</string>
+    <string name="tls_observed">First seen</string>
+    <string name="tls_approved">Approved on</string>
+    <string name="tls_expires_in">The certificate expires in %1$d days. If this server renews by hand, now is the time to say so to whoever runs it.</string>
+    <string name="tls_expired">The certificate has EXPIRED.</string>
+    <string name="tls_approve">Approve this key</string>
+    <string name="tls_revoke">Forget it</string>
+    <string name="tls_probe_section">Check what the server shows now</string>
+    <string name="tls_probe_note">A connection of its own, with no login: nothing of yours is sent. It answers the question worth asking before approving - is that snapshot still current? What it cannot promise: between this check and the next handshake the identity can change again. The check is honesty, not a guarantee; the guarantee is the key being compared on EVERY connection.</string>
+    <string name="tls_probe">Check now</string>
+    <string name="tls_probe_failed">Could not read the identity: %1$s</string>
+    <string name="tls_probe_same">Same key as the one recorded above.</string>
+    <string name="tls_probe_diff">DIFFERENT from the key recorded above.</string>
+    <string name="srv_cert_expiring">Certificate expires in %1$d days</string>
+    <string name="mnt_letto_messageid_note">A crossposted message is ONE message, even though NeReO keeps one row per group. With this on, marking it read anywhere marks every copy read - which is what MesNews does, and what "seen it already" means. Watched threads and filters already worked by Message-ID: read was the odd one out.</string>
+    <string name="cmp_hide_details">Hide details</string>
+    <string name="cmp_show_details">Sender and headers</string>
+    <string name="cmp_name">Name (visible in the group)</string>
+    <string name="cmp_email">Email</string>
+    <string name="cmp_headers">Custom headers (one per line: Name: value)</string>
+    <string name="hdr_riservate_scartate">Reserved by NeReO, will not be sent: %1$s</string>
+    <string name="cmp_subject">Subject</string>
+    <string name="cmp_message">Message</string>
+    <string name="cmp_send_failed">Sending failed (the text is saved in Drafts): %s</string>
+
+    <!-- ===== Dialog minori e citazioni ===== -->
+    <string name="trim_title">Trim quote</string>
+    <string name="trim_none">No quoted line to trim.</string>
+    <string name="trim_note">Tap the X to remove a quoted line. The rest of the message is left untouched.</string>
+    <string name="trim_remove_cd">Remove this quoted line</string>
+    <string name="trim_apply">Apply</string>
+    <string name="xp_title">Crossposted message</string>
+    <string name="xp_title_followup">Where the reply goes</string>
+    <string name="xp_note_followup">The author asked for follow-ups in %1$s. You can add the original groups (max %2$d groups).</string>
+    <string name="xp_group_autore">%s  (asked by the author)</string>
+    <string name="xp_reply_only_in">Reply only to %s</string>
+    <string name="xp_note">This message is posted to %1$d groups. Choose where your reply should go (max %2$d groups).</string>
+    <string name="xp_this_group">%s  (this group)</string>
+    <string name="xp_max_reached">Maximum of %d groups reached.</string>
+    <string name="xp_default_all_section">Reply to crossposts</string>
+    <string name="xp_default_all_switch">Reply to all groups by default</string>
+    <string name="xp_default_all_note">When on, replying to a crossposted message pre-selects all the original groups (up to the 3-group cap) instead of just the current one. You can still adjust the choice before sending.</string>
+    <string name="xp_reply_here">Reply here only</string>
+    <string name="xp_reply_n">Reply to %d groups</string>
+    <string name="xp_new_title">Crosspost new thread</string>
+    <string name="xp_new_note">You can post this thread to other groups too (max %d extra). The current group is always included.</string>
+    <string name="xp_search_group">Search group</string>
+    <string name="xp_only_here">Here only</string>
+    <string name="xp_send_n">Post to %d groups</string>
+    <string name="unsub_del_n">Also delete the %d downloaded messages</string>
+    <string name="unsub_del">Also delete downloaded messages</string>
+    <string name="body_more_lines">▼ … %d more quoted lines (tap to expand)</string>
+    <string name="body_quote_muted">▸ quote hidden (tap to show)</string>
+    <string name="quote_below">Write below the quote (netiquette)</string>
+    <string name="quote_above">Write above the quote</string>
+    <string name="quote_trimmed">Trimmed quote</string>
+    <string name="quote_none">No quote</string>
+
+    <!-- ===== Ricerca ===== -->
+    <string name="srch_in_group">Search in %s</string>
+    <string name="srch_title">Search</string>
+    <string name="srch_field">Word or phrase to search</string>
+    <string name="srch_clear_cd">Clear</string>
+    <string name="srch_tab_messages">Messages</string>
+    <string name="srch_tab_threads">Threads</string>
+    <string name="srch_note_group">Searches subject and author of this group\'s messages, and the body of those already opened.</string>
+    <string name="srch_note_all">Searches subject and author of all cached messages, and the body of those already opened.</string>
+    <string name="srch_none">No result for \"%s\".</string>
+    <string name="srch_in_body">In the text:</string>
+    <string name="srch_threads_n">%d threads with at least one matching message.</string>
+    <string name="srch_first_500">First 500 results.</string>
+    <string name="srch_results_n">%d results.</string>
+    <string name="srch_matches">%1$d matching messages  ·  %2$s</string>
+    <string name="srch_root_missing">  ·  thread start not in cache</string>
+
+    <!-- ===== Lettura articolo ===== -->
+    <string name="art_all_read">You have already read everything here!</string>
+    <string name="art_end_of_group">This is the last message in the group.</string>
+    <string name="art_start_of_group">This is the first message in the group.</string>
+    <string name="art_title">Article</string>
+    <string name="art_reply_cd">Reply</string>
+    <string name="art_tree_cd">Thread tree</string>
+    <string name="art_headers_cd">Message headers</string>
+    <string name="art_mute_quotes_cd">Mute or show quotes</string>
+    <string name="art_more_cd">More options</string>
+    <string name="art_unwatch">Stop following the thread</string>
+    <string name="art_watch">Follow the thread</string>
+    <string name="art_mark_unread">Mark as unread</string>
+    <string name="art_rot13_orig">Show original text</string>
+    <string name="art_rot13_dec">Decode ROT13</string>
+    <string name="art_plonk_menu">Plonk author…</string>
+    <string name="art_prev_msg">Previous message (in this thread)</string>
+    <string name="art_next_msg">Next message (in this thread)</string>
+    <string name="art_next_unread">Next unread</string>
+    <string name="art_prev_thread">Previous thread</string>
+    <string name="art_next_thread">Next thread</string>
+    <string name="art_back_index">Back to index</string>
+    <string name="art_top">Start of message</string>
+    <string name="art_bottom">End of message</string>
+    <string name="art_crossposted">⚠ Crossposted to %1$d groups: %2$s</string>
+    <string name="art_face_cd">Author\'s Face</string>
+    <string name="art_xface_cd">Author\'s X-Face</string>
+    <string name="art_date_today">today %1$s</string>
+    <string name="art_date_yesterday">yesterday %1$s</string>
+    <string name="art_face_big_cd">Author\'s Face, enlarged</string>
+    <string name="art_error">Error: %s</string>
+    <string name="art_plonk_title">Plonk</string>
+    <string name="art_plonk_body">Put \"%s\" in the killfile?\n\nTheir messages, future and existing, will be hidden. Below you can choose whether to hide the replies to their posts as well. Reversible from filter management.</string>
+    <string name="art_plonk_followup">Hide replies as well</string>
+    <string name="art_plonk_followup_on">Replies to their posts and the whole branch below will disappear too, whoever wrote them. Those repliers stay visible elsewhere: in other threads, in uncontaminated branches, and in threads they start themselves.</string>
+    <string name="art_plonk_followup_off">Plain plonk: only they disappear. Replies to their posts stay visible, and usually quote their text.</string>
+    <string name="art_this_author">this author</string>
+    <string name="art_headers_title">Headers</string>
+    <string name="art_headers_none">Headers not available for this message.\nThey are saved on reading: if the message was downloaded with an earlier version, reopen it after refreshing the group.</string>
+    <string name="art_tree_title">Thread tree</string>
+    <string name="art_tree_none">Thread cannot be reconstructed.</string>
+    <string name="gst_none_long">no action (long gesture)</string>
+    <string name="gst_next_thread">next thread</string>
+    <string name="gst_prev_thread">previous thread</string>
+    <string name="gst_next_msg">next message</string>
+    <string name="gst_prev_msg">previous message</string>
+    <string name="gst_none">no action</string>
+
+    <!-- ===== RC02: stringhe prima scritte direttamente nel codice =====
+         Aggiunte completando la traduzione dell'interfaccia: elenco
+         discussioni, layout a pannelli e voci minori. Le chiavi common_*
+         sono condivise fra ThreadListScreen e ThreePaneHome, che offrono
+         le stesse funzioni su telefono e su schermo largo. -->
+
+    <string name="tl_view_sequential">Sequential</string>
+    <string name="tl_view_grouped_threads">Grouped threads</string>
+    <string name="tl_view_tree">Tree</string>
+    <string name="tl_sync_failed">Sync failed: %1$s</string>
+    <string name="tl_selected_count">%1$d selected</string>
+    <string name="tl_exit_selection">Exit selection</string>
+    <string name="tl_select_all">Select all</string>
+    <string name="tl_mark_selected_read">Mark selected as read</string>
+    <string name="tl_mark_selected_unread">Mark selected as unread</string>
+    <string name="tl_mark_deletion">Mark for deletion</string>
+    <string name="tl_restore_selected">Restore selected</string>
+    <string name="tl_default_title">Thread</string>
+    <string name="common_showing_unread">Showing unread only</string>
+    <string name="tl_showing_all">Showing all</string>
+    <string name="common_marked_read">%1$d messages marked as read</string>
+    <string name="common_undo_upper">UNDO</string>
+    <string name="common_mark_all_read">Mark all as read</string>
+    <string name="tl_sync">Sync</string>
+    <string name="tl_search_group">Search in this group…</string>
+    <string name="common_watched_threads_only">Followed threads only</string>
+    <string name="common_view">View</string>
+    <string name="common_thread_sort">Thread sorting</string>
+    <string name="common_expand_all_threads">Expand all threads</string>
+    <string name="common_collapse_all_threads">Collapse all threads</string>
+    <string name="common_mark_all_unread">Mark all as unread</string>
+    <string name="common_redownload_group_menu">Re-download group from server…</string>
+    <string name="common_download_all_bodies_menu">Download all bodies…</string>
+    <string name="common_hide_filtered">Hide filtered messages</string>
+    <string name="common_show_filtered">Show filtered messages</string>
+    <string name="common_group_retention_menu">Retention for this group…</string>
+    <string name="tl_all_read_empty">All read in this group.\nOpen the ⋮ menu and choose \"Show filtered\" or change view.</string>
+    <string name="tl_no_articles">No articles. Tap the sync icon above.</string>
+    <string name="tl_restore_message">Restore this message</string>
+    <string name="tl_restore_all">Restore all (%1$d)</string>
+    <string name="common_open_message">Open</string>
+    <string name="common_go_first_unread_reply">Go to the first unread reply to my messages (%1$d)</string>
+    <string name="common_go_first_reply">Go to the first reply to my messages (%1$d)</string>
+    <string name="common_mark_message_unread">Mark message as unread</string>
+    <string name="common_mark_message_read">Mark message as read</string>
+    <string name="common_mark_thread_read">Mark thread as read</string>
+    <string name="common_mark_thread_unread">Mark thread as unread</string>
+    <string name="common_ignore_author">Plonk author and replies</string>
+    <string name="common_ignore_author_success">Plonked: %1$s — replies to their posts hidden too</string>
+    <string name="common_author_unidentified">Unable to identify the author</string>
+    <string name="common_delete_thread">Delete this thread</string>
+    <string name="common_thread_deleted">Thread deleted (%1$d messages)</string>
+    <string name="common_no_message_deleted">No message deleted</string>
+    <string name="tl_supersede">Supersede…</string>
+    <string name="tl_cancel_post">Withdraw from server (cancel)…</string>
+    <string name="tl_cancel_title">Withdraw this message?</string>
+    <string name="tl_cancel_body">Sends a cancel control message asking the server to withdraw your article. In practice this only acts on the server you posted to — other servers usually keep the message, and many providers ignore withdrawal requests altogether. NeReO will check each of your servers and tell you what it finds. Your local copy stays until the group is re-synced.</string>
+    <string name="tl_cancel_result_title">Withdrawal outcome</string>
+    <string name="tl_cancel_checking">Request sent. Checking the servers…</string>
+    <string name="tl_cancel_line_sent">%1$s (request sent here): %2$s</string>
+    <string name="tl_cancel_line_other">%1$s: %2$s</string>
+    <string name="tl_cancel_state_removed">withdrawn</string>
+    <string name="tl_cancel_state_present">still there</string>
+    <string name="tl_cancel_state_unknown">could not check</string>
+    <string name="tl_cancel_result_note">A withdrawal normally acts only on the server you posted to: the other servers are only being asked, and "still there" is the usual answer from them. To make a correction visible everywhere, use "Supersede" instead.</string>
+    <string name="tl_cancel_confirm">Withdraw</string>
+    <string name="art_missing_remove">Remove the local copy</string>
+    <string name="tl_delete_local_copy">Delete local copy</string>
+    <string name="tl_select_multiple">Select multiple messages…</string>
+    <string name="common_download_bodies_title">Download all bodies</string>
+    <string name="common_download_bodies_body">Download the text of ALL messages in this group not yet read from the server, so you can read them offline.\n\nIt may require time and data traffic if the group is large: it is one request per message. Messages are NOT marked as read.</string>
+    <string name="common_download">Download</string>
+    <string name="common_redownload_group_title">Re-download group from server</string>
+    <string name="common_redownload_group_body">Delete the local copy of this group and get it from the server again from scratch.\n\nWarning: this is not the same as \"mark all as unread\". Here messages are actually discarded and re-downloaded, so their read state, flags and bodies already in memory are lost; data traffic is needed and it may take a while.\n\nUse it if messages have disappeared because of automatic retention or if the local copy seems inconsistent.</string>
+    <string name="common_redownload">Re-download</string>
+    <string name="common_redownload_group_window">Only the latest %1$d messages still held by the server come back — the number your sync settings allow. Any older ones you have locally are lost, and no re-download brings them back.</string>
+    <string name="tl_use_default">Use default value</string>
+    <string name="tl_never_keep_all">Never (keep all)</string>
+    <string name="tl_keep_latest_threads">Latest %1$d threads</string>
+    <string name="tl_group_retention">Group retention</string>
+    <string name="tl_retention_body">After every sync, read messages are deleted (unread and followed ones remain). You can choose to keep messages by TIME or by NUMBER of threads.</string>
+    <string name="tl_by_thread_count">By number of threads</string>
+    <string name="tl_thread_count_tip">Recommended for low-traffic groups: they do not empty over time.</string>
+    <string name="tl_by_time">By time</string>
+    <string name="tl_selected">Selected</string>
+    <string name="tl_not_selected">Not selected</string>
+    <string name="common_collapse_thread">Collapse thread</string>
+    <string name="common_expand_thread">Expand thread</string>
+    <string name="tl_watched">Watched</string>
+    <string name="common_contains_my_message">Contains one of my messages</string>
+    <string name="pane_configure_server">Set up a server (top-right icon), then subscribe to groups with +.</string>
+    <string name="pane_refresh_hint">Tip: pull down the list to refresh all groups.</string>
+    <string name="pane_refresh_group">Refresh group</string>
+    <string name="pane_hide_read_messages">Hide read messages</string>
+    <string name="pane_fullscreen_cd">Full-screen reading</string>
+    <string name="pane_fullscreen_exit_cd">Exit full-screen reading</string>
+    <string name="pane_search_in_group">Search in this group</string>
+    <string name="pane_choose_group">Choose a group from the column on the left.</string>
+    <string name="pane_no_articles">No messages in this group.</string>
+    <string name="pane_no_unread">No unread messages in this group.</string>
+    <string name="pane_go_to_replies_to_my_messages">Go to replies to my messages</string>
+    <string name="pane_select_message">Select a message from the centre column.</string>
+    <!-- 1.2.5: controllo aggiornamenti (Bingo3331); 1.3.1: modalità a quattro vie (Bingo3331 + HAL) -->
+    <string name="upd_section">Updates</string>
+    <string name="upd_mode_never">Never</string>
+    <string name="upd_mode_daily">Once a day</string>
+    <string name="upd_mode_4h">Every 4 hours</string>
+    <string name="upd_mode_always">On every launch</string>
+    <string name="upd_last_check_never">No check has run yet.</string>
+    <string name="upd_last_check_today_at">today at %1$s</string>
+    <string name="upd_last_check_date_at">on %1$s at %2$s</string>
+    <string name="upd_last_check_none_found">no update found</string>
+    <string name="upd_last_check_version_found">found version %1$s</string>
+    <string name="upd_last_check_prefix">Last check: %1$s — %2$s</string>
+    <string name="upd_note">On startup, at the chosen interval, NeReO asks SourceForge whether a newer version exists and, only if there is one, lets you know. It’s a single request to a public address, sending no data. The app never downloads or installs anything itself: it opens the page and you download.</string>
+    <string name="upd_check_now">Check for updates</string>
+    <string name="upd_uptodate">You’re already on the latest version.</string>
+    <string name="upd_check_failed">Couldn’t check right now (network unavailable).</string>
+    <string name="upd_available_title">Update available</string>
+    <string name="upd_available_msg">NeReO %1$s is available. Open the releases page to download it?</string>
+    <string name="upd_open_page">Open page</string>
+    <string name="upd_later">Later</string>
+    <string name="pane_reply_to_post">Reply to this post</string>
+    <string name="pane_send_failed">Sending failed: %1$s</string>
+    <string name="cmp_441_content">The server judges the message too short on text (an anti-spam defence): write a little more and send it again.</string>
+    <string name="cmp_441_generic">The server refused the message: the reason is in its reply, shown as it is.</string>
+    <string name="groups_all_read">All read</string>
+    <string name="groups_welcome">Welcome!\n1. Set up a server (top-right icon)\n2. Subscribe to groups using the + button</string>
+    <string name="drafts_no_subject">(no subject)</string>
+    <string name="cmp_default_intro" formatted="false">%author% wrote:</string>
+
+    <!-- ===== Note di versione (What's new) ===== -->
+    <string name="rn_m1_title">Plonk extended to replies</string>
+    <string name="rn_m1_l1">The rule editor for «from» rules now has an «Extend to replies» checkbox: besides the filtered author, replies to their posts and the whole branch below them disappear too, whoever wrote them.</string>
+    <string name="rn_m1_l2">Those repliers stay fully visible everywhere else: in other threads, in uncontaminated branches of the same thread, and in threads they start themselves. No guilt by association outside the branch.</string>
+    <string name="rn_m1_l3">Quick plonk from the context menu is extended by default, and your existing «Plonk:» rules become extended on first launch. Replies are hidden, not deleted: remove the rule and they come back.</string>
+
+    <!-- ===== Rete di sicurezza database ===== -->
+    <string name="db_reset_title">Database reset</string>
+    <string name="db_reset_with_backup">This version of the app could not open the existing database (incompatible schema), so it was reset. A copy of your previous data was saved here:\n\n%1$s</string>
+    <string name="db_reset_no_backup">This version of the app could not open the existing database (incompatible schema), so it was reset. The automatic backup could not be created.</string>
+
+    <!-- ===== Lingua dell'app (interruttore in-app) ===== -->
+    <string name="app_language">Language</string>
+    <string name="app_language_system">System default</string>
+    <string name="app_language_it">Italiano</string>
+    <string name="app_language_en">English</string>
+
+    <!-- Diagnostica NNTP (scatola nera) -->
+    <string name="mnt_diag_section">Diagnostics</string>
+    <string name="mnt_diag_switch">Record NNTP dialogue</string>
+    <string name="mnt_diag_note">For troubleshooting a server. When on, the app keeps the last ~400 lines of the NNTP client/server dialogue in memory, plus computed summary lines (marked \"D:\") such as how many overview rows actually arrived and which article numbers are missing, and a session header/footer with timing. Passwords and usernames are masked; nothing is written to disk until you export. Turn it on, run one sync, then copy or export the log — and turn it back off.</string>
+    <string name="mnt_diag_copy">Copy log</string>
+    <string name="mnt_diag_export">Export log</string>
+    <string name="mnt_diag_copied">NNTP log copied to clipboard</string>
+    <string name="mnt_diag_empty">No dialogue recorded yet. Turn on the switch and run a sync.</string>
+    <string name="mnt_diag_saved">NNTP log saved</string>
+    <string name="mnt_diag_listgroup_note">Advanced: for a subscribed group, ask the server for the real list of articles present (LISTGROUP) and compare it with the last overview summary. Useful to tell apart a gap in the server\'s overview database from articles that are genuinely gone. Requires the switch above to be on.</string>
+    <string name="mnt_diag_listgroup_btn">LISTGROUP diagnostic…</string>
+    <string name="mnt_db_section">Database diagnostics</string>
+    <string name="mnt_db_note">Counts the rows of every table and shows the schema version and the space used. Its purpose is comparison: take the numbers before an update and again after, and if they match, the migration lost nothing. It is also the quickest thing to attach to a bug report. Nothing is computed until you press the button.</string>
+    <string name="mnt_db_btn">Count rows</string>
+    <string name="mnt_db_err">Diagnostics failed: %s</string>
+    <string name="mnt_diag_listgroup_need_switch">Turn on \"Record NNTP dialogue\" above first — otherwise nothing gets logged.</string>
+    <string name="mnt_diag_listgroup_no_groups">No subscribed groups yet.</string>
+    <string name="mnt_diag_listgroup_running">Running… this can take a moment on a large group.</string>
+    <string name="mnt_diag_listgroup_done">Diagnostic done — see the NNTP log.</string>
+    <string name="mnt_diag_listgroup_cancelled">Diagnostic cancelled — whatever was already recorded stays in the NNTP log.</string>
+    <string name="mnt_orphans_note">Rows left behind by a server deleted with version 1.4.1 or earlier: its groups, its messages, its group catalogue and its TLS pins stayed in the database, invisible and unreachable. From 1.4.2 on, deleting a server takes them away with it; this button clears out what is already there. Nothing else is touched.</string>
+    <string name="mnt_orphans_btn">Delete orphaned rows</string>
+    <string name="mnt_orphans_none">No orphaned rows: nothing to delete.</string>
+    <string name="mnt_orphans_title">Delete the orphaned rows?</string>
+    <string name="mnt_orphans_confirm">These rows will be removed for good:\n\n%1$s\n\nThey belong to no server and to no group, so nothing you can see will change.</string>
+    <string name="mnt_orphans_confirm_btn">Delete</string>
+    <string name="mnt_orphans_done">Done: %1$s rows removed.</string>
+    <!-- 1.2.9.b: crash log (Plan C.1, NeReO_bug_1.2.9.md item X) -->
+    <string name="mnt_crash_section">Last crash</string>
+    <string name="mnt_crash_note">Always on: if the app ever closes unexpectedly, the last crash is saved here automatically — nothing is sent anywhere on its own. If it happens to you, please copy or export this and send it over; it\'s the only way to actually find and fix it.</string>
+    <string name="mnt_crash_copy">Copy</string>
+    <string name="mnt_crash_export">Export</string>
+    <string name="mnt_crash_clear">Clear</string>
+    <string name="mnt_crash_copied">Crash log copied to clipboard</string>
+    <string name="mnt_crash_saved">Crash log saved</string>
+    <string name="mnt_crash_cleared">Crash log cleared</string>
+    <string name="mnt_crash_empty">No crash recorded — good news.</string>
+    <!-- Azioni long-press sul gruppo sottoscritto -->
+    <string name="groups_download_bodies">Download bodies (last 300)</string>
+    <string name="groups_unsub_action">Unsubscribe\u2026</string>
+    <string name="groups_bodies_done">Downloaded %d bodies</string>
+    <!-- Note di rilascio 1.2 -->
+    <string name="rn_v12_compat_title">Works with more servers</string>
+    <string name="rn_v12_compat_l1">Some providers — Astraweb among them — refuse the OVER command used to fetch headers, and syncing failed with «Unrecognized command». NeReO now falls back to XOVER automatically, so those servers work again.</string>
+    <string name="rn_v12_tablet_title">Full reading on tablets too</string>
+    <string name="rn_v12_tablet_l1">The three-column panel view now has the full-headers and ROT13 buttons, just like the single-page view, and the Drafts button is reachable there as well.</string>
+    <string name="rn_v12_tablet_l2">Continuous view now opens already positioned on the message you picked, without the little jump while bodies load.</string>
+    <string name="rn_v12_groups_title">Groups and message bodies</string>
+    <string name="rn_v12_groups_l1">Long-press a subscribed group to download the missing bodies of the last 300 messages in one go — next to the usual «Unsubscribe».</string>
+    <string name="rn_v12_groups_l2">«Follow the thread» now applies to the whole conversation, not just the first post, and your own posts are recognised even with per-server identities.</string>
+    <string name="rn_v12_care_title">Backup, diagnostics and fixes</string>
+    <string name="rn_v12_care_l1">Backup is now complete: per-server identities, all settings and followed threads. Restoring stays compatible with older backups.</string>
+    <string name="rn_v12_care_l2">New NNTP diagnostics under Maintenance (passwords always masked); the bottom icon bar wraps to two rows on narrow screens instead of hiding buttons; and a spurious error while scrolling fast is gone.</string>
+    <!-- Conferma invio + refresh automatico (richiesta Bingo3331) -->
+    <string name="cmp_sent">Message sent</string>
+    <string name="rn_v12_care_l3">After you post, NeReO now confirms «Message sent» and refreshes the group by itself, so your own post shows up without a manual pull — as soon as the server makes it available.</string>
+    <!-- Note di rilascio 1.2.9.b -->
+    <string name="rn_v1210_title">Version 1.2.10</string>
+    <string name="rn_v1210_l1">More resilient article list: a rare database read error that could happen while leaving a group mid-sync no longer crashes the app — it now keeps showing the last known list instead.</string>
+    <string name="rn_v1210_l2">New setting (Maintenance → Alerts): you can now turn off automatic syncing when you open a group, so threads you\'re still reading don\'t get mixed in with new arrivals. Manual sync (button/pull-to-refresh) always still works.</string>
+    <string name="art_copy_message">Copy the message</string>
+    <string name="art_export_message">Export / share</string>
+    <string name="art_export_eml">Save as .eml file</string>
+    <string name="art_eml_saved">Article saved as .eml</string>
+    <string name="art_eml_failed">Could not write the file</string>
+    <!-- 1.4.9 (par. J3-C1): "keep this" - the folder is chosen once. -->
+    <string name="art_conserva">Keep this message</string>
+    <string name="art_export_chooser">Share article</string>
+    <string name="art_copy_link">Copy link (usenet.id)</string>
+    <string name="art_show_in_list">Show in the list</string>
+    <string name="art_copy_msgid">Copy Message-ID</string>
+    <string name="art_copy_done">Copied to clipboard</string>
+    <!-- 1.5 / 158: voce «Cita» nel menu di selezione del messaggio (ui/CitaSelezione.kt) -->
+    <string name="sel_cita">Quote</string>
+    <string name="sel_cita_rispondi">Quote and reply</string>
+    <string name="sel_cita_fatto">Quote copied to the clipboard</string>
+    <string name="cmp_paste_cd">Paste</string>
+    <string name="cmp_paste_empty">The clipboard is empty: there is nothing to paste.</string>
+    <string name="rn_v143_title">What\'s new in 1.4.3</string>
+    <string name="rn_v148_title">What\'s new in 1.4.8</string>
+    <string name="rn_v148_l1">The Apply now command, on the filters screen, now works for rules that ADD as well. A Highlight rule, or a score typed by hand in advanced mode, used to apply only to messages arriving afterwards: nothing happened to the ones already downloaded. Reported by Cercaparole on Usenet. The cause was not a filter evaluating the wrong way, but the fact that the score was only ever saved when it served to hide something — and in NeReO highlighted is not a flag of its own, it is the score that the thread list reads in order to colour the row. The engine was computing the right answer and the answer was being thrown away. The summary shown at the end therefore has a third figure, the messages whose score was updated, next to deleted and hidden.</string>
+    <string name="rn_v148_l2">A stated limit, for the half that is missing. A Follow thread rule applied to already downloaded messages now sets the score, so the row is coloured, but it does not yet grant the star of followed threads; and the extend to replies box still hides branches whatever the rule\'s action is, even when that action is follow. These are writes that touch many rows of the database and they are tested one at a time: they arrive in the next version. Messages already hidden and threads you follow are not touched, as before.</string>
+    <string name="rn_v148_l3">From the search results, the «Show in the list» target now takes you back to the thread even when the message is a REPLY and not the first post. In the grouped-threads view it only worked on first posts; the tree and sequential views were already fine. It was not a difference between views: in the grouped view a closed thread is a single row, so a reply needs the thread to be opened first, and that step was being skipped when the message list had not yet arrived from the database. Reported by BIG Umberto.</string>
+    <string name="rn_v148_l4">In the search, the underscore and the percent sign now search for themselves. They were database wildcards: searching for _114 meant «any single character, then 114», and the results included messages with no underscore in them at all. One giveaway: those rows showed no yellow highlight, because the subject did not really contain what you had typed. Reported by BIG Umberto. Note: the search looks at subject, author and the body of downloaded messages, so a result with no yellow in its subject may have matched inside the text.</string>
+    <string name="rn_v148_l5">After «Show in the list», the back arrow no longer retraces the whole way. The list used to open ON TOP of the message you came from, so going back made that message reappear before you got where you wanted. The message now steps aside and the arrow takes you back to the search results, from which you can jump to the next one. Reported by BIG Umberto.</string>
+    <string name="flw_section">Layout of the messages you send</string>
+    <string name="flw_switch">Use Format=Flowed (RFC 3676)</string>
+    <string name="flw_note">Long paragraphs are broken with the «soft» break of RFC 3676 instead of a hard line break, and the message says so. Readers whose program knows this format see the paragraph re-joined to the width of their own screen, even on a narrow phone; readers whose program does not see lines wrapped at 72 columns, as now. The signature is left alone.</string>
+    <string name="flw_note2">Off by default because it is the only setting that changes what leaves NeReO and lands on other people’s screens: a published message cannot be withdrawn. Switch it on, send a couple of test messages to a test group and look at how they arrive, before using it for real ones.</string>
+    <string name="rn_v148_l6">Maintenance now has a setting to lay out the messages you send in Format=Flowed (RFC 3676): long paragraphs leave with the «soft» break the standard prescribes instead of a hard wrap at 72 columns, so readers on a narrow screen see them re-joined rather than as a staircase. It is OFF by default, and it is the only setting that changes what leaves NeReO: a published message cannot be withdrawn, so it is worth trying in a test group before leaving it on. NeReO has been able to READ this format since 1.4.6, and it only declares it when there is actually something to re-join — announcing a format and then not using it leaves the reader worse off than before.</string>
+    <string name="rn_v147_title">What\'s new in 1.4.7</string>
+    <string name="rn_v147_l1">The tree indentation and its vertical rails now come from one place, and the rails appear in all three views: the message list on the phone, the conversation tree and the panel layout. They used to be in the panel layout only. Dave Royal asked whether that was by design: it was not. The same indentation formula was written in three different files and only one of them also drew the rails, so the difference had simply never been decided by anyone. The three views now share the same geometry as well, not just the same code.</string>
+    <string name="rn_v147_l2">That screen is now called the thread tree, in both languages. It used to be called the conversation tree while the rest of the app says thread everywhere, and the screen even contradicted itself: its title said conversation and its error message said thread. Dave Royal pointed out that conversation is not a Usenet word. He is right, and more than as a matter of style: a conversation is a group of messages estimated from subject lines, which is what mail clients do; a thread is a graph of declared references, which is what NeReO actually builds.</string>
+    <string name="rn_v147_l3">Appearance now has a switch for showing unread messages only. The setting always existed and shipped switched on, but it could be changed only from the envelope icon above a list, and nowhere in Settings. Jeff, on his first day with NeReO, looked where the setting ought to be, did not find it and concluded that the app was deleting the messages he had read. Nothing was ever deleted: the switch simply was not where anyone would look for it. Changing it in either place now moves the other.</string>
+    <string name="rn_v147_l4">Re-downloading a group from the server can now be started from the newsgroup list too, by holding a group pressed. It was only available from the menu inside a group, while everything else of that family — download bodies, unsubscribe, refresh all groups of this server — already lived in the newsgroup list. Jeff looked there first and apologised for not finding it; the command was the thing out of place, not the place he looked.</string>
+    <string name="rn_v147_l5">The re-download dialog now says how many messages will actually come back. Re-downloading does not restore: it fetches again as many headers as your sync settings allow, and anything older that you had locally is lost for good. A group with 415 messages came back with 298, because the setting was 300. The dialog warned about read state, flags and bodies, but not about ending up with fewer messages than before — and the line suggesting it as a remedy for messages lost to automatic cleanup pointed the other way.</string>
+    <string name="rn_v147_l6">The newsgroup list remembers where you were. Scrolling down to look for groups with new messages, opening one and coming back used to put you at the top again, which with dozens of groups across two servers meant scrolling all the way down each time. The message list has had this since an earlier tester asked for it; the newsgroup list never got it. Reported by Jeff.</string>
+    <string name="rn_v146_title">What\'s new in 1.4.6</string>
+    <string name="rn_v146_l1">The writing screen now names the group the message will actually go to. When the author of an article had asked for followups in a different group and named only one, the header of the writing screen still showed the group you were reading: it said “Group: it.test” one line above the notice telling you the reply would leave for uk.test. Until Followup-To was honoured those two values were always the same thing, and the line that displayed them had never needed to tell them apart. Both layouts had it, so the choice has been extracted into a single place instead of being corrected twice. Found by Dave Royal, with a documented test.</string>
+    <string name="rn_v146_l2">In the panel layout the groups you pick in the crosspost selector are no longer discarded. Choosing the destination by hand and then sending could still deliver the message where the article’s Followup-To header asked, and not where you had chosen: the writing pane received the list of groups but not the fact that the list was YOUR decision, so the header kept winning. The rule that a human choice is not overridden by a header was written down and applied in the paged layout, and was missing in the panel one, where the dialog opens somewhere else. Found by Dave Royal, with a documented test.</string>
+    <string name="rn_v146_l3">In the panel layout on a narrow pane, the subject and the author line could collapse into a column of single letters. In a row of controls the toolbar is measured first and takes what it asks for, while the text is given whatever is left — and on a pane narrower than the toolbar, what was left was nothing. A text with no width does not disappear: it wraps after every character. The point was never that the toolbar is long; it is that the one thing you have to be able to READ was always the one that paid. Below a certain width the toolbar now moves under the header instead of competing with it: nothing is squeezed and nothing is cut off. Above that width everything looks exactly as before. Found by Marco on the setup no tester has — the panel layout on a phone held sideways, while the testers who use panels have a TV box and tablets, which are wide. The toolbar itself now wraps as well, instead of having its last icon cut off — and that icon was the menu button, the way to reach everything else.</string>
+    <string name="rn_v146_l4">The panel layout gains the navigation commands that until now existed only in the page layout: previous and next message, first unread, previous and next discussion, start and end of the message, and «reload». Until yesterday, reaching the next message in the panel layout meant scrolling the list and tapping — and with a remote control that scrolling is the hard part of the day. The new entries start out in the ⋮ menu, so that nobody who has already arranged their toolbar finds it changed underneath them: two taps in the toolbar editor move them in among the icons. A command that cannot be used in a given pane — «start of message» in the continuous view, where the messages all scroll together — is shown greyed out rather than doing nothing.</string>
+    <string name="rn_v146_l5">Replying to a message whose author asked for the discussion to continue elsewhere (the Followup-To header) now works in the hard cases too. The group selector starts from the groups the author named rather than from the group you are reading, and it lists them even if you are not subscribed: someone else chose them, so you should not have to subscribe in order to reply where you were asked to. A destination such as «uk.test only», which simply could not be expressed before, is now what you get by confirming without adding anything. And opening the selector just to LOOK no longer throws the author\'s request away: that was the worst case, because the act of checking destroyed the very thing being checked. Finally, the notice at the top of the compose screen and the line saying where the message will go now read the same value: before, they could contradict each other one line apart. Reported by Dave Royal, with tests 9A and 9B.</string>
+    <string name="rn_v146_l6">NeReO now reads Format=Flowed (RFC 3676), the way almost every modern newsreader states where a paragraph really ends. Until yesterday NeReO guessed: it estimated the width the message had been laid out at and joined the lines that looked like they belonged together. It worked nearly always, and «always» and «nearly always» are two different things. Now, when the sender declares it, nothing is estimated: the lines that continue were marked one by one by the person who wrote them, and we read those marks. For messages that declare nothing, nothing changes — the old heuristic stays. You will notice it on nested quotations, where guessing was hardest, and on signatures: the separator ends with a space, and a trailing space in this format means «continues» — so a signature could glue itself to the last paragraph. The standard provides for that exception, and now so does NeReO.</string>
+    <string name="rn_v146_l7">From a message there is now a way to see WHERE it lives: «Show in the list» opens the group list, expands the discussion holding it and highlights it. It comes from BIG Umberto: «search works, but it opens the post, it does not show you where it is» — and he was right to the letter, because from a result you landed inside the message with no idea which discussion it belonged to or what surrounded it. The highlight clears on the first tap: it has already done its job. It is a toolbar action like the others, so you can move it into the menu or elsewhere from the toolbar editor. It is absent from the panel layout, and not by oversight: there the list is already next to the message.</string>
+    <string name="rn_v145_title">What\'s new in 1.4.5</string>
+    <string name="rn_v145_l1">“Mark all as read” is back in the toolbar of the panel layout, where it costs one tap again instead of two. It was removed in 1.4.1 for a good reason — it sat right next to the unread filter and got pressed by accident — but the paged layout got a better cure for the same problem: there the icon was MOVED away from the filter rather than taken out. The panel layout now gets that same cure, in the same position, and the menu entry is gone so there is one way in each layout, and it is the same way. “Mark all as unread” stays in the menu: that one really is rare. Reported, twice and about two different things, by Dave Royal.</string>
+    <string name="rn_v145_l2">“Always reply to all groups” now works on the phone too. The setting has existed since 1.2.7, but it was only ever read when the crosspost dialog opened — and in the paged layout replying goes straight to the writing screen without that dialog. So the setting was on and did nothing: the writing screen showed only the group you had been reading, until you opened the group selector by hand. A reply to a crossposted article now starts with all of the original’s groups, up to the cap, exactly as the panel layout already did. If the author asked for followups elsewhere, that request still wins. Reported by Dave Royal.</string>
+    <string name="rn_v145_l3">An article can be saved as an .eml file, which an email client opens as a message instead of a wall of pasted text. It is the other half of a request from 1.3.6: back then the answer was sharing the raw article to another app, which covers reading it elsewhere but not keeping it. The file is written with its encoding headers rewritten to match what is actually inside it — NeReO stores message bodies already decoded, so copying the original Content-Type across would have made the file lie about itself and every accented character would have come out wrong. It is a bar action like the others, so you can move it into the menu or remove it in Appearance → Customise bars. Requested by Adam H. Kerman.</string>
+    <string name="rn_v145_l4">The quoting introduction can now carry the subject of the message you are quoting, with %%subject%% (or %%oggetto%%). It joins the author, email, date, time, group and Message-ID placeholders that were already there, and it works in ordinary replies too, not only when quoting across groups. Requested by Ammammata.</string>
+    <string name="rn_v145_l5">Following a thread now follows it forward, not just backwards. Until now “watch this thread” marked the messages that existed at the moment you tapped it: replies arriving afterwards were born unwatched, which is the opposite of what you asked for. It was not only the missing star — the watched mark also keeps a message safe from filters and from automatic clean-up, so the newer messages of a thread you were following were LESS protected than the old ones, and a followed thread could quietly hollow out from the middle. New replies now inherit the mark from any watched ancestor, at any depth, so it survives even when a message in the middle of the chain was never downloaded. One note: this applies to messages arriving from now on. Replies already in your archive keep whatever mark they had — to bring an old thread up to date, unwatch it and watch it again. Reported by BIG Umberto, who called it “only cosmetic”: it was not, and finding out why took his report plus a screenshot.</string>
+    <string name="rn_v145_l6">A thank-you to Dave Royal, and it is not a formality. Since 1.4 most of what has been fixed in NeReO started with one of his reports: the Followup-To handling, the refresh menu, the three-dot menus that opened in the wrong place, “mark all as read” in the panel layout, replies to crossposts on the phone. What makes them worth so much is not the number. He tells us where the defect is NOT, which saves half an investigation; he corrects us when we misread him instead of letting it slide; he accepts a trade-off and says which one; he sends designs, not just complaints; and he keeps prepared test cases on uk.test and it.test so the next fix can be checked against the same ground. Several of the entries in these notes exist because he went looking.</string>
+    <string name="rn_v144_title">What\'s new in 1.4.4</string>
+    <string name="rn_v144_l1">The Paste button is now in the writing panel of the PANEL layout too, where it had never been. Everything done for that button — it was asked for in 1.3.3, made always visible in 1.4.1, and taught in build 106 to read the clipboard on the click rather than while the bar is being drawn — had been done to the paged view only, because the panel layout had no such button at all to fix. Reported over and over by the person who had asked for it in the first place; he was right every time.</string>
+    <string name="rn_v144_l2">«Withdraw from the server (cancel)» is now in the context menu of the panel layout as well. It had been left out on purpose in 1.4.2: it carries three dialogs — confirmation, waiting, per-server outcome — and copying them would have been the very defect this release is about. They have been moved into one shared place instead, so both views now run the same code. It still appears only on your own messages, and it still sends a control message onto Usenet, so the confirmation still says plainly what the server may or may not do with it.</string>
+    <string name="rn_v144_l3">With a single server configured, the refresh icon no longer asks which servers you want to refresh — it just refreshes. The menu still appears when you have more than one, where the choice means something. Until now it opened regardless, offering two entries that did the same thing and a dialog where you ticked the one server you own: not a choice, a formality.</string>
+    <string name="rn_v144_l4">The three-dot menu now opens underneath the icon you tapped, on the thread list of the paged layout too. There it appeared at the far left edge of the screen — on a tablet, a hand’s width away from the icon. The cause: those actions sit in a full-width row of their own, and a menu with nothing around it hangs off its parent, so it was measuring itself against the whole row. In the narrow columns of the panel layout the same defect was invisible, which is why it went unreported for so long. Reported by Dave Royal; a census found twelve icon-and-menu pairs and eight without an anchor of their own: all of them have one now, not just the one he found.</string>
+    <string name="rn_v144_l5">Groups with the same name on different servers can be told apart again. In the panel layout the group column was one flat list that never said which server a group came from — and the list was not even sorted by server, so groups from two servers came out interleaved and two identical names could land side by side. It now has a heading per server, like the paged view always had. And in both layouts the bar above the thread list now names the server under the group name: until now, once you were inside a group, nothing told you which of the two you were reading. With a single server configured nothing changes, because there is nothing to tell apart. Two smaller things came with it: the heading now shows the name you gave the server rather than its host, which is the only one that differs when you have two accounts on the same provider; and groups left behind by a deleted server no longer vanish from the list — they gather at the end under “?”, where the database cleanup can find them. Reported by Roxy.</string>
+    <string name="rn_v143_l1">Lists no longer go deaf. It could happen — almost always on a large group, and right after a refresh — that the open list stopped showing new messages: the group badge counted them, the database held them, but the list stayed put until you left the group and came back in. Underneath there was a database read that failed, and a defence written badly around it: instead of starting to listen again, the list shut down for good. It now repairs itself within an instant. Thanks to whoever turned the diagnostic log on and sent it in — without that, this one would still be a suspicion instead of a fix.</string>
+    <string name="rn_v143_l2">The Cancel button of the LISTGROUP diagnostic works. It was disabled for as long as the operation was running, and on a group with a hundred and seventy thousand articles that wait is over a minute and a half: the only way out was to force-close the app. It now really interrupts, and whatever had already been recorded stays in the log.</string>
+    <string name="rn_v143_l3">The rows orphaned by a server deleted with 1.4.1 or earlier can finally be removed. 1.4.2 only counted them, at the end of the Database diagnostics report: the measurement has arrived — three groups and 99,906 catalogue rows with no server on one tester’s phone, in a 36 MB database — and with a real number in front of it the cleanup stopped being an idea of mine. The button is right under the report, and before deleting anything it tells you how many rows are going, item by item.</string>
+    <string name="rn_v142_title">What\'s new in 1.4.2</string>
+    <string name="rn_v142_l1">“Reload message” now really reloads. In 1.4 and 1.4.1 that button on the reading bar DELETED the article instead of fetching it again: it vanished from the list along with its read state, its “watched” flag and everything else, and it did not come back even on a group refresh, because a refresh resumes from the last article already downloaded. Now only the message text is cleared and asked for again: the row stays where it is, with everything that belongs to it. Reported on the group with a precise technical analysis attached — that detail saved the whole diagnosis.</string>
+    <string name="rn_v142_l2">Your own posts come back as unread like any other message. 1.4.1 made them arrive already read: it seemed convenient and it is not, because after posting you want to find your own message again, to see how it came out and where it landed in the thread — and with the “unread only” filter on it simply was not there. No other reader behaves like this: not PAN, not Thunderbird, not Piao Hong, not MesNews. The rule was also wider than it looked: on the first sync of a group it marked your whole history there as read.</string>
+    <string name="rn_v142_l3">“Mark all read” is no longer hit by mistake. A rare action with consequences was sitting next to a frequent, harmless one, the unread filter. On a phone it swaps places with “Refresh”; in the panel view, where the toolbar is denser and the same action was already in the three-dot menu, the toolbar icon has been removed — it was a duplicate, and dropping it makes the accidental tap impossible rather than merely less likely. The two layouts now show the icons in the same order.</string>
+    <string name="rn_v142_l4">Crossposting now works when you start a NEW thread from the panel view too. The group picker only appeared when replying to an already-crossposted message: starting a thread from scratch it was missing, while the paged view always offers it. Same shape of defect fixed in 1.4 for replies, left uncovered on the other branch.</string>
+    <string name="rn_v142_l5">“Supersede” now also appears in the context menu of the PANEL view, where it had never been: it only existed in the paged view. As before it shows only on your own messages. “Withdraw from the server (cancel)” stays in the paged view for now — that part has to be reorganised first so there are not two copies of it, and it sends control messages onto the network: it deserves a test round of its own.</string>
+    <string name="rn_v142_l6">Deleting a server now really takes away what belongs to it, and asks you first, telling you how many groups and how many messages will go. Up to 1.4.1 a single tap on the bin did it with no questions, and only the server row disappeared: its groups and all its messages stayed in the database forever, invisible and unreachable, taking up space and inflating the diagnostics figures. If that already happened to you, the Database diagnostics in Maintenance now says so: an “ORFANI” block with the counts appears at the end of the report. For now it only counts them; removing them is the next step, and I want to know what numbers we are talking about first.</string>
+    <string name="rn_v142_l7">Deleting a whole thread now brings the group’s unread badge down at once. It used to stay at the old number until the next refresh: it was the only deletion that forgot to recompute it.</string>
+    <string name="rn_v141_title">Version 1.4.1</string>
+    <string name="rn_v141_l1">&quot;Read follows the Message-ID&quot; now actually works. It was announced in 1.4 and it did not work for anyone: the rule was wired to the &quot;mark as read&quot; menu actions only, and not to the one thing everybody does, which is reading a message. Every place that marks a message read now goes through a single point, so a crosspost you read in one group counts as read in the others however you read it. The same applies in reverse: &quot;mark all unread&quot; propagates too, so it can bring messages back to unread in other groups. Reported by Dave Royal, confirmed by Marco.</string>
+    <string name="rn_v141_l2">Your own posts no longer come back as unread. After a successful send your article arrives from the server like any other and was showing up in red: you had just written it. In the same pass, the test for &quot;is this mine?&quot; has been tightened in the three places left behind by the 1.2.12 security audit: it now extracts the address from the From line and compares it, instead of looking for it anywhere in that line. Until now a From line carrying your address inside the display name was enough to mark a stranger\'s thread as yours. Counts computed during earlier syncs stay as they were until that group is synced again.</string>
+    <string name="rn_v141_l3">Replying no longer loses your place. You replied to the 23rd message of a thread, sent or cancelled, and came back to the first post: the app was not keeping which message you were on. Reported and confirmed by BIG Umberto with a proper A/B test.</string>
+    <string name="rn_v141_l4">Three fixes in the lists, all from Dave Royal. The thread popup now follows &quot;show filtered posts&quot; like the group list does, which also fixes the false &quot;thread cannot be reconstructed&quot; when you opened it from a filtered post, and next/previous doing nothing on one. In an expanded thread the first post now shows its own read state instead of the whole thread\'s, so you no longer see two red lines when only one message is unread. And the count after an update says how many of the new messages were filtered, instead of announcing arrivals you will never see.</string>
+    <string name="rn_v141_l5">The paste button in the compose screen is always there, and it now works where it did not. Two things were wrong. It only appeared when the clipboard already had text, so Roxy, who asked for that button in 1.3.3, spent weeks looking for it and concluded it did not exist. And NeReO read the clipboard while drawing the screen rather than when you press the button: since Android 10 an app may only READ the clipboard while it has input focus, though it may always write to it. On a phone you never saw this, because the on-screen keyboard appearing redraws the bar and the second read succeeds. On a device with no on-screen keyboard that second read never happens, and the button stayed away for good. The clipboard is now read on the press, and read the tolerant way every other app uses, so text copied as HTML or as a link arrives too. Diagnosed from two measurements by Roxy: copying from NeReO into another app always worked, the other way round never did.</string>
+    <string name="rn_v141_l6">Already in 1.4, but we never wrote it down: when a server asks for a password and none is saved for it, NeReO says so clearly instead of sending an empty one.</string>
+    <string name="rn_v141_l7">Two diagnostic lines for an open report. With the NNTP log on, NeReO records how many rows the message list receives and whether a read from the database fails, because when it does that list stops updating until you leave the group and come back. The symptom was measured by BIG Umberto, the cause is not settled, and these two lines exist to settle it. With the log off nothing is recorded.</string>
+    <string name="rn_v141_l8">Custom headers that NeReO reserves for itself are now named BEFORE you send. Some headers cannot be overridden — the vital ones (From, Subject…) and the control ones (Followup-To, Control, Sender, Expires…), which exist so that text pasted from elsewhere cannot turn a message into a control message by accident. They were dropped in silence: you wrote a valid line, sent, and it simply was not there. Now the editor lists them while you type, and the same rule feeds both the warning and the sending code, so the two cannot drift apart.</string>
+    <string name="rn_v141_l9">“Mark all read” and “Refresh” swap places in the message list toolbar. A rare action with consequences was sitting next to a frequent, harmless one (the unread filter), and was being hit by mistake. Moving it into the menu would have cost a tap a day to whoever uses it every evening; swapping the two costs nobody anything.</string>
+    <string name="msg_no_new_filtered">No new messages. (%d filtered)</string>
+    <string name="msg_new_articles_filtered">%1$d new articles (%2$d filtered)</string>
+    <string name="tl_my_post_with_replies">A message of mine is in this thread, with %d replies</string>
+    <string name="rn_v14_title">Version 1.4</string>
+    <string name="rn_v14_l1">STARTTLS now follows both halves of RFC 4642 instead of one. If a server refuses STARTTLS before the handshake, NeReO may carry on unencrypted, as the standard allows, and that is unchanged. But if the server accepts (382) and the handshake then fails, RFC 4642 says both sides SHOULD close the connection - and until now NeReO carried on in cleartext instead. That fallback was probably broken anyway, because the TLS ClientHello had already been written to the socket, but the point is that it should never have been attempted. Such a connection now fails with an explicit message rather than quietly continuing unencrypted.</string>
+    <string name="rn_v14_l2">The database has been updated (schema version 12). Your servers, groups, articles, filters, identities and drafts are migrated in place and nothing is deleted - and if NeReO ever meets a version it cannot migrate it makes a physical copy of the database first and tells you. The new structures are not used by anything yet: they are there for the trust-and-certificates work that follows in this same release. As always before a version that touches the database, a backup from Maintenance costs nothing.</string>
+    <string name="rn_v14_l3">A restore could give a server a user name it never had. Servers with no account were written to the backup correctly, as an empty value, but read back as the literal word null - four characters, which NeReO then dutifully tried to log in with, on servers that want no login at all. The server answered 381 Enter password, NeReO sent an empty password, and the server replied with a syntax error that meant nothing to anyone. The defect was in a single missing check, and had been there since at least version 1.2.8. Restores are now correct, and any server already carrying that fake user name is repaired the next time you restore a backup - the message tells you how many. On top of that, NeReO no longer sends an empty password when a server asks for one: it now says plainly that no password is saved for that server, and suggests clearing the user name if the server does not need an account.</string>
+    <string name="rn_v14_l4">Maintenance has a new Database diagnostics panel. It counts the rows of every table and shows the schema version and the space used, with a Copy button. It exists because a database migration that OPENS is not the same as a migration that WORKED: a migration can be formally correct and still have emptied a table, and the app would start perfectly - it is your archive that would be missing. Take the numbers before an update and again after, and if they match, nothing was lost. It is also the quickest thing to attach to a bug report, so nobody has to describe their archive in words. Nothing is computed until you press the button.</string>
+    <string name="rn_v14_l5">Replying to a crosspost now shows where the message is actually going. Until now the compose screen showed only the group you were reading, even when the reply was set to go out on three - so there was no way to check before pressing Send. Two related faults went with it: reopening the group selector to CHECK your choice silently reset it to the default, which is the worst possible case because the act of checking destroyed what was being checked; and in the panel layout the crosspost button did not exist at all, so changing the groups meant abandoning the reply and starting over. All three reported by Dave Royal.</string>
+    <string name="rn_v14_l6">"All messages" now works on high-retention servers. Asking for the whole history of a very large group made NeReO request the entire article range in one go, and the reply could exceed the 64 MB ceiling that protects the app from running out of memory: the result was an error and nothing downloaded at all. The overview is now fetched in slices, each one saved before the next is asked for. The ceiling stays exactly where it was - raising it would have moved the wall, not removed it - and there are two bonuses: a sync interrupted halfway now resumes instead of starting over, and memory use no longer depends on how big the group is. Reported by Bingo3331.</string>
+    <string name="rn_v14_l7">TLS trust is now something you GRANT, not something you are handed. The normal path is unchanged - Android\'s certificate check plus the host name check, exactly as before. What changes is what happens when that fails: instead of a dead end, NeReO writes down the identity the server showed (issuer, subject, key fingerprint, validity dates) and marks it SEEN, NOT TRUSTED. The connection still fails. You approve it later, calmly, from Servers &gt; TLS identity, with the values in front of you - never in a dialog on top of a running sync, because a security warning that interrupts you is the one you click without reading. What gets pinned is the SHA-256 of the leaf certificate\'s public key, never an intermediate: pinning an intermediate would mean trusting everything that authority signs in the future, which is close to the opposite of the point. From then on that key is compared on EVERY connection, and if it ever changes NeReO stops and shows you both - with no &quot;accept the new one&quot; button in the warning. The friction is the feature. There is also a per-server exception for an EXPIRED certificate, which relaxes the dates and nothing else: chain and host name are still required, and the day the server renews, the exception goes inert on its own.</string>
+    <string name="rn_v14_l8">NeReO now warns you when a server certificate is about to expire. Since the trust work above means NeReO sees the certificate on every connection, the expiry date comes for free - it would have been a waste not to use it. Servers whose certificate expires within 30 days say so next to their name, and the TLS identity screen says it too. This exists because of a real case: the administrator of one of the servers we use renews by hand, and a Let\'s Encrypt certificate lives 90 days - so that situation is not closed, it is cyclical. A warning in time turns it into a message to the administrator instead of a morning without news.</string>
+    <string name="rn_v14_l9">Accented text no longer breaks in articles whose character set is missing or wrongly declared. NeReO used to take the declaration at face value; measured on seven real cases, five lost the text. The worst was not the missing declaration but the WRONG one - there you got no error markers at all, just plausible-looking gibberish, which NeReO then re-published in impeccable UTF-8. The rule now has three steps: bytes that are strictly valid UTF-8 with at least one multi-byte sequence ARE UTF-8 whatever the declaration says; otherwise the declared set, which keeps Cyrillic and Japanese correct; otherwise the same fallback the headers have always used. Ten cases are checked automatically on every build. Because NeReO stores the DECODED text, this does not repair what is already in your archive - so there is a new &quot;Reload message&quot; action for the article bar (Appearance &gt; Customize bars) that throws the local copy away and fetches it again.</string>
+    <string name="rn_v14_l10">A crossposted message read in one group now counts as read in the others. It is one message, even though NeReO keeps one row per group - and this is what MesNews does. Watched threads and filters already worked this way; read was the odd one out. On by default, with a switch in Maintenance.</string>
+    <string name="rn_v14_l11">NeReO now reads and respects Followup-To. When the author of an article asks for follow-ups to continue in another group, the reply goes THERE - which is what that header means - and the compose screen says so plainly, because redirecting a message without saying it would replace a discourtesy with a surprise. If you open the groups selector and choose yourself, your choice wins: a human decision is not overridden by a header. The special case Followup-To: poster, which asks for private replies, does not block posting - NeReO has no mail of its own - but it warns clearly and offers the author\'s address, to copy or to open in your mail app. This was the one GNKSA criterion NeReO did not meet.</string>
+    <string name="rn_v14_l12">Each group can have its own quote intro. It REPLACES the one from your identity rather than joining the random draw, because the point is a deliberate choice - typically writing it in the language of the group - and an Italian intro drawn at random on an English group is the defect, not the feature. Set it from the group menu, in the same dialog as message retention; leave it empty to go back to your identity\'s. The same placeholders work.</string>
+    <string name="rn_v137_title">Version 1.3.7</string>
+    <string name="rn_v137_l1">Restoring a backup no longer duplicates your filters and identities. Reported by Dave Royal, who noticed that a restore added his filters instead of replacing them; checking the code showed identities had the same problem. A restore is now idempotent: restoring the same file twice leaves exactly the same state. Filters are matched on name, field, match type, pattern and group scope; identities on their nickname.</string>
+    <string name="rn_v137_l2">Restoring now asks how: Merge or Replace. Merge keeps what you have and updates the rest; Replace deletes your current filters and identities first. Neither touches servers, subscriptions or downloaded articles - deleting a server would take its groups and messages with it, and a restore must never be able to destroy months of downloaded articles by mistake.</string>
+    <string name="rn_v137_l3">An encrypted backup that decrypted correctly but failed to import used to report "wrong password", sending you to look for the wrong cause. The two steps are now separate and each reports its own error.</string>
+    <string name="rn_v137_l4">When a long line is wrapped on send, the broken line no longer ends with a trailing space. A trailing space is the soft-break marker of Format=Flowed (RFC 3676), so a reader that understands it would have joined the line back to the next one - undoing the very line break NeReO had just made. It only happened when the break fell on a double space, which is common enough after a full stop. Double spaces inside a line are left exactly as you typed them, and the signature delimiter keeps its required trailing space. Question raised by Adam H. Kerman.</string>
+    <string name="rn_v137_l5">"Unreadable file" now tells you why. When a backup cannot be opened, the message used to be those two words and nothing else: a missing file, a permission refused and an empty stream all looked identical. The technical detail now appears in a dialog with a Copy button, because that is what a bug report needs. Reported by Dave Royal, who repeated the same test six times across two versions and could tell us no more than "unreadable file" - which was all we ever showed him.</string>
+    <string name="rn_v136_title">Version 1.3.6</string>
+    <string name="rn_v136_l1">Long subjects containing accented or non-Latin characters are now encoded correctly. RFC 2047 allows at most 75 characters per encoded word; NeReO produced a single word of any length — an ordinary Italian subject came out at 140 characters. A decoder is entitled to make a mess of that, and what ends up in other people\'s archives cannot be corrected afterwards. The encoding is now split and folded as the standard requires, cutting only between whole characters so that emoji and other multi-byte characters survive intact.</string>
+    <string name="rn_v136_l2">An article whose body is pure ASCII is now declared as such (us-ascii, 7bit) instead of always claiming UTF-8. The check happens after the signature has been added to the body, which is where it has to happen: deciding one step earlier would mean declaring plain ASCII and then posting a signature with an accent in it.</string>
+    <string name="rn_v136_l3">New bar action: Export / share. It hands the article — full headers included — to another app of your choice, so you can archive it or answer the author by e-mail, which NeReO cannot do itself. It replaces a Share action that had quietly disappeared in 1.3.4 along with the old text-selection menu, and that we had wrongly recorded as still being available elsewhere.</string>
+    <string name="rn_v136_l4">Two new bar actions: Copy link (usenet.id) and Copy Message-ID. The first builds a web address that points at the article you are reading — https://usenet.id/ followed by its Message-ID — so you can send someone to that exact post from a chat, an e-mail or a forum. The second puts the Message-ID itself on the clipboard, in its canonical form, which until now could only be obtained by opening the full headers and selecting it by hand. NeReO never contacts usenet.id: it composes the text and copies it, with no connection and no new permission. Requested by ObiWan. Both actions can be moved or hidden from Settings → Customise the bars.</string>
+    <string name="rn_v136_l5">Corrected preset: OVH (news.usenet.ovh) is back on port 119 with STARTTLS, instead of port 563 with implicit TLS. Version 1.3.5 had moved all three account-based servers to 563, but OVH offers no TLS on that port; picking it from the built-in list therefore produced a configuration that could not work. Its administrator enabled STARTTLS on port 119 on 14 September 2026, and that combination has been verified on a real device. Nothing changes for servers you have already configured.</string>
+    <string name="rn_v135_title">Version 1.3.5</string>
+    <string name="rn_v135_l1">Error messages coming from NeReO\'s network layer are now in English for everyone. Until now they were in Italian: a user running the app in English was answered in Italian when his server refused the connection, and reasonably wondered what he had done wrong. Those particular messages sit below the translation system — that part of the app has no access to the translated texts and cannot follow your language — so if a single language has to serve everyone, English is at least the language of Usenet and the app\'s own default.</string>
+    <string name="rn_v135_l2">What this means if you use NeReO in Italian: fewer than ten messages, all of them network errors, now reach you in English while the rest of the app stays in your language. This is a stopgap and not a translation. Making those texts follow the interface language means passing them in from outside that layer, which is a deeper change; it will be done when that part of the code is next opened for other reasons.</string>
+    <string name="rn_v135_l3">A report on Solani exposed a defect worth fixing. The server address was already being cleaned of stray spaces before use; the user name was not. A space picked up from a paste or from a keyboard suggestion was sent to the server, which counted it — and the only feedback was \'authentication failed\'. The user name is now trimmed, exactly as the address already was. The password is deliberately NOT trimmed: it may legitimately begin or end with a space, and the app has no right to change it in silence.</string>
+    <string name="rn_v135_l4">The password field now has a reveal button — asked for by that same user — and a live character count underneath. The count is there because it catches what revealing cannot: a trailing space is invisible even in plain sight. If you know your password is eleven characters and the field says twelve, you have found the problem in one second. And if it really does start or end with a space, the app says so in red instead of correcting it for you.</string>
+    <string name="rn_v135_l5">The NNTP diagnostic log now records the SHAPE of each credential sent — how many characters, whether there are spaces at either end, whether it contains non-ASCII characters — and never the value itself. It is the difference between diagnosing a rejected login from a log and guessing at it across three exchanges of messages.</string>
+    <string name="rn_v135_l6">Choosing a server from the built-in list now fills in port 563 with encryption for the three that require an account (Eternal September, Solani, OVH). Until now the list offered port 119 unencrypted to everyone, including those three — and since NeReO refuses to put a password on an unencrypted connection, the very first attempt always failed with a 483. It was not an edge case: it was the normal path, and whoever picks a server from a list does so precisely in order not to have to choose a port. The two open servers, which need no password, still start on 119. Nothing changes for servers you have already set up.</string>
+    <string name="rn_v135_l7">Two reports, one defect. &quot;Open the first unread&quot; sometimes jumped back to the opening post — already read — even with unread messages waiting; and marking a conversation as read occasionally left it showing. Both came from the same place: NeReO answered the question &quot;which messages belong to this conversation&quot; in three different ways, and only one of them was the threading engine that actually draws the screen. The other two compared text in the References header, and disagreed with the screen whenever the opening post had never been downloaded or a message listed only its direct parent. Now every part of the app asks the threading engine, so a menu can no longer see a different conversation from the one you are looking at.</string>
+    <string name="rn_v135_l8">A note for whoever reported the first one: orphan replies were exactly right. Subject changes were not — NeReO\'s threading engine never looks at the subject, so renaming a message cannot affect grouping.</string>
+    <string name="rn_v135_l9">Signatures may now use blank lines between their lines of text. Four lines of text separated by blank lines used to lose the last two, because the limit counted physical lines; it now counts lines of text, with an overall cap so a signature cannot be padded out with empty space. Worth knowing: classic Usenet netiquette counts four physical lines, blanks included — this is NeReO being lenient, so another newsreader may still trim such a signature.</string>
+    <string name="rn_v134_title">Version 1.3.4</string>
+    <string name="rn_v134_l1">Technical release: not a single line of the app itself changed since 1.3.3. What changed is everything NeReO stands on — the build toolchain (Android Gradle plugin 8.7.3 → 9.3.0, Gradle 8.9 → 9.5.0, Kotlin 2.0.21 → 2.2.10) and, above all, Jetpack Compose, the graphics framework, from 1.7.6 to 1.12: twenty months in one step.</string>
+    <string name="rn_v134_l2">Why it goes out on its own, with nothing else: twenty months of Compose touch rendering, scrolling, text, keyboard and animations — that is the whole app. If something misbehaves after this update, there has to be exactly one suspect. It is the same rule that sent 1.2.14 out alone.</string>
+    <string name="rn_v134_l3">What we are hoping for: Compose 1.12 contains explicit work on mouse-driven text selection and on the selection toolbar. On a device with no touchscreen, driven by a pointer, that toolbar has never appeared — you can select text but nothing offers to copy it. This is the only way to find out whether the problem was already fixed upstream. It is a hope, not a promise: if the toolbar still does not appear, we will at least know that road was not enough.</string>
+    <string name="rn_v134_l4">If you notice anything at all behaving differently from 1.3.3 — text, scrolling, keyboard, animations, anything — please report it, even if it seems trivial. That is precisely what this release is for.</string>
+    <string name="rn_v134_l5">One thing was lost along the way, and it is only fair to say so: selecting text in a message no longer offers "Search the web" and "Share". Those two were added in 1.2.8 at Dave Royal\'s request, by replacing the selection menu with our own. Compose 1.12 no longer goes through that mechanism — the menu is now the platform one, and ours was being ignored in silence. The new API lets an app add items to that menu, but does not tell it which text is selected, so those two actions cannot currently be rebuilt. Copy and Select all are unaffected, and the bar action "Copy the message" is still there.</string>
+    <string name="rn_v133_title">Version 1.3.3</string>
+    <string name="rn_v133_l1">When an encrypted connection fails, NeReO now says WHICH of the two possible problems it is, because the fixes are different. If the certificate is not signed by an authority Android knows, or has expired, the message says so and states plainly that the security option cannot help — until 1.3.2 it suggested that option in every case, sending people to look for a way out that does not exist. If instead the certificate is valid but issued for a different address, the option does work and the message points at it. When the failure matches neither pattern, NeReO says so instead of inventing a diagnosis, and shows the raw error. Reported by Bingo3331 on Paganini.</string>
+    <string name="rn_v133_l2">The security option has been renamed to what it actually does: "Do not check the host name on the certificate". Its old name promised more than it delivered — it never made NeReO accept a self-signed, unknown-authority or expired certificate, and its note now says so explicitly. Nothing changes in behaviour: what was accepted before is accepted now, and what was refused is still refused.</string>
+    <string name="rn_v133_l3">New "Copy the message" action in the reading bar (both on the phone and in the multi-pane reading pane): one click copies the whole message to the clipboard, with no need to select anything first. It is customizable like every other bar action, so you can move it into the ⋮ menu or switch it off. Alongside it, a "Paste" button in the compose screen toolbar. Both come from Roxy, who reads on a device with no touchscreen: there selecting text works, but the floating Copy/Search/Share bar does not appear — it belongs to the touch path — and on Android the right button is BACK, so there is no context menu to fall back on either.</string>
+    <string name="rn_v133_l4">If you have a keyboard attached, Ctrl+C and Ctrl+V already work inside NeReO, including where the floating bar does not appear: to copy PART of a message that remains the quickest route. The "Copy the message" action copies the WHOLE text instead — for a fragment you still have to select it.</string>
+    <string name="rn_v132b_title">Version 1.3.2</string>
+    <string name="rn_v132b_l1">New optional setting (Appearance → "Tap the thread to open the first unread"): on the phone, tapping the head of a thread goes straight to the first message you have not read in that thread, instead of the first post. It is the phone counterpart of what 1.3.1 brought to the multi-pane layout, and it works in the tree view too — where until now nothing of the sort was available. Off by default: if you do not turn it on, nothing changes.</string>
+    <string name="rn_v132b_l2">The declared User-Agent now follows RFC 5536 §3.2.13: NeReO/1.3.2 (Android), with the version attached by a slash. Until 1.3.1 it read "NeReO 1.3.1 (Android)", with a space — not illegal, but it said something else: the grammar reads that as TWO products, one called "NeReO" and one called "1.3.1", so anyone collecting newsreader statistics saw a piece of software that does not exist. Identities still carrying one of our old defaults are updated once, automatically; a User-Agent you wrote yourself is never touched, an empty one included. Reported by Dave Royal.</string>
+    <string name="rn_v132b_l3">Fixed: if the newest article in a group was cancelled, every update of that group reported "423 No articles in …" and downloaded nothing until somebody posted again. 423 is not an error — RFC 3977 §8.3 defines it as "no articles in that range", and it is the correct answer once the last article is gone while the group\'s high water mark stays where it was. NeReO treated it as fatal: the error surfaced, the shared connection was torn down and reopened for the remaining groups, and the bookmark never moved, so the next update asked for the same dead range again. Found by BIG Umberto with a deliberate test on alt.test.a, reproduced on three different servers.</string>
+    <string name="rn_v131b_title">Version 1.3.1</string>
+    <string name="rn_v131b_l1">In the multi-pane layout, with "Tap the first post to expand" enabled, tapping a thread now expands it AND opens the first unread message of that thread in the reading pane (or the first post, if you have read them all). Before it only expanded, which on a device without a touchscreen — a TV box with a remote — made the first post of any thread with replies impossible to open at all, since the long-press menu is not available there. Reported by Roxy.</string>
+    <string name="rn_v131b_l2">Still in the multi-pane layout, every row in the thread list now carries a "⋮" button that opens its context menu with a single click. The long press keeps working exactly as before: this adds a way in, it does not replace one. It comes from the same report: on a device driven by a pointer, holding a button down is technically possible but so slow that — in the reporter\'s words — "it would put you off using it".</string>
+    <string name="rn_v131b_l3">The reading pane bar in the multi-pane layout is now customizable too, like the phone one (Appearance → Customize reading bar). What you switch off moves into the ⋮ menu rather than disappearing. It ships with ROT13 and Headers already in the menu: on a tablet held upright the pane is narrow, and five buttons left almost no room for the subject line. Suggested by Dave Royal, and asked before by Roxy.</string>
+    <string name="rn_v130_title">Version 1.3</string>
+    <string name="rn_v130_l1">Fixed a gap in the previous version: "Send the password only when the server asks" was not applied when publishing a message or downloading the group list — those two still authenticated immediately. The four places that opened a connection have been merged into one, so the rule now holds everywhere by construction.</string>
+    <string name="rn_v130_l2">This is the stable release that gathers the whole 1.2.12–1.2.17 line: the security hardening pass, TLS hostname verification, withdraw and supersede with per-server outcome, and everything that came out of field testing on three providers.</string>
+    <string name="rn_v1217_title">Version 1.2.17</string>
+    <string name="rn_v1217_l1">New "Send the password only when the server asks" option (Maintenance → Security), off by default. On a server that cannot encrypt the connection, the password then crosses the network only when you publish something, instead of at every single sync.</string>
+    <string name="rn_v1217_l2">The server list now shows, under any server whose last connection was not encrypted, that the password travels in clear. It is based on what actually happened, not on the settings: a server can be configured for encryption, announce it, and still fail to provide it.</string>
+    <string name="rn_v1217_l3">The diagnostic log no longer counts expected replies as errors — a successful withdrawal used to end its session with "1 error".</string>
+    <string name="rn_v1216_title">Version 1.2.16</string>
+    <string name="rn_v1216_l1">After withdrawing a message, NeReO now checks every server you have configured, not just the one you posted to, and shows the outcome for each — the answer you would otherwise have to go looking for by hand on another machine.</string>
+    <string name="rn_v1216_l2">The confirmation dialog now says plainly what a withdrawal can and cannot do: in practice it acts only on the server you posted to. To make a correction visible everywhere, "Supersede" is the tool that works.</string>
+    <string name="rn_v1215_title">Version 1.2.15</string>
+    <string name="rn_v1215_l1">After withdrawing a message (cancel), NeReO now asks the server whether it is really gone and tells you the answer, instead of only saying the request was sent. Some servers ignore cancel requests entirely: you now find out straight away.</string>
+    <string name="rn_v1215_l2">A message that no longer exists on the server (expired, or withdrawn by its author) is reported as such, with a button to remove the leftover local copy — instead of a bare network error.</string>
+    <string name="rn_v1215_l3">When a message replaces another one (supersede), the replaced message is now hidden here too, provided both come from the same address. It is hidden, not deleted: "Show hidden" brings it back.</string>
+    <string name="rn_v1215_l4">Fixed a needless reconnection: a plain "article not found" reply from the server was being treated as a broken connection, costing an extra round trip. Servers reached by IP address no longer produce an incomprehensible error, and changing the security switches now closes any connection opened under the previous settings.</string>
+    <string name="rn_v1214_title">Version 1.2.14</string>
+    <string name="rn_v1214_l1">Secure connections (TLS) now also check that the certificate presented by the server really belongs to the address you are connecting to. Until now the traffic was encrypted but nobody verified who was on the other end, so a hostile network could have interposed itself. If a server has a badly configured certificate the connection now fails with an explicit message: to connect anyway, turn on "Allow unverifiable certificates" in Maintenance → Security, which is off by default and disables the check for every server.</string>
+    <string name="rn_v1213_title">Version 1.2.13</string>
+    <string name="rn_v1213_l1">Fixed a network error that could appear in place of a message body when moving quickly from one message to the next: the connection kept open for reading is now silently re-established when the server has dropped it, instead of surfacing the failure.</string>
+    <string name="rn_v1213_l2" formatted="false">A new identity now starts with the User-Agent field already filled in (%nereo%, which becomes the app name and its current version when you post). Empty it if you prefer to declare nothing: staying anonymous is still possible, but it is now a choice rather than an oversight. Existing identities are left exactly as they are.</string>
+    <string name="rn_v1212_title">Version 1.2.12</string>
+    <string name="rn_v1212_l1">Hardening pass: NeReO now copes safely with malformed or deliberately hostile articles and server replies (oversized messages, broken headers, unusual images) instead of misbehaving. Nothing changes in normal use.</string>
+    <string name="rn_v1212_l2">"Supersede…" now appears only on your own messages, and there is a new "Withdraw from server (cancel)…" next to it: it asks the server to withdraw an article you posted. Many servers ignore such requests — the dialog says so.</string>
+    <string name="rn_v1211_title">Version 1.2.11</string>
+    <string name="rn_v1211_l1">Updated the internal database library to a newer version that hardens some rare concurrency edge cases. No visible changes — this is a behind-the-scenes reliability update.</string>
+    <string name="rn_v1211_l2">Extended the same crash-proofing added in 1.2.10 to search results as well, which had the same rare risk but weren\'t covered yet.</string>
+    <string name="rn_v129c_title">Version 1.2.9.c</string>
+    <string name="rn_v129c_l1">More robust syncing: removed a possible race condition between the automatic new-message check and other syncs in progress, which could have contributed to an occasional crash.</string>
+    <string name="rn_v129b_title">Version 1.2.9.b</string>
+    <string name="rn_v129b_l1">Search: the results list no longer resets when reopening a result — coming back from a message opened from search, the query and results stay as they were.</string>
+    <string name="rn_v129b_l2">"Show filtered" is now a complete audit: messages already downloaded that match an "Ignore" rule are marked and shown grayed out too, not just the ones matching "Delete completely".</string>
+    <string name="rn_v129b_l3">Blank User-Agent now means a truly anonymous post, exactly as the help text always promised.</string>
+    <string name="rn_v129b_l4">New: Maintenance now keeps the last crash report on the device (nothing sent anywhere on its own) — if the app ever closes unexpectedly, please copy or export it and send it over.</string>
+    <!-- Note di rilascio 1.2.9 -->
+    <string name="rn_v129_title">Version 1.2.9</string>
+    <string name="rn_v129_l1">Real multi-identity: create as many identities as you like (name, email, signature, User-Agent, X-No-Archive, custom headers, quote intro, Face) and assign each one to a specific server — post as "MCSM" on Astraweb and as "TAF" on Eternal September, each with its own address and Face.</string>
+    <string name="rn_v129_l2">STARTTLS: servers that stay on a plaintext port can now upgrade to an encrypted connection right after connecting (RFC 4642), next to the existing implicit SSL/TLS.</string>
+    <string name="rn_v129_l3">Per-server override of "allow plaintext authentication": force it on or off for a single server regardless of the global Maintenance → Security setting.</string>
+    <string name="rn_v129_l4">Faster reading: while you read through a thread, article bodies now reuse the same connection instead of reconnecting for every single article.</string>
+    <string name="rn_v129_l5">The server\'s declared CAPABILITIES are now read at connection time and logged in NNTP diagnostics.</string>
+    <string name="rn_v129_l6">Backup and restore now carry identities and the new per-server options.</string>
+    <!-- Note di rilascio 1.2.6 -->
+    <string name="rn_v13_title">Version 1.2.8</string>
+    <string name="rn_v13_l1">Customizable reading bar: choose in Settings → Appearance which icons the bottom reading bar shows and in what order (new "Customize reading bar" editor).</string>
+    <string name="rn_v13_l2">Selective refresh: the refresh icon now lets you pick which servers to refresh, and the menu on each server lets you pick just some of its groups — instead of always downloading everything.</string>
+    <string name="rn_v13_l3">Full-screen reading in panel mode (tablet): while reading, one tap temporarily hides the groups and threads columns so you can focus on the text.</string>
+    <string name="rn_v13_l4">Search/Share on selected text: selecting text in an article now also offers Search (web search) and Share, next to Copy and Select all.</string>
+    <string name="rn_v132_l1">Beefed-up NNTP diagnostics: turning on "Record NNTP dialogue" now also logs how many overview rows actually arrived per sync and which article numbers are missing, plus per-command timing and a session header/footer — useful for tracking down gaps in a provider\'s backfill (e.g. Astraweb).</string>
+    <string name="rn_v132_l2">New manual diagnostic (Maintenance → Diagnostics → "LISTGROUP diagnostic…"): asks the server for the real list of articles in a group and, for numbers missing from the overview, checks with STAT whether they truly exist — telling apart a gap in the server\'s overview database from articles that are genuinely gone.</string>
+    <string name="rn_v131_l1">Update check, four modes: under Maintenance → Updates, choose Never / Once a day / Every 4 hours / On every launch. A "Last check: …" line always shows below the picker, so you can see it\'s working even when it finds nothing new (no popup in that case, just that line).</string>
+    <string name="rn_v131_l2">Fixed a bug: the old "once a day" limit was per calendar day, not elapsed time — opening the app even once before a new release went out could leave you "stuck" until the next day, no matter how many more times you reopened the app.</string>
+    <string name="rn_v127_title">Version 1.2.7</string>
+    <string name="rn_v127_l1">Insecure server: if a server refuses your password over an unencrypted connection, a clear dialog now offers two ways out — switch that server to SSL (recommended) or allow unencrypted authentication (not recommended).</string>
+    <string name="rn_v127_l2">New setting: reply to crossposts on all the original groups by default (off by default — you keep replying only to the current group unless you turn it on).</string>
+    <string name="rn_v127_l3">Continuous view: a thicker separator now marks where each new sub-thread begins, so the discussion is easier to scan.</string>
+    <string name="rn_v126_title">What’s new in 1.2.6</string>
+    <string name="rn_v126_l1">Security: your password is no longer sent over an unencrypted connection (it would travel in clear). If you have an old server that requires it, you can knowingly allow it in Maintenance.</string>
+    <string name="rn_v126_l2">“Check for updates” is now also in the main menu, next to About and What’s new (before, only in Maintenance).</string>
+    <string name="rn_v126_l3">Panel view: a ⋮ menu on every post with author plonk — before, you could only do it by switching to full-screen view.</string>
+    <string name="rn_v126_l4">Panel view: you can reorder groups here too (a “reorder” icon at the top of the groups column), not only in full-screen view.</string>
+    <string name="rn_v126_l5">Backup now saves the group order: restoring no longer puts everything back in alphabetical order.</string>
+    <string name="rn_v126_l6">Cleaner Headers view: the long Face/X-Face code is no longer shown (the little face still appears next to the author).</string>
+    <string name="rn_v126_l7">New button to mute quotes: hide quoted text with one tap to focus on the new message (a tap on the placeholder shows it again).</string>
+    <string name="rn_v126_l8">In tablet/two-pane mode, swipe up or down in the reading pane to jump to the next or previous unread post in the thread.</string>
+    <!-- Note di rilascio 1.2.5 (correzioni) -->
+    <string name="rn_v125_title">1.2.5 fixes</string>
+    <string name="rn_v125_l1">Continuous view: opening a long thread no longer marks the messages after the selected one as read in bulk. Now only what you actually see is marked read: the chosen message on opening, then each message as you bring it to the top by scrolling.</string>
+    <string name="rn_v125_l2">Continuous view: crosspost groups are now shown (in red) on every post, not only in the single-article view.</string>
+    <string name="rn_v125_l3">With the «unread only» filter on, when there is nothing left to read the list now says so explicitly («No unread messages»).</string>
+    <string name="rn_v125_l4">New update check: NeReO can tell you when a newer version is available on SourceForge (automatic once a day, can be turned off; plus a button under Maintenance). Notification and link only: the app never downloads or installs anything itself.</string>
+    <!-- Note di rilascio 1.2.4 (correzioni) -->
+    <string name="rn_v124_title">1.2.4 fixes</string>
+    <string name="rn_v124_l1">Reflow text: now also joins the «orphan» one- or two-word lines left in the middle of a paragraph (a few used to remain even with reflow on). Only labels, greetings and short lines ending with punctuation stay on their own line. Still off by default; reading only.</string>
+    <!-- Note di rilascio 1.2.3 (correzioni) -->
+    <string name="rn_v123_title">1.2.3 fixes</string>
+    <string name="rn_v123_l1">In the tree, messages that open a discussion are no longer shown as «already read» when they aren’t: the colour now follows the post’s real state, in step with «jump to next unread».</string>
+    <string name="rn_v123_l2">Continuous view: replying to a crossposted message now shows the prompt to choose which groups to reply to, just like the single-article view — before, the reply went only to the first group, with no warning.</string>
+    <string name="rn_v123_l3">Continuous view: opening several unread messages no longer shows «Error: connection reset» where the text should be — bodies are fetched one request at a time instead of opening many connections at once.</string>
+    <string name="rn_v123_l4">Panel view: refresh now uses the icon at the top of the column by default; the pull-to-refresh swipe no longer steals the first upward scroll. The swipe can be turned back on in Appearance. On the phone nothing changes.</string>
+    <string name="rn_v123_l5">Reflow text: now also acts on posts wrapped narrow (around 38-40 columns), which were skipped entirely before and left orphan words. Still read-only, enabled in Appearance.</string>
+    <string name="rn_v123_l6">Continuous view: opening a thread on a message in the middle no longer marks the messages above it — merely skipped past — as «read». Marking now applies from the chosen message downwards, not to what flashes by on opening.</string>
+    <!-- Note di rilascio 1.2.2 (correzioni) -->
+    <string name="rn_v122_title">1.2.2 fixes</string>
+    <string name="rn_v122_l1">On tablet/landscape, picking a message from the tree again positions it correctly at the top and keeps it there — in 1.2 it could land in a random spot.</string>
+    <string name="rn_v122_l2">The «refresh» spinner no longer sticks at the top of the tree pane: scrolling stays immediate.</string>
+    <string name="rn_v122_l3">SSL/TLS connections: added the missing read timeout, so a stalled encrypted connection no longer leaves the app waiting forever.</string>
+    <!-- 1.2.2: aggiornamento più veloce + striscia conteggio sull'icona -->
+    <string name="rn_v122_l4">Refreshing is much faster: one connection per server instead of one per group. And the new-messages count now appears when you tap the refresh icon too, not only with pull-to-refresh.</string>
+    <!-- Riflusso testo (de-wrap) -->
+    <string name="app_reflow_text">Reflow text (rejoin wrapped paragraphs)</string>
+    <string name="app_reflow_text_note">Rejoins lines split by the classic 72-column wrap so paragraphs fill the screen; intentional short lines (lists, verse) are left alone. Reading only.</string>
+    <!-- 1.2.2: riflusso testo -->
+    <string name="rn_v122_l5">New «Reflow text» option (Appearance): rejoins paragraphs broken by the classic 72-column wrap, so posts read tidily on narrow screens instead of showing one- or two-word orphan lines. Off by default.</string>
+    <!-- 1.2.2: fix vista a pannelli (Dave Royal) -->
+    <string name="rn_v122_l6">Tablet panel view: in continuous view the third column now follows the same thread order as the tree (column 2), instead of date order.</string>
+    <string name="rn_v122_l7">Tablet panel view: writing a post now opens the editor full-screen, so the on-screen keyboard no longer covers the text area in landscape.</string>
+    <!-- Vista a pannelli: solo icona per aggiornare (disattiva swipe) -->
+    <string name="app_pane_refresh_icon_only">Refresh only with the icon (disable swipe) in the panel view</string>
+    <string name="app_pane_refresh_icon_only_note">In the panel view, turns off the pull-to-refresh gesture on the thread column and leaves only the Refresh icon at the top of the panel. Useful in landscape, where the short panel keeps the gesture armed and the spinner can stick.</string>
+    <string name="rn_v122_l8">New option (Appearance → panel layout): refresh only with the icon and disable the pull-to-refresh gesture — handy in landscape, where the spinner could stick in the thread column.</string>
+    <!-- 1.4.9 (par. J1, Jeff): le rotaie del rientro, distinte dalle barre citazioni. -->
+    <string name="app_tree_rails">Vertical indent rails in lists</string>
+    <string name="app_tree_rails_note">The grey vertical lines that mark one level of indentation each in the thread lists and in the conversation tree. These are not the quote bars, which sit inside the message and take the colour of their level: these are all the same grey. Switching them off leaves the indentation in place — only the lines go.</string>
+    <!-- 1.4.9 (par. J3-C1): la cartella di «conserva questo». -->
+    <string name="cns_section">Kept messages</string>
+    <string name="cns_folder_none">No folder chosen yet.</string>
+    <string name="cns_folder_current">Folder: %1$s</string>
+    <string name="cns_folder_choose">Choose the folder</string>
+    <string name="cns_folder_change">Change folder</string>
+    <string name="cns_note">The «Keep» action — in the reading bar, or in the ⋮ menu in panel view — writes the message into this folder as an .eml file. You choose the folder once; after that, keeping a message is one tap. The file is yours, and nothing inside NeReO touches it any more: not the automatic clean-up, not unsubscribing, not a re-download.</string>
+    <string name="cns_note_search">⚠ NeReO’s search does not see kept messages: it searches the local store, and a kept message has left it. To read one again, open the file with another app.</string>
+    <string name="cns_saved">Message kept</string>
+    <string name="cns_failed">Could not keep the message</string>
+    <string name="cns_folder_lost">The folder for kept messages is no longer available: please choose another one.</string>
+    <string name="cns_folder_set">Folder set</string>
+    <!-- 1.4.9 (par. J1 e J3-C1, Jeff): note di versione. -->
+    <string name="rn_v149_title">What’s new in 1.4.9</string>
+    <string name="rn_v149_l1">In Appearance, right below the quote style, there is now a switch for the vertical indent rails in the lists — the grey lines that mark one level of depth each. It starts switched ON: that is how NeReO has looked since 1.4.7, and the rails were asked for. What it fixes is a confusion, not a bug: whoever chose the «marks only» quote style still saw vertical lines and took them for quote bars. They are two different ornaments that look alike, and now they have two switches. Switching the rails off leaves the indentation in place — only the lines go. Reported by Jeff.</string>
+    <string name="rn_v149_l2">New action «Keep this message» in the reading bar, and in the ⋮ menu in panel view. It writes the message as an .eml file into a folder you choose once, under Maintenance → Kept messages; after that, keeping a message is one tap. «Save as .eml file» stays where it was and still asks you where to put the file each time, which is the right shape for the occasional hand-off to a mail client. A kept message leaves NeReO’s local store and becomes a file of yours: the automatic clean-up will not take it away, nor will unsubscribing, nor a re-download. In exchange, NeReO’s search no longer sees it — the search reads the local store, and that message has left it; to read it again, open the file with another app. It comes from a question by Jeff, «does NeReO store posts?»: the answer was no, and now it is «if you ask it to».</string>
+    <string name="rn_v149_l3">On a small screen, with large text and a tall keyboard, the message field could be squeezed until the letters you typed were cut in half. Reported by a user on a Samsung J6, and reproduced here by turning the text size up and opening «Sender and headers». The keyboard was not covering the field — the field was simply being given almost no height, because the writing form could not scroll and the field was taking «whatever is left». The form now scrolls and the field keeps a real minimum height, so what you type is always visible. If a keyboard of yours leaves very little room, the page scrolls instead of cutting the text.</string>
+    <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
+    <string name="rn_v155_l7">X-Faces are shown. The classic black-and-white Usenet face (the X-Face header, sent by MesNews and many traditional newsreaders) now appears next to the author\'s name, where until now only the colour Face did. Tap it to enlarge it: it stays sharp, square by square. Order: Face first, then X-Face, then the coloured initials. NeReO shows X-Faces but does not send them.</string>
+    <string name="rn_v155_l8">New messages really stay in view now. The 1.5.4 fix worked only when NeReO had just taken you back to where you left off: on the first visit to a group after starting the app, or when the list was already at the top, the messages arriving with the sync could still end up above the edge of the screen. Now, every time you open a group, if new messages arrive and you have not yet moved the list with your finger, it goes to the top to show them. With the \"newest first\" orders it also notices a reply inside the thread that is already at the top. With the \"oldest first\" orders, where new messages are at the bottom, you stay where you were. In the panel view too.</string>
+    <string name="rn_v155_title">New in 1.5.5</string>
+    <string name="rn_v155_l1">Search tells you where it found the word. When it is only in the text of the message, the result shows a short excerpt with the word highlighted in yellow. Before, such a result had no highlight at all and looked wrong.</string>
+    <string name="rn_v155_l2">When the server refuses a message with code 441, its reply is now followed by a line in your language. For the most common case, \"Article must contain real content\", it says what to do: write a little more.</string>
+    <string name="rn_v155_l3">In the panel view, the message field is no longer squeezed: the writing area scrolls and the field keeps a usable height, as in the page view since 1.4.9.</string>
+    <string name="rn_v155_l4">A new look for the author of a message. Next to the name, the author\'s Face or, when there is none, their initials on a coloured circle: the colour comes from the address, so the same person always has the same colour, in every group. Name, address and date are laid out more clearly, and the date says \"today\", \"yesterday\" or the day of the week for recent messages (tap it for the full date). In full-screen reading and in the panels, where the Face was missing until now.</string>
+    <string name="rn_v155_l5">Themed icon: on Android 13 and later, if you use themed icons, NeReO\'s icon now takes the colours of your theme like the others.</string>
+    <string name="rn_v155_l6">Replying in very deep threads works again. When a message carried a very long References line (one in nl.politiek had 27 message-ids), the reply could exceed the 998-character limit of a header line and the server refused it. Now NeReO removes duplicate ids and, above the limit, drops the oldest ones after the first, always keeping the start of the thread and the most recent messages, as RFC 5537 prescribes. Below the limit nothing changes.</string>
+    <string name="rn_v154_title">New in 1.5.4</string>
+    <string name="rn_v154_l1">«Quote and reply»: select some text in a message and the menu offers, next to «Quote», a command that opens the reply with that quotation already in place, the cursor below it and your signature at the end.</string>
+    <string name="rn_v154_l2">Opening a group, new messages are no longer missed. The list used to go back to where you had left it before the new messages arrived on top; now, if new ones arrive while you have not touched the list yet, it goes to the top to show them.</string>
+    <string name="rn_v154_l3">Update check «Daily» now checks at the first opening of each new day, and in any case after 24 hours. Before, it waited 24 hours from the last check, and a new version could be noticed up to a day late.</string>
+    <string name="rn_v153_title">New in 1.5.3</string>
+    <string name="rn_v153_l1">Deleting or editing a filter rule now undoes what it did: messages it hid come back into view without downloading them again, and the colour or star it gave goes away — unless another active rule still applies. Stars you set by hand stay. «Apply now» does the same.</string>
+    <string name="rn_v153_l2">The diagnostic log now records what filters do: each rule saved or deleted, and how many messages came back into view, lost a star or changed score.</string>
+    <string name="rn_v152_title">New in 1.5.2</string>
+    <string name="rn_v152_l1">A lighter app. NeReO used to carry the whole Material icon library, more than eleven thousand icons, of which it uses 75: now it carries only those, and the APK is much smaller. Nothing changes on screen: the icons are the same, checked one by one.</string>
+    <string name="rn_v151_title">New in 1.5.1</string>
+    <string name="rn_v151_l1">Drafts save themselves. A second and a half after you stop typing, and again when you leave the screen or the app goes to the background: leaving without tapping «Save draft» no longer loses your text, which you will find in Drafts. A reply you opened and left untouched does not become a draft, and after a successful send the draft does not come back.</string>
+    <string name="rn_v151_l2">«Discard», in the bottom bar of the writing screen: throws the text away and deletes its draft, after a confirmation. With automatic saving, it is the way to leave without a trace.</string>
+    <string name="rn_v151_l3">The line-by-line screen for remote-control users, announced in 1.5, is not coming for now: «Quote» works with text selection, and the screen will be made if someone really needs it.</string>
+    <string name="rn_v151_l4">Filters: «Extend to replies» on a «Follow the thread» or «Highlight» rule no longer hides the replies — it follows them with a star or highlights them, like the rule itself. And «Apply now» also stars already downloaded messages that match a «Follow the thread» rule. Nothing changes for rules that hide. Deleting or editing a rule that highlighted removes the colour; stars stay, because you may have set them yourself.</string>
+    <string name="rn_v15_title">What’s new in 1.5</string>
+    <string name="rn_v15_l1">Under the bonnet, and nothing changes for you yet: this is the first stone of the quoting package asked for by Ammammata and widened by Bingo3331. The part that describes a quotation — who wrote it, where, when, under what subject, and the lines you picked — is now kept separate from the text that comes out of it. That separation is the whole point: it is what will make it cheap to collect several quotations, even from different groups, and insert them all at once. The line that puts «&gt; » in front of quoted text also lives in one place now, instead of inside the function that prepares replies.</string>
+    <string name="rn_v15_l2">The first visible piece of the quoting package, and it is exactly what Ammammata asked for: select part of a message, and the menu that appears above the selection now offers «Quote». The clipboard receives a complete quote — your attribution line, the chosen lines with «&gt; » in front and, at the end, the Message-ID with its permanent link, so readers can find the original. It always quotes the ORIGINAL lines, whole: a selection starting mid-line widens to the full line, and text that was already quoted keeps its levels even if you see them as bars on screen. It works in full-screen reading and in the panel view; a line-by-line screen for remote-control users comes in a next step.</string>
+    <string name="rn_v15_l3">From Marco\'s testing: if you quote lines that were themselves already quoted in the message — Giangi\'s sentence inside Roberto\'s reply — the quotation no longer attributes those words to Roberto. It uses the line that introduces them in the message («On 05/10, Giangi wrote:») and drops the extra «&gt;» levels. If that line is missing or not recognisable, it behaves as before.</string>
+    <string name="rn_v1411_title">What’s new in 1.4.11</string>
+    <string name="rn_v1411_l1">NeReO now remembers which servers offer STARTTLS — the upgrade from a plaintext connection to an encrypted one — and warns you, next to the server name, if a server that used to offer it stops advertising it. Someone sitting in the middle of your connection can delete that one line from the server’s reply, and a reader that knows no better simply never tries to encrypt. RFC 4642 suggests exactly this defence, and is just as clear about its limit: it protects you only AFTER one clean connection, so the very first time you talk to a server there is nothing to compare against. It also stays deliberately silent in the two cases where it would cry wolf: when the server answers nothing at all to the capability question, and on servers already encrypted from the first byte, which have no reason to advertise the upgrade. Asked for by ObiWan.</string>
+    <string name="rn_v1410_title">What’s new in 1.4.10</string>
+    <string name="rn_v1410_l1">In the newsgroup list, a long group name now shortens the way it already did elsewhere in the app — dropping the middle of the hierarchy rather than cutting the end off with an ellipsis — and only when it really does not fit. Short names are untouched, and groups with unread messages stay in bold. The shared component that does this was already used a few lines further down in the same screen; this one spot had been left out.</string>
+    <string name="rn_v1410_l2">Under the bonnet, and nothing changes for you: a deprecated database call replaced by the equivalent the library itself prescribes, and the two files that handle line wrapping and Format=Flowed moved into a package of their own — they were sitting in the screens package, and the data layer was reaching up into it. Both changes leave behaviour identical. This version was not asked for by anyone: it pays off our own debts, and it seemed fair to say so.</string>
+    <string name="rn_v1410_l3">Holding a message pressed opens a panel of actions. When the thread contained messages of your own, one extra entry appeared and the last actions — among them «Withdraw from server» — ended up cut off the bottom with no way to reach them. The panel was not getting stuck: it simply did not scroll. It does now. Reported by Macchia, who also worked out the condition himself: it only happened when the extra entry was there. The same panel in the panel view had the same fault and is fixed too.</string>
+    <string name="rn_v1410_l4">In the grouped-threads view, the «+» now opens the whole discussion, including replies you have already read. With «unread only» switched on, a discussion whose replies were all read still showed the «+» and a count of its replies, but tapping it revealed nothing at all. The filter decides what the LIST shows; tapping «+» is an explicit request to see one discussion, and the explicit gesture now wins. Reported in five words by a user who thought he was doing something wrong — he was not.</string>
 </resources>
