@@ -50,17 +50,18 @@ object ThreadScrollMemory {
     /**
      * @property articleId primo messaggio visibile (dove riposizionarsi);
      * @property offset scostamento in pixel;
-     * @property topArticleId id del PRIMO articolo della lista all'uscita,
-     *   per capire al rientro se sono arrivati articoli nuovi in cima.
+     * @property impronta la lista all'uscita (primo articolo e id piu' alto),
+     *   per capire al rientro se sono arrivate novita' in cima. Fino alla
+     *   1.5.4 era solo l'id del primo: vedi [novitaInCima] per il perche'.
      */
-    data class Ancora(val articleId: Long, val offset: Int, val topArticleId: Long)
+    data class Ancora(val articleId: Long, val offset: Int, val impronta: ImprontaLista)
 
     private val ancore = HashMap<Long, Ancora>()
 
     fun get(groupId: Long): Ancora? = ancore[groupId]
 
-    fun put(groupId: Long, articleId: Long, offset: Int, topArticleId: Long) {
-        ancore[groupId] = Ancora(articleId, offset, topArticleId)
+    fun put(groupId: Long, articleId: Long, offset: Int, impronta: ImprontaLista) {
+        ancore[groupId] = Ancora(articleId, offset, impronta)
     }
 
     fun clear(groupId: Long) { ancore.remove(groupId) }

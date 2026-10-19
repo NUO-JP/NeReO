@@ -26,7 +26,7 @@ object ReleaseNotes {
      * corretto. Ad ogni bump di versione in build.gradle.kts, aggiornare
      * SEMPRE anche questa riga e le [sections] sotto.
      */
-    const val VERSION = "1.5.4"
+    const val VERSION = "1.5.5"
 
     /**
      * Novità della versione corrente, in blocchi titolo → righe.
@@ -39,6 +39,26 @@ object ReleaseNotes {
      * strings.xml (tutte e tre le cartelle).
      */
     val sections: List<Pair<Int, List<Int>>> = listOf(
+        // 1.5.5 (17 ottobre 2026, versionCode 169). Chiavi rn_v155_* verificate
+        // libere nelle tre cartelle prima di usarle.
+        //  - l1  la ricerca mostra l'estratto del testo
+        //  - l2  il rifiuto 441 del server spiegato
+        //  - l3  il campo del messaggio nella vista a pannelli
+        //  - l4  (versionCode 170) intestazione dell'autore, iniziali colorate
+        //  - l5  (versionCode 170) icona a tema di Android 13
+        //  - l6  (versionCode 171) References oltre i 998 caratteri
+        //  - l7  (versionCode 172) le X-Face si vedono
+        //  - l8  (versionCode 173) i messaggi nuovi non sfuggono piu' (bis)
+        R.string.rn_v155_title to listOf(
+            R.string.rn_v155_l4,
+            R.string.rn_v155_l7,
+            R.string.rn_v155_l1,
+            R.string.rn_v155_l2,
+            R.string.rn_v155_l3,
+            R.string.rn_v155_l8,
+            R.string.rn_v155_l6,
+            R.string.rn_v155_l5,
+        ),
         // 1.5.4 (15 ottobre 2026, versionCode 168). Chiavi rn_v154_* verificate
         // libere nelle tre cartelle prima di usarle.
         //  - l1  «Cita e rispondi»

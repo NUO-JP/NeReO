@@ -6,22 +6,37 @@ Scritto da zero in Kotlin + Jetpack Compose. Nasce dal MOD 17 di *Newsreader* di
 
 Il package interno resta `org.openusenet.reader` — invariato di proposito, per non rompere gli aggiornamenti già installati.
 
-**Versione 1.5.4** (versionCode 168) — 15 ottobre 2026
+**Versione 1.5.5** (versionCode 173) — 18 ottobre 2026
 
-## Funzioni (1.5.4)
+## Funzioni (1.5.5)
 
 - Multi-server NNTP con SSL/TLS implicito **o STARTTLS** (RFC 3977 + RFC 4643 + RFC 4642) e autenticazione, con **verifica del nome host sul certificato** (RFC 6125) e fallback automatico IPv6/IPv4; CAPABILITIES letto e loggato alla connessione; riuso della connessione durante la lettura di un thread; **allarme se un server che offriva STARTTLS smette di annunciarlo** (RFC 4642 §5)
 - Ricerca e sottoscrizione gruppi, sync incrementale delle headline con `OVER` e ripiego automatico su `XOVER` per i server che non riconoscono `OVER` (es. Astraweb)
 - Viste discussione: ad albero (algoritmo JWZ su References), sequenziale, raggruppata; vista continua del thread
 - **Multi-identità vera:** quante identità vuoi (nome, email, firma, User-Agent, X-No-Archive, intestazioni personalizzate, introduzione alla citazione, Face), ciascuna assegnabile a un server specifico — scrivi come "MCSM" su un server e come "TAF" su un altro, ognuna con il proprio indirizzo
 - Scrittura: risposte con citazione (quattro modalità), crosspost, firme, bozze locali **che si salvano da sole** (1.5.1); override per-server dell'autenticazione non cifrata
-- Decodifica header RFC 2047, quoted-printable, base64, charset multipli; **Face** (PNG, come MesNews) in lettura e in invio — l'**X-Face** in bianco e nero compresso **non** è supportata; **Format=Flowed** (RFC 3676) in lettura
+- Decodifica header RFC 2047, quoted-printable, base64, charset multipli; **Face** (PNG, come MesNews) in lettura e in invio; **X-Face** in bianco e nero **in lettura** (dalla 1.5.5, non in invio); **Format=Flowed** (RFC 3676) in lettura
 - **Barre di lettura personalizzabili** in entrambe le viste: ventuno azioni, ognuna spostabile fra barra e menu, con l'ordine che decidi tu
 - **«Conserva questo messaggio»**: un messaggio si scrive come file `.eml` in una cartella scelta una volta sola, e da lì non lo tocca più niente di NeReO — né la pulizia automatica, né una disiscrizione, né un riscarico
 - **Motore filtri a punteggio** stile slrn/Gnus: contains/wildcard/regex su From, Subject, Message-ID, Xpost e Body, con scope per gruppo (wildmat), scadenza, soglie kill/hide/highlight/watch; import/export kill-file testuale (formato slrn-like)
 - Backup e ripristino della configurazione, con cifratura opzionale
 - Material 3, tema chiaro/scuro/di sistema, dynamic color, tinte e dimensioni del testo, layout a pannelli per schermi larghi
 - Interfaccia in italiano e inglese, con **interruttore lingua dentro l'app** (Aspetto → Lingua) oltre alla voce di sistema su Android 13+
+
+## Novità della 1.5.5
+
+> Tre voci del quaderno, scelte da Marco: un difetto noto e due piccole confusioni incontrate dagli utenti. E, dal brainstorming del 17 ottobre, un aspetto nuovo per l'autore del messaggio e l'icona a tema; poi una segnalazione da Usenet (References), una richiesta di Marco (X-Face) e una segnalazione di Marcoseba sulla 1.5.4 (messaggi nuovi).
+
+- **L'autore del messaggio ha un aspetto nuovo.** Accanto al nome la sua Face o, quando manca, le **iniziali su un cerchio colorato**: il colore viene dall'indirizzo, quindi la stessa persona ha sempre lo stesso colore, in ogni gruppo, anche se cambia nickname. Nome, indirizzo e data sono disposti in una piccola scheda, e la data dice «oggi», «ieri» o il giorno della settimana per i messaggi recenti (un tocco mostra la data completa). Un componente solo per le tre viste di lettura: nei pannelli la Face finora mancava. Colori con contrasto misurato (almeno 4:1 col bianco); logica provata con `kotlinc` (28 asserzioni)
+- **Rispondere nelle discussioni molto profonde funziona di nuovo** *(segnalazione su Usenet)*. Un messaggio con una riga `References` lunghissima (uno in nl.politiek ne aveva 27) produceva una risposta oltre il limite di 998 caratteri per riga di intestazione, e il server la rifiutava: NeReO la spediva senza tetto. Ora, in un punto solo per tutte le strade dell'invio (risposta a pagine e a pannelli, supersede, bozza ripresa), toglie gli identificativi doppi e, oltre il limite, toglie i più vecchi dopo il primo, tenendo la radice e gli antenati più recenti (RFC 5537 §3.4.4). Sotto il limite non cambia niente. Provato con `kotlinc` (17 asserzioni)
+- **Le X-Face si vedono.** La classica faccina in bianco e nero di Usenet (l'intestazione `X-Face:`, mandata da MesNews e da molti lettori tradizionali) compare accanto al nome dell'autore, dove finora compariva solo la `Face:` a colori. Ordine: Face, poi X-Face, poi le iniziali colorate. Toccandola si ingrandisce e resta nitida, a quadretti. Il decodificatore è tradotto in Kotlin da FFmpeg (`libavcodec/xface.c`, LGPL 2.1+, da *compface* di James Ashton, 1990), con le sue note di copyright; le tabelle sono confrontate byte per byte con l'originale. Nessuna modifica al database: la X-Face si legge dalle intestazioni già salvate. NeReO le mostra, non le invia
+- **I messaggi nuovi restano davvero in vista** *(Marcoseba, sulla 1.5.4: «a me capita ancora»)*. La correzione della 1.5.4 accendeva la sorveglianza solo dopo un ripristino di posizione, e per «novità» guardava solo il primo della lista. Al primo ingresso nel gruppo dopo l'avvio, o partendo già dall'alto, la lista di Compose (righe a chiave fissa) restava ferma sulla riga vista e i nuovi finivano sopra il bordo. Ora la sorveglianza vale a ogni ingresso e si spegne solo con un trascinamento del dito (non più con `isScrollInProgress`, vero anche per gli scorrimenti del programma); il segnale di novità dipende dall'ordinamento: l'id interno più alto per «più recente» e vista sequenziale, il primo della lista per «apertura, dai più recenti», mai per gli ordinamenti «dai più vecchi». Un componente solo (`SorveglianzaNovita.kt`) per telefono e pannelli. Provato con `kotlinc` (15 asserzioni)
+- **Icona a tema** (Android 13 e successivi): con le icone a tema attive, anche quella di NeReO prende i colori del telefono
+
+- **La ricerca dice dove ha trovato la parola.** La ricerca guarda oggetto, autore e, per i messaggi già aperti, il testo; ma il giallo compariva solo su oggetto e autore, e un risultato trovato nel testo sembrava sbagliato (il «1.1.4» di BIG Umberto). Ora, se la parola sta solo nel testo, sotto la riga compare un breve estratto con la parola in giallo. Provato con `kotlinc` (17 asserzioni)
+- **Il rifiuto 441 del server spiegato.** «441 Article must contain real content» arrivava grezzo, in inglese, e chi scrive un messaggio corto non capiva che deve solo scrivere di più (il caso di Ammammata). Il testo del server resta intero; sotto compare una riga nella lingua dell'app. Per gli altri 441 la riga dice che il motivo è nella risposta del server, senza indovinarlo. Nelle due schermate di scrittura. Provato con `kotlinc` (11 asserzioni)
+- **Il campo del messaggio nella vista a pannelli non viene più schiacciato.** Era il difetto corretto nella vista a pagine con la 1.4.9 (§K1, l'utente del Samsung J6), rimasto nella seconda copia: un minimo d'altezza che non era un minimo. Stessa correzione: l'area di scrittura scorre, il campo ha un'altezza minima e un tetto
+- **Il nome è riservato.** `TRADEMARK.txt`, nuovo nei sorgenti: il codice resta GPL, ma le versioni modificate devono usare un altro nome e un altro `applicationId` (GPLv3 §7(c) e (e)). Nei sorgenti anche `.gitignore`, per il repository su GitHub
 
 ## Novità della 1.5.4
 
@@ -495,4 +510,4 @@ Il progetto nasce dal MOD 17 di *Newsreader* di Piao Hong, di cui riprende l'imp
 
 ## Licenza
 
-GPL-3.0-or-later — vedi `LICENSE`. Contributi benvenuti: il core (`nntp/`, `filter/`, `thread/`) è puro Kotlin/JVM ed è coperto da test.
+GPL-3.0-or-later — vedi `LICENSE`. Il nome «NeReO» e il logo sono riservati all'autore: le versioni modificate devono usare un altro nome e un altro `applicationId` — vedi `TRADEMARK.txt`. Sorgenti anche su GitHub: <https://github.com/mcsm64/NeReO>. Contributi benvenuti: il core (`nntp/`, `filter/`, `thread/`) è puro Kotlin/JVM ed è coperto da test.

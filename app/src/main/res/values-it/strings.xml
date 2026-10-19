@@ -524,6 +524,7 @@
     <string name="srch_note_group">Cerca in oggetto e autore dei messaggi di questo gruppo, e nel testo di quelli già aperti.</string>
     <string name="srch_note_all">Cerca in oggetto e autore di tutti i messaggi in cache, e nel testo di quelli già aperti.</string>
     <string name="srch_none">Nessun risultato per \"%s\".</string>
+    <string name="srch_in_body">Nel testo:</string>
     <string name="srch_threads_n">%d discussioni con almeno un messaggio corrispondente.</string>
     <string name="srch_first_500">Primi 500 risultati.</string>
     <string name="srch_results_n">%d risultati.</string>
@@ -556,6 +557,9 @@
     <string name="art_bottom">Fine messaggio</string>
     <string name="art_crossposted">⚠ Crosspostato in %1$d gruppi: %2$s</string>
     <string name="art_face_cd">Face dell\'autore</string>
+    <string name="art_xface_cd">X-Face dell\'autore</string>
+    <string name="art_date_today">oggi %1$s</string>
+    <string name="art_date_yesterday">ieri %1$s</string>
     <string name="art_face_big_cd">Face dell\'autore, ingrandita</string>
     <string name="art_error">Errore: %s</string>
     <string name="art_plonk_title">Plonk</string>
@@ -699,6 +703,8 @@
     <string name="upd_later">Più tardi</string>
     <string name="pane_reply_to_post">Rispondi a questo post</string>
     <string name="pane_send_failed">Invio fallito: %1$s</string>
+    <string name="cmp_441_content">Il server giudica il messaggio troppo povero di testo (è una difesa anti-spam): scrivi qualcosa in più e invialo di nuovo.</string>
+    <string name="cmp_441_generic">Il server ha rifiutato il messaggio: il motivo è nella sua risposta, riportata così com\'è.</string>
     <string name="groups_all_read">Tutto letto</string>
     <string name="groups_welcome">Benvenuto!\n1. Configura un server (icona in alto a destra)\n2. Sottoscrivi i gruppi col pulsante +</string>
     <string name="drafts_no_subject">(senza oggetto)</string>
@@ -1038,6 +1044,15 @@
     <string name="rn_v149_l2">Nuova azione «Conserva questo messaggio» nella barra di lettura, e nel menu ⋮ nella vista a pannelli. Scrive il messaggio come file .eml in una cartella che scegli UNA VOLTA SOLA, in Manutenzione → Messaggi conservati; da quel momento conservare è un tocco. «Salva come file .eml» resta al suo posto e continua a chiedere ogni volta dove mettere il file, che è la forma giusta per il giro occasionale verso un client di posta. Un messaggio conservato esce dall\'archivio locale di NeReO e diventa un file tuo: non lo porta via la pulizia automatica, né una disiscrizione, né un riscarico. In cambio, la ricerca di NeReO non lo vede più - cerca nell\'archivio locale, e quel messaggio ne è uscito; per rileggerlo si apre il file con un\'altra app. Nasce da una domanda di Jeff, «NeReO conserva i post?»: la risposta era no, e adesso è «se glielo chiedi».</string>
     <string name="rn_v149_l3">Su uno schermo piccolo, con i caratteri grandi e una tastiera alta, il campo del messaggio poteva essere schiacciato al punto che le lettere scritte si vedevano tagliate a metà. Segnalato da un utente su Samsung J6, e riprodotto qui alzando la dimensione del testo e aprendo «Mittente e intestazioni». Non era la tastiera a coprire il campo: era il campo a ricevere quasi nessuna altezza, perché il modulo di scrittura non scorreva e il campo prendeva «quello che avanza». Adesso il modulo scorre e il campo conserva un\'altezza minima vera, così quello che scrivi si vede sempre. Se la tua tastiera lascia pochissimo spazio, la pagina scorre invece di tagliare il testo.</string>
     <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
+    <string name="rn_v155_l7">Le X-Face si vedono. La classica faccina in bianco e nero di Usenet (l\'intestazione X-Face, mandata da MesNews e da molti lettori tradizionali) compare ora accanto al nome dell\'autore, dove finora compariva solo la Face a colori. Toccala per ingrandirla: resta nitida, a quadretti. L\'ordine è: prima la Face, poi la X-Face, poi le iniziali colorate. NeReO mostra le X-Face ma non le invia.</string>
+    <string name="rn_v155_l8">I messaggi nuovi restano davvero in vista. La correzione della 1.5.4 funzionava solo quando NeReO ti aveva appena riportato dove eri rimasto: al primo ingresso nel gruppo dopo aver aperto l\'app, o quando la lista era già in cima, i messaggi che arrivavano con la sincronizzazione potevano ancora finire sopra il bordo dello schermo. Ora, ogni volta che apri un gruppo, se arrivano messaggi nuovi e non hai ancora spostato la lista col dito, sale in cima a mostrarli. Con gli ordinamenti \"dai più recenti\" si accorge anche di una risposta dentro la discussione che è già in cima. Con gli ordinamenti \"dai più vecchi\", dove i nuovi stanno in fondo, resti dove sei. Anche nella vista a pannelli.</string>
+    <string name="rn_v155_title">Novità della 1.5.5</string>
+    <string name="rn_v155_l1">La ricerca dice dove ha trovato la parola. Se sta solo nel testo del messaggio, il risultato mostra un breve estratto con la parola evidenziata in giallo. Prima un risultato così non aveva nessun giallo e sembrava sbagliato.</string>
+    <string name="rn_v155_l2">Quando il server rifiuta un messaggio col codice 441, alla sua risposta segue ora una riga in italiano. Per il caso più comune, \"Article must contain real content\", dice cosa fare: scrivere qualcosa in più.</string>
+    <string name="rn_v155_l3">Nella vista a pannelli il campo del messaggio non viene più schiacciato: l\'area di scrittura scorre e il campo mantiene un\'altezza utilizzabile, come nella vista a pagine dalla 1.4.9.</string>
+    <string name="rn_v155_l4">Un aspetto nuovo per l\'autore del messaggio. Accanto al nome, la sua Face o, quando non ce l\'ha, le sue iniziali su un cerchio colorato: il colore viene dall\'indirizzo, quindi la stessa persona ha sempre lo stesso colore, in ogni gruppo. Nome, indirizzo e data sono disposti in modo più chiaro, e la data dice \"oggi\", \"ieri\" o il giorno della settimana per i messaggi recenti (toccala per la data completa). Nella lettura a schermo intero e nei pannelli, dove finora la Face mancava.</string>
+    <string name="rn_v155_l5">Icona a tema: su Android 13 e successivi, se usi le icone a tema, anche l\'icona di NeReO prende i colori del tuo tema come le altre.</string>
+    <string name="rn_v155_l6">Rispondere nelle discussioni molto profonde funziona di nuovo. Quando un messaggio portava una riga References lunghissima (uno in nl.politiek ne aveva 27), la risposta poteva superare il limite di 998 caratteri per riga di intestazione e il server la rifiutava. Ora NeReO toglie gli identificativi doppi e, oltre il limite, toglie i più vecchi dopo il primo, tenendo sempre l\'inizio della discussione e i messaggi più recenti, come prescrive la RFC 5537. Sotto il limite non cambia niente.</string>
     <string name="rn_v154_title">Novità della 1.5.4</string>
     <string name="rn_v154_l1">«Cita e rispondi»: selezionando del testo in un messaggio, il menu offre accanto a «Cita» un comando che apre la risposta con quella citazione già dentro, il cursore sotto e la tua firma in fondo.</string>
     <string name="rn_v154_l2">Aprendo un gruppo i messaggi nuovi non sfuggono più. La lista tornava dove l\'avevi lasciata prima che i nuovi arrivassero in cima; ora, se arrivano mentre non hai ancora toccato la lista, sale in cima a mostrarli.</string>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 1.5.5 (G2): la stessa icona della v26 piu' la versione MONOCROMATICA per
+     le «icone a tema» di Android 13 e successivi. Il sistema usa solo la
+     forma (il canale alfa) e la colora col tema del telefono: le tre barre del
+     primo piano vanno bene cosi' come sono. Sotto Android 13 vale ancora
+     mipmap-anydpi-v26, identica a prima. -->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/ic_launcher_bg" />
+    <foreground android:drawable="@drawable/ic_launcher_fg" />
+    <monochrome android:drawable="@drawable/ic_launcher_fg" />
+</adaptive-icon>

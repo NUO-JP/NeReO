@@ -118,18 +118,9 @@ import org.openusenet.reader.ui.Routes
 import org.openusenet.reader.ui.components.QuoteColoredBody
 import org.openusenet.reader.ui.components.readStateColor
 import org.openusenet.reader.ui.components.readingColors
-import java.time.Instant
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 import org.openusenet.reader.ui.indietroSicuro
 
-/**
- * 1.2.12 (audit di sicurezza): lato massimo accettato per l'immagine Face di un
- * articolo. Lo standard de facto è 48x48; 512 lascia spazio abbondante a chi la
- * manda più grande del dovuto, e taglia fuori le immagini costruite apposta per
- * esaurire la memoria una volta decompresse.
- */
-private const val MAX_FACE_LATO = 512
+// 1.5.5: MAX_FACE_LATO e la decodifica della Face sono in IntestazioneAutore.kt.
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalLayoutApi::class)
 @Composable
@@ -819,80 +810,11 @@ fun ArticleScreen(repo: NewsRepository, nav: NavHostController, articleId: Long,
                         modifier = Modifier.padding(top = 2.dp, bottom = 4.dp),
                     )
                 }
-                Row(verticalAlignment = Alignment.CenterVertically) {
-                    val faceBmp = remember(a.faceB64) {
-                        a.faceB64?.let { raw ->
-                            // decodifica robusta: la Face è base64 (PNG). Provo più
-                            // varianti di flag invece di arrendermi al primo errore —
-                            // in invio usiamo NO_WRAP, ma Face di altri client possono
-                            // avere padding/whitespace diversi. Pulisco e provo NO_WRAP
-                            // poi DEFAULT.
-                            val clean = raw.filter { !it.isWhitespace() }
-                            val bytes = runCatching {
-                                android.util.Base64.decode(clean, android.util.Base64.NO_WRAP)
-                            }.recoverCatching {
-                                android.util.Base64.decode(clean, android.util.Base64.DEFAULT)
-                            }.getOrNull()
-                            // 1.2.12 (audit di sicurezza): la decodifica vera e
-                            // propria era FUORI dal runCatching qui sopra, e
-                            // senza alcun controllo sulle dimensioni. Una Face
-                            // è un PNG 48x48, ma niente impediva a chi pubblica
-                            // di allegarne uno che, da pochi kilobyte di base64,
-                            // si espande in decine di megabyte di bitmap
-                            // ("bomba di decompressione") — allocati sul thread
-                            // dell'interfaccia. Il risultato era un
-                            // OutOfMemoryError, che essendo un Error non veniva
-                            // intercettato: l'app moriva aprendo l'articolo.
-                            // Ora: prima si leggono SOLO le dimensioni
-                            // (inJustDecodeBounds non alloca nulla), si rifiuta
-                            // ciò che è fuori scala, e la decodifica vera sta
-                            // dentro un runCatching.
-                            bytes?.let { b ->
-                                runCatching {
-                                    val opzioni = android.graphics.BitmapFactory.Options().apply {
-                                        inJustDecodeBounds = true
-                                    }
-                                    android.graphics.BitmapFactory.decodeByteArray(b, 0, b.size, opzioni)
-                                    val l = opzioni.outWidth
-                                    val h = opzioni.outHeight
-                                    if (l !in 1..MAX_FACE_LATO || h !in 1..MAX_FACE_LATO) null
-                                    else android.graphics.BitmapFactory.decodeByteArray(b, 0, b.size)
-                                }.getOrNull()
-                            }
-                        }
-                    }
-                    // wishlist beta12 (Bingo3331, tramite Marco: "AVATAR" = Face):
-                    // a 48x48 è quasi impossibile apprezzare un'immagine curata.
-                    // Tocco → versione ingrandita in un dialog.
-                    var faceEnlarged by remember(a.id) { mutableStateOf(false) }
-                    if (faceBmp != null) {
-                        Image(
-                            faceBmp.asImageBitmap(),
-                            contentDescription = stringResource(R.string.art_face_cd),
-                            modifier = Modifier
-                                .size(48.dp)
-                                .padding(end = 8.dp)
-                                .clickable { faceEnlarged = true },
-                        )
-                    }
-                    if (faceEnlarged && faceBmp != null) {
-                        Dialog(onDismissRequest = { faceEnlarged = false }) {
-                            Image(
-                                faceBmp.asImageBitmap(),
-                                contentDescription = stringResource(R.string.art_face_big_cd),
-                                modifier = Modifier
-                                    .size(288.dp)
-                                    .clickable { faceEnlarged = false },
-                            )
-                        }
-                    }
-                    Text(
-                        "${a.fromField}\n" + DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
-                            .format(Instant.ofEpochSecond(a.dateEpoch).atZone(ZoneId.systemDefault())),
-                        style = MaterialTheme.typography.bodySmall,
-                        color = readFg.copy(alpha = 0.7f),
-                    )
-                }
+                // 1.5.5 (G1 + G3): Face o iniziali colorate, nome, indirizzo,
+                // data «oggi / ieri / giorno». La decodifica della Face, con le
+                // difese della 1.2.12, e' SPOSTATA in IntestazioneAutore.kt: le
+                // tre viste di lettura ora la condividono.
+                IntestazioneAutore(a.fromField, a.dateEpoch, a.faceB64, a.headersRaw, readFg)
                 HorizontalDivider(Modifier.padding(vertical = 8.dp))
             }
             when {

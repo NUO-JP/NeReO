@@ -1969,8 +1969,63 @@ android {
         //  3. «una volta al giorno» = 24 ore OPPURE giorno di calendario nuovo
         //     (piano B): update/FinestraControllo.kt, Kotlin puro, 11 asserzioni.
         // Zip: da 112 a 113 file, il file in piu' e' update/FinestraControllo.kt.
-        versionCode = 168
-        versionName = "1.5.4"
+        // 1.5.5 (17 ottobre 2026, versionCode 169) - TRE VOCI DEL QUADERNO
+        // (A + B, scelte di Marco). versionName CAMBIA PER OBBLIGO: la
+        // 1.5.4/168 e' PUBBLICA dal 15 ottobre (confermato da Marco, APK
+        // pubblicato = APK del pacchetto, SHA-256 identico).
+        // isNewer("1.5.5","1.5.4") = true, ESEGUITO.
+        //  A. §K1-bis: il campo del messaggio nella scrittura a PANNELLI aveva
+        //     ancora weight(1f) + heightIn(min): il minimo schiacciato della
+        //     1.4.9. Stessa correzione della vista a pagine: colonna
+        //     scorrevole, niente peso, heightIn(min = 160, max = 480).
+        //  B1. la ricerca dice DOVE ha trovato: se la parola sta solo nel
+        //      corpo, sotto la riga compare un estratto col giallo
+        //      (ui/screens/DoveCorrisponde.kt, Kotlin puro).
+        //  B2. il 441 spiegato: al testo del server si aggiunge una riga
+        //      (nntp/RifiutoInvio.kt, Kotlin puro; ui/SpiegaRifiuto.kt per le
+        //      due scritture).
+        // Zip: da 113 a 118 file: i tre .kt nuovi, TRADEMARK.txt e .gitignore.
+        // versionCode 170 (17 ottobre 2026, sera) - G1 + G2 + G3 del
+        // brainstorming, scelte di Marco PRIMA di compilare la 169: versionName
+        // INVARIATO (la 1.5.5 non e' pubblicata), versionCode alzato perche'
+        // la 169 e' stata consegnata (monotono, mai riusato).
+        //  G1. iniziali colorate al posto della Face quando manca (colore
+        //      fisso per indirizzo); G3. intestazione dell'autore a scheda,
+        //      data «oggi / ieri / giorno»: un componente solo per le TRE viste
+        //      (ui/screens/IntestazioneAutore.kt; logica pura in
+        //      ui/AutoreVisivo.kt). La decodifica della Face e' SPOSTATA li'
+        //      da ArticleScreen, difese della 1.2.12 comprese.
+        //  G2. icona monocromatica per le icone a tema (mipmap-anydpi-v33).
+        // Zip: da 118 a 121 file (i due .kt e l'icona v33).
+        // versionCode 171 (18 ottobre 2026) - SEGNALAZIONE SU USENET: rispondere
+        // a un post con un References lunghissimo (nl.politiek, 27 id) falliva
+        // all'invio. Il References usciva senza tetto. Ora un punto solo, in
+        // postArticle: doppioni tolti e, oltre i 998 caratteri, accorciato
+        // tenendo la radice e gli antenati piu' recenti (RFC 5537 §3.4.4,
+        // RFC 5536 §2.2, lette alla fonte). thread/ReferencesInUscita.kt,
+        // Kotlin puro, 17 asserzioni. versionName INVARIATO (1.5.5 non
+        // pubblicata, 170 mai compilata). Zip: da 121 a 122 file.
+        // versionCode 172 (18 ottobre 2026) - LE X-FACE SI VEDONO (richiesta
+        // di Marco, piano A: solo visualizzazione). Prima la avevo chiamata
+        // 1.5.6; Marco: la 1.5.5 non e' mai stata pubblicata, quindi resta
+        // 1.5.5 (regola dei due numeri: il nome cambia solo dopo la
+        // pubblicazione). La 171 compilata non si pubblica.
+        // Decodificatore tradotto da FFmpeg (libavcodec/xface.c + xfacedec.c,
+        // LGPL 2.1+, da compface di James Ashton) in ui/XFace.kt, Kotlin puro;
+        // accanto all'autore: Face, poi X-Face, poi iniziali. Nessuna modifica
+        // al database: la X-Face si legge dalle intestazioni gia' salvate.
+        // Zip: da 122 a 123 file.
+        // versionCode 173 (18 ottobre 2026) - I MESSAGGI NUOVI NON SFUGGONO
+        // PIU', davvero (Marcoseba sulla 1.5.4: «a me capita ancora»). La
+        // sorveglianza della 1.5.4 si accendeva solo dopo un ripristino di
+        // posizione e guardava solo il primo della lista; ora vale a ogni
+        // ingresso, si spegne solo per un trascinamento del dito, e il segnale
+        // di novita' dipende dall'ordinamento (ui/screens/NovitaInCima.kt,
+        // SorveglianzaNovita.kt). Estesa ai pannelli (piano B con estensione,
+        // scelto da Marco). versionName INVARIATO: 1.5.5 non pubblicata.
+        // Zip: da 123 a 125 file.
+        versionCode = 173
+        versionName = "1.5.5"
     }
 
     buildTypes {

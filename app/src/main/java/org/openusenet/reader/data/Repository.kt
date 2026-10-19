@@ -32,6 +32,7 @@ import org.openusenet.reader.filter.MatchType
 import org.openusenet.reader.filter.PropagationInput
 import org.openusenet.reader.filter.ScorableArticle
 import org.openusenet.reader.thread.Threader
+import org.openusenet.reader.thread.referencesInUscita
 import org.openusenet.reader.filter.ScoreResult
 import org.openusenet.reader.nntp.MimeUtil
 import org.openusenet.reader.nntp.NntpClient
@@ -2804,7 +2805,21 @@ class NewsRepository(
                     .take(3)
                 add("Newsgroups: ${gruppiRisposta.joinToString(",")}")
                 intestazione("Subject", MimeUtil.encodeWord(unaRiga(subject)))
-                referencesHeader?.takeIf { it.isNotBlank() }?.let { add("References: ${unaRiga(it)}") }
+                // 1.5.5 / 171 (segnalazione su Usenet, nl.politiek): il References
+                // passava COSI' COM'ERA. Ora un punto solo, per tutte le strade che
+                // arrivano qui (risposta a pagine e a pannelli, supersede, bozza
+                // ripresa): doppioni tolti e, oltre i 998 caratteri, accorciato
+                // tenendo la radice e gli antenati piu' recenti (RFC 5537 §3.4.4).
+                // Vedi thread/ReferencesInUscita.kt.
+                referencesHeader?.takeIf { it.isNotBlank() }?.let { grezzo ->
+                    val prima = Threader.idNelleReferences(grezzo).size
+                    val pronto = referencesInUscita(grezzo)
+                    val dopo = if (pronto.isEmpty()) 0 else pronto.split(' ').size
+                    if (dopo != prima) {
+                        NntpLog.diag("References: $prima identificativi -> $dopo (doppioni e tetto di 998 caratteri)")
+                    }
+                    if (pronto.isNotEmpty()) add("References: $pronto")
+                }
                 add("MIME-Version: 1.0")
                 // 1.3.6 — SI DICHIARA CIO' CHE SI MANDA DAVVERO.
                 //

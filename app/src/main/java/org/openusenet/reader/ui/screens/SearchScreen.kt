@@ -44,6 +44,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -259,14 +261,36 @@ fun SearchScreen(
                             )
                         },
                         supportingContent = {
-                            Text(
-                                highlightMatches(
-                                    "${a.fromField}  ·  ${formatThreadDate(a.dateEpoch)}",
-                                    query, hlBg,
-                                ),
-                                style = MaterialTheme.typography.bodySmall,
-                                maxLines = 1,
-                            )
+                            // 1.5.5 (voce 14, BIG Umberto e il «1.1.4»): se la
+                            // parola sta SOLO nel testo, la riga non aveva nessun
+                            // giallo e il risultato sembrava sbagliato. Ora si
+                            // vede l'estratto del testo, col giallo come il resto.
+                            val dove = remember(a.id, a.body, query) {
+                                doveCorrisponde(a.subject, a.fromField, a.body, query)
+                            }
+                            Column {
+                                Text(
+                                    highlightMatches(
+                                        "${a.fromField}  ·  ${formatThreadDate(a.dateEpoch)}",
+                                        query, hlBg,
+                                    ),
+                                    style = MaterialTheme.typography.bodySmall,
+                                    maxLines = 1,
+                                )
+                                dove.estratto?.let { estratto ->
+                                    val etichetta = stringResource(R.string.srch_in_body)
+                                    Text(
+                                        buildAnnotatedString {
+                                            append(etichetta)
+                                            append(" ")
+                                            append(highlightMatches(estratto, query, hlBg))
+                                        },
+                                        style = MaterialTheme.typography.bodySmall,
+                                        fontStyle = FontStyle.Italic,
+                                        maxLines = 2,
+                                    )
+                                }
+                            }
                         },
                         modifier = Modifier.clickable {
                             // livello 2: porto il termine cercato fino all'articolo

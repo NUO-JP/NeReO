@@ -66,6 +66,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarDuration
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
@@ -109,6 +110,7 @@ import org.openusenet.reader.data.IntestazioniPersonalizzate
 import org.openusenet.reader.data.NewsRepository
 import org.openusenet.reader.thread.Threader
 import org.openusenet.reader.ui.indietroSicuro
+import org.openusenet.reader.ui.spiegazioneRifiutoInvio
 
 @OptIn(ExperimentalMaterial3Api::class, androidx.compose.foundation.ExperimentalFoundationApi::class)
 @Composable
@@ -477,7 +479,19 @@ fun ComposeScreen(
             }.onFailure {
                 // 1.5.1 (T2): l'invio non e' andato, la bozza torna a proteggere il testo.
                 guardia.riapri()
-                snackbar.showSnackbar(ctx.getString(R.string.cmp_send_failed, it.message ?: ""))
+                // 1.5.5 (voce 15, il 441 di Ammammata): il testo del server
+                // resta intero; se e' un 441 si aggiunge una riga che dice cosa
+                // fare, e l'avviso resta a schermo piu' a lungo per leggerla.
+                val spiegazione = spiegazioneRifiutoInvio(it.message)
+                val base = ctx.getString(R.string.cmp_send_failed, it.message ?: "")
+                if (spiegazione != null) {
+                    snackbar.showSnackbar(
+                        base + "\n" + ctx.getString(spiegazione),
+                        duration = SnackbarDuration.Long,
+                    )
+                } else {
+                    snackbar.showSnackbar(base)
+                }
             }
             sending = false
         }

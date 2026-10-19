@@ -1,8 +1,30 @@
 ======================================================================
- NeReO 1.5.4 - Ne(ws) Re(ader) O(pen-source)
+ NeReO 1.5.5 - Ne(ws) Re(ader) O(pen-source)
  Newsreader Usenet (NNTP) solo testo per Android
- NeReO 1.5.4 (versionCode 168) - By MCSM - 2026/10/15
+ NeReO 1.5.5 (versionCode 173) - By MCSM - 2026/10/18
 ======================================================================
+ ***  VERSIONE 1.5.5  ***
+
+ Tre voci del quaderno: un difetto noto e due piccole confusioni incontrate dagli utenti. E un aspetto nuovo per l'autore del messaggio, piu' l'icona a tema; e una correzione della 1.5.4 segnalata da un utente.
+
+  * L'AUTORE DEL MESSAGGIO HA UN ASPETTO NUOVO. Accanto al nome la sua Face o, quando manca, le sue iniziali su un cerchio colorato: il colore viene dall'indirizzo, quindi la stessa persona ha sempre lo stesso colore, in ogni gruppo. La data dice "oggi", "ieri" o il giorno della settimana per i messaggi recenti (toccala per la data completa). Anche nei pannelli, dove la Face finora mancava.
+
+  * RISPONDERE NELLE DISCUSSIONI MOLTO PROFONDE FUNZIONA DI NUOVO. Quando un messaggio portava una riga References lunghissima (uno in nl.politiek ne aveva 27), la risposta superava il limite di 998 caratteri per riga di intestazione e il server la rifiutava. Ora NeReO toglie gli identificativi doppi e, oltre il limite, toglie i piu' vecchi dopo il primo, tenendo l'inizio della discussione e i messaggi piu' recenti (RFC 5537). Sotto il limite non cambia niente.
+
+  * LE X-FACE SI VEDONO. La classica faccina in bianco e nero di Usenet (l'intestazione X-Face, mandata da MesNews e da molti lettori tradizionali) compare accanto al nome dell'autore, dove finora compariva solo la Face a colori. Prima la Face, poi la X-Face, poi le iniziali colorate. Toccandola si ingrandisce e resta nitida. NeReO le mostra, non le invia.
+
+  * I MESSAGGI NUOVI RESTANO DAVVERO IN VISTA. La correzione della 1.5.4 funzionava solo se NeReO ti aveva appena riportato dov'eri rimasto: al primo ingresso nel gruppo dopo aver aperto l'app, o con la lista gia' in cima, i messaggi arrivati con la sincronizzazione potevano ancora finire sopra il bordo dello schermo. Ora, a ogni apertura del gruppo, se arrivano messaggi nuovi e non hai ancora spostato la lista col dito, sale in cima a mostrarli. Con gli ordinamenti "dai piu' recenti" si accorge anche di una risposta nella discussione gia' in cima; con quelli "dai piu' vecchi", dove i nuovi stanno in fondo, resti dove sei. Anche nella vista a pannelli.
+
+  * ICONA A TEMA: su Android 13 e successivi, con le icone a tema attive, anche quella di NeReO prende i colori del tuo tema.
+
+  * LA RICERCA DICE DOVE HA TROVATO LA PAROLA. Se la parola sta solo nel testo del messaggio, sotto il risultato compare un breve estratto con la parola in giallo. Prima un risultato cosi' non aveva nessun giallo e sembrava sbagliato.
+
+  * IL RIFIUTO 441 DEL SERVER SPIEGATO. Alla risposta del server, che resta intera, segue una riga in italiano. Per il caso piu' comune, "Article must contain real content", dice cosa fare: scrivere qualcosa in piu'.
+
+  * NELLA VISTA A PANNELLI IL CAMPO DEL MESSAGGIO NON VIENE PIU' SCHIACCIATO: l'area di scrittura scorre e il campo mantiene un'altezza utilizzabile, come nella vista a pagine dalla 1.4.9.
+
+  * IL NOME E' RISERVATO. Il codice resta GPL, ma le versioni modificate devono usare un altro nome e un altro applicationId: vedi TRADEMARK.txt.
+
  ***  VERSIONE 1.5.4  ***
 
  Tre richieste di utenti, arrivate a Marco il giorno dopo la 1.5.3.
@@ -595,7 +617,7 @@ NeReO e' un lettore di newsgroup Usenet per Android, dedicato alle discussioni t
 
 Niente gruppi binari, niente allegati, niente pubblicita', niente telemetria: solo messaggi e conversazioni, come Usenet e' sempre stata.
 
-E' software libero, rilasciato con licenza GNU GPL v3 o successiva.
+E' software libero, rilasciato con licenza GNU GPL v3 o successiva. Il nome "NeReO" e il logo sono riservati all'autore: le versioni modificate devono usare un altro nome (vedi TRADEMARK.txt). Sorgenti anche su GitHub: https://github.com/mcsm64/NeReO
 
 
 ===================

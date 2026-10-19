@@ -130,6 +130,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import org.openusenet.reader.ui.PulsanteIncolla
+import org.openusenet.reader.ui.spiegazioneRifiutoInvio
 import org.openusenet.reader.ui.CorpoCitabile
 import org.openusenet.reader.ui.rememberAppunti
 import org.openusenet.reader.ui.articoloEml
@@ -164,9 +165,6 @@ import org.openusenet.reader.ui.components.UnsubscribeDialog
 import org.openusenet.reader.ui.components.QuoteColoredBody
 import org.openusenet.reader.ui.components.readStateColor
 import org.openusenet.reader.ui.components.readingColors
-import java.time.Instant
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
 
 /** Cosa si sta componendo nel pannello destro. */
 private sealed interface ComposeTarget {
@@ -903,6 +901,22 @@ fun ThreePaneHome(repo: NewsRepository, nav: NavHostController) {
                         // Rimedio: abilitare il gesto SOLO quando la lista è
                         // davvero ferma in cima (non in movimento inerziale).
                         val listaAlbero = rememberLazyListState()
+                        // 1.5.5 / 173 (Marcoseba): anche qui, se il sync
+                        // dell'apertura porta novita' e non hai ancora trascinato
+                        // la lista, si va in cima a mostrarle. Stessa logica del
+                        // telefono, stesso file: SorveglianzaNovita.kt.
+                        val improntaPannello = remember(flat, articoliVisibili) {
+                            improntaLista(flat.firstOrNull()?.article?.id, articoliVisibili.map { it.id })
+                        }
+                        InCimaSeArrivanoNovita(
+                            listState = listaAlbero,
+                            chiave = selectedGroupId,
+                            attiva = true,
+                            impronta = improntaPannello,
+                            vistaSequenziale = AppSettings.threadView == ThreadViews.SEQUENTIAL,
+                            ordinamento = AppSettings.threadSort,
+                            spegni = selectedArticleId != null,
+                        )
                         val fermaInCima by remember {
                             derivedStateOf {
                                 !listaAlbero.isScrollInProgress &&
@@ -2115,14 +2129,8 @@ private fun PostContinuo(
         IntestazioneConBarra(
             azioniInBarra = AppSettings.paneBarOrder.count { it !in AppSettings.paneBarInMenu },
             intestazione = { mod ->
-                Text(
-                "${authorDisplayName(post.fromField)}  ·  " +
-                    DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
-                        .format(Instant.ofEpochSecond(post.dateEpoch).atZone(ZoneId.systemDefault())),
-                style = MaterialTheme.typography.bodySmall,
-                color = readFg.copy(alpha = 0.7f),
-                modifier = mod,
-            )
+                // 1.5.5 (G1 + G3): avatar piccolo e data «oggi / ieri / giorno».
+                IntestazioneAutoreCompatta(post.fromField, post.dateEpoch, post.faceB64, headersRaw, readFg, mod)
             },
             barra = {
                 /*
@@ -2522,12 +2530,9 @@ private fun ArticlePaneSingolo(
                     modifier = Modifier.padding(bottom = 4.dp),
                 )
             }
-            Text(
-                "${a.fromField}\n" + DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm")
-                    .format(Instant.ofEpochSecond(a.dateEpoch).atZone(ZoneId.systemDefault())),
-                style = MaterialTheme.typography.bodySmall,
-                color = readFg.copy(alpha = 0.7f),
-            )
+            // 1.5.5 (G1 + G3): la stessa intestazione della lettura a schermo
+            // intero — qui prima mancava la Face.
+            IntestazioneAutore(a.fromField, a.dateEpoch, a.faceB64, a.headersRaw, readFg)
             HorizontalDivider(Modifier.padding(vertical = 8.dp))
             if (crosspostWarning) {
                 // beta17: selettore gruppi. Il gruppo corrente è sempre incluso;
@@ -2846,7 +2851,26 @@ private fun ComposePane(
             // sotto. Ora la Column NON scorre: è il campo corpo a scorrere dentro
             // di sé grazie a weight(1f), esattamente come in ComposeScreen (che
             // non ha mai avuto questo bug proprio perché strutturata così).
+            //
+            // 1.5.5 (§K1-bis) — E ADESSO LA COLONNA SCORRE DI NUOVO, MA IL
+            // CAMPO HA UN TETTO. E' la correzione della 1.4.9 (§K1) portata
+            // nella seconda copia, la stessa struttura verificata sul campo
+            // dall'utente del J6 nella vista a pagine. Il campo qui sotto aveva
+            // `weight(1f)` + `heightIn(min = 200.dp)`: lo stesso minimo che non
+            // e' un minimo, perche' il peso impone un'altezza fissa e il minimo
+            // non puo' chiedere piu' del massimo che riceve. E qui nome, email
+            // e oggetto sono SEMPRE visibili (non c'e' «Mittente e
+            // intestazioni» da chiudere), quindi lo spazio residuo era ancora
+            // meno.
+            // Il conflitto della beta15 (Roxy) nasceva da un campo SENZA
+            // tetto dentro una colonna scorrevole: cresceva illimitato e i due
+            // scorrimenti si contendevano i gesti. Con `heightIn(max = 480.dp)`
+            // il campo resta limitato e scorre al proprio interno, come nella
+            // vista a pagine dalla 1.4.9.
+            // ⚠️ Niente `weight` fra i figli di questa colonna: in una colonna
+            // scorrevole l'altezza disponibile e' infinita (vedi ComposeScreen).
             .imePadding()
+            .verticalScroll(rememberScrollState())
             .padding(16.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
@@ -2982,6 +3006,15 @@ private fun ComposePane(
                 color = MaterialTheme.colorScheme.error,
                 style = MaterialTheme.typography.bodySmall,
             )
+            // 1.5.5 (voce 15): la stessa riga di spiegazione della vista a
+            // pagine, dallo stesso posto (ui/SpiegaRifiuto.kt).
+            spiegazioneRifiutoInvio(it)?.let { spiegazione ->
+                Text(
+                    stringResource(spiegazione),
+                    color = MaterialTheme.colorScheme.error,
+                    style = MaterialTheme.typography.bodySmall,
+                )
+            }
         }
         Text(
             // 1.4 (Dave Royal): con più gruppi di destinazione si mostrano tutti.
@@ -3038,14 +3071,13 @@ private fun ComposePane(
                 autoCorrectEnabled = false,
             ),
             textStyle = MaterialTheme.typography.bodyMedium.copy(fontFamily = FontFamily.Monospace),
-            // beta15 (Roxy): weight(1f) → il corpo prende l'altezza residua e
-            // scorre DENTRO di sé; niente più crescita illimitata dentro una
-            // Column scrollabile (vedi commento in cima). heightIn min garantisce
-            // un'area usabile anche con tastiera alzata. Come ComposeScreen.
+            // beta15 (Roxy): il corpo scorre DENTRO di sé; niente crescita
+            // illimitata dentro una colonna scorrevole (vedi commento in cima).
+            // 1.5.5 (§K1-bis): tolto `weight(1f)`, che schiacciava il minimo;
+            // minimo e tetto identici alla vista a pagine (1.4.9, §K1).
             modifier = Modifier
                 .fillMaxWidth()
-                .weight(1f)
-                .heightIn(min = 200.dp)
+                .heightIn(min = 160.dp, max = 480.dp)
                 .bringIntoViewRequester(corpoInVista),
         )
     }

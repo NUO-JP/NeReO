@@ -197,13 +197,13 @@ fun ThreadListScreen(
      * «niente di nuovo»: lo stesso punto, ogni volta.
      *
      * Piano A (Marco): se, DOPO aver riportato l'utente dov'era, la cima della
-     * lista cambia e lui non ha ancora toccato la lista, si va in cima. Lo
-     * scatto c'e' solo quando c'e' una novita'. [primoAlRipristino] e' la cima
-     * nel momento del ripristino; [sorvegliaNovita] si spegne al primo tocco
-     * dell'utente o dopo il salto.
+     * lista cambia e lui non ha ancora toccato la lista, si va in cima.
+     *
+     * 1.5.5 / 173 (Marcoseba: «a me capita ancora»): la sorveglianza si
+     * accendeva solo dopo un ripristino, e «novita'» voleva dire solo «il primo
+     * e' cambiato». Ora vale in ogni ingresso, e il segnale tiene conto
+     * dell'ordinamento: vedi SorveglianzaNovita.kt e NovitaInCima.kt.
      */
-    var primoAlRipristino by remember(groupId) { mutableStateOf<Long?>(null) }
-    var sorvegliaNovita by remember(groupId) { mutableStateOf(false) }
 
     val articles by repo.articles(groupId, AppSettings.mostraFiltrati)
         .collectAsState(initial = emptyList())
@@ -281,6 +281,10 @@ fun ThreadListScreen(
     val items = remember(articoliVisibili, unreadOnly, view, AppSettings.threadSort, expandedRoots) {
         buildThreadList(articoliVisibili, unreadOnly, view, expandedRoots = expandedRoots)
     }
+    // 1.5.5 / 173: primo della lista e id piu' alto, per riconoscere le novita'.
+    val impronta = remember(items, articoliVisibili) {
+        improntaLista(items.firstOrNull()?.article?.id, articoliVisibili.map { it.id })
+    }
 
     // Ripristino (beta14 best-of-both): appena la lista ha contenuto, decido.
     // Se il primo articolo della lista è cambiato rispetto a quando sono
@@ -302,21 +306,17 @@ fun ThreadListScreen(
          * che deve funzionare sempre.
          */
         if (evidenziaArticolo != null) { posizioneRipristinata = true; return@LaunchedEffect }
+        val improntaOra = impronta
         ThreadScrollMemory.get(groupId)?.let { ancora ->
-            val primoAttuale = items.first().article.id
-            val ciSonoNovita = primoAttuale != ancora.topArticleId
+            val ciSonoNovita = improntaOra != null && novitaInCima(
+                view == ThreadViews.SEQUENTIAL, AppSettings.threadSort, ancora.impronta, improntaOra,
+            )
             if (!ciSonoNovita) {
                 // nessun articolo nuovo in cima → riprendi da dove eri
                 val idx = items.indexOfFirst { it.article.id == ancora.articleId }
                 // se il messaggio non c'è più (cancellato, filtrato, scaduto) si
                 // resta in cima: meglio un punto noto che uno arbitrario
-                if (idx >= 0) {
-                    listState.scrollToItem(idx, ancora.offset)
-                    // 1.5.4: da qui si sorveglia la cima (vedi sopra). Si accende
-                    // DOPO lo scorrimento: quello e' nostro, non dell'utente.
-                    primoAlRipristino = primoAttuale
-                    sorvegliaNovita = true
-                }
+                if (idx >= 0) listState.scrollToItem(idx, ancora.offset)
             }
             // se ci sono novità non faccio nulla: la lista è già in cima (0,0),
             // dove i nuovi articoli sono visibili
@@ -324,23 +324,18 @@ fun ThreadListScreen(
         posizioneRipristinata = true
     }
 
-    // 1.5.4: il primo tocco dell'utente spegne la sorveglianza — da li' in poi
-    // la posizione e' una sua scelta, e nessun messaggio nuovo la sposta.
-    LaunchedEffect(listState, groupId) {
-        snapshotFlow { listState.isScrollInProgress }.collect { scorre ->
-            if (scorre && sorvegliaNovita) sorvegliaNovita = false
-        }
-    }
-    // 1.5.4: la cima e' cambiata dopo il ripristino (il sync dell'apertura ha
-    // portato messaggi nuovi) e l'utente non ha toccato niente: in cima.
-    LaunchedEffect(items, sorvegliaNovita) {
-        if (!sorvegliaNovita || items.isEmpty()) return@LaunchedEffect
-        val primo = items.first().article.id
-        if (primoAlRipristino != null && primo != primoAlRipristino) {
-            sorvegliaNovita = false
-            listState.scrollToItem(0)
-        }
-    }
+    // 1.5.5 / 173: da qui, in OGNI caso (ripristino o partenza dall'alto), le
+    // novita' che arrivano col sync dell'apertura portano in cima finche'
+    // l'utente non trascina la lista. Non con un messaggio da evidenziare:
+    // quello e' un «portami qui» esplicito (par. B13) e non va scavalcato.
+    InCimaSeArrivanoNovita(
+        listState = listState,
+        chiave = groupId,
+        attiva = posizioneRipristinata && evidenziaArticolo == null,
+        impronta = impronta,
+        vistaSequenziale = view == ThreadViews.SEQUENTIAL,
+        ordinamento = AppSettings.threadSort,
+    )
 
     /*
      * 1.4.6 (par. B13, BIG Umberto) — «MOSTRA NELL'ELENCO».
@@ -425,12 +420,12 @@ fun ThreadListScreen(
     // che impediva alla memoria di azzerarsi da sola. Registra anche l'id del
     // PRIMO articolo della lista (beta14): serve al rientro per capire se sono
     // arrivati articoli nuovi in cima.
-    LaunchedEffect(listState, groupId, items) {
+    LaunchedEffect(listState, groupId, items, impronta) {
+        val improntaSalvata = impronta ?: return@LaunchedEffect
         snapshotFlow { listState.firstVisibleItemIndex to listState.firstVisibleItemScrollOffset }
             .collect { (idx, off) ->
                 items.getOrNull(idx)?.article?.id?.let { id ->
-                    val topId = items.firstOrNull()?.article?.id ?: id
-                    ThreadScrollMemory.put(groupId, id, off, topId)
+                    ThreadScrollMemory.put(groupId, id, off, improntaSalvata)
                 }
             }
     }

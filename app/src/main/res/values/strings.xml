@@ -531,6 +531,7 @@
     <string name="srch_note_group">Searches subject and author of this group\'s messages, and the body of those already opened.</string>
     <string name="srch_note_all">Searches subject and author of all cached messages, and the body of those already opened.</string>
     <string name="srch_none">No result for \"%s\".</string>
+    <string name="srch_in_body">In the text:</string>
     <string name="srch_threads_n">%d threads with at least one matching message.</string>
     <string name="srch_first_500">First 500 results.</string>
     <string name="srch_results_n">%d results.</string>
@@ -563,6 +564,9 @@
     <string name="art_bottom">End of message</string>
     <string name="art_crossposted">⚠ Crossposted to %1$d groups: %2$s</string>
     <string name="art_face_cd">Author\'s Face</string>
+    <string name="art_xface_cd">Author\'s X-Face</string>
+    <string name="art_date_today">today %1$s</string>
+    <string name="art_date_yesterday">yesterday %1$s</string>
     <string name="art_face_big_cd">Author\'s Face, enlarged</string>
     <string name="art_error">Error: %s</string>
     <string name="art_plonk_title">Plonk</string>
@@ -706,6 +710,8 @@
     <string name="upd_later">Later</string>
     <string name="pane_reply_to_post">Reply to this post</string>
     <string name="pane_send_failed">Sending failed: %1$s</string>
+    <string name="cmp_441_content">The server judges the message too short on text (an anti-spam defence): write a little more and send it again.</string>
+    <string name="cmp_441_generic">The server refused the message: the reason is in its reply, shown as it is.</string>
     <string name="groups_all_read">All read</string>
     <string name="groups_welcome">Welcome!\n1. Set up a server (top-right icon)\n2. Subscribe to groups using the + button</string>
     <string name="drafts_no_subject">(no subject)</string>
@@ -1045,6 +1051,15 @@
     <string name="rn_v149_l2">New action «Keep this message» in the reading bar, and in the ⋮ menu in panel view. It writes the message as an .eml file into a folder you choose once, under Maintenance → Kept messages; after that, keeping a message is one tap. «Save as .eml file» stays where it was and still asks you where to put the file each time, which is the right shape for the occasional hand-off to a mail client. A kept message leaves NeReO’s local store and becomes a file of yours: the automatic clean-up will not take it away, nor will unsubscribing, nor a re-download. In exchange, NeReO’s search no longer sees it — the search reads the local store, and that message has left it; to read it again, open the file with another app. It comes from a question by Jeff, «does NeReO store posts?»: the answer was no, and now it is «if you ask it to».</string>
     <string name="rn_v149_l3">On a small screen, with large text and a tall keyboard, the message field could be squeezed until the letters you typed were cut in half. Reported by a user on a Samsung J6, and reproduced here by turning the text size up and opening «Sender and headers». The keyboard was not covering the field — the field was simply being given almost no height, because the writing form could not scroll and the field was taking «whatever is left». The form now scrolls and the field keeps a real minimum height, so what you type is always visible. If a keyboard of yours leaves very little room, the page scrolls instead of cutting the text.</string>
     <!-- 1.4.10: manutenzione, nessuna voce chiesta da fuori. -->
+    <string name="rn_v155_l7">X-Faces are shown. The classic black-and-white Usenet face (the X-Face header, sent by MesNews and many traditional newsreaders) now appears next to the author\'s name, where until now only the colour Face did. Tap it to enlarge it: it stays sharp, square by square. Order: Face first, then X-Face, then the coloured initials. NeReO shows X-Faces but does not send them.</string>
+    <string name="rn_v155_l8">New messages really stay in view now. The 1.5.4 fix worked only when NeReO had just taken you back to where you left off: on the first visit to a group after starting the app, or when the list was already at the top, the messages arriving with the sync could still end up above the edge of the screen. Now, every time you open a group, if new messages arrive and you have not yet moved the list with your finger, it goes to the top to show them. With the \"newest first\" orders it also notices a reply inside the thread that is already at the top. With the \"oldest first\" orders, where new messages are at the bottom, you stay where you were. In the panel view too.</string>
+    <string name="rn_v155_title">New in 1.5.5</string>
+    <string name="rn_v155_l1">Search tells you where it found the word. When it is only in the text of the message, the result shows a short excerpt with the word highlighted in yellow. Before, such a result had no highlight at all and looked wrong.</string>
+    <string name="rn_v155_l2">When the server refuses a message with code 441, its reply is now followed by a line in your language. For the most common case, \"Article must contain real content\", it says what to do: write a little more.</string>
+    <string name="rn_v155_l3">In the panel view, the message field is no longer squeezed: the writing area scrolls and the field keeps a usable height, as in the page view since 1.4.9.</string>
+    <string name="rn_v155_l4">A new look for the author of a message. Next to the name, the author\'s Face or, when there is none, their initials on a coloured circle: the colour comes from the address, so the same person always has the same colour, in every group. Name, address and date are laid out more clearly, and the date says \"today\", \"yesterday\" or the day of the week for recent messages (tap it for the full date). In full-screen reading and in the panels, where the Face was missing until now.</string>
+    <string name="rn_v155_l5">Themed icon: on Android 13 and later, if you use themed icons, NeReO\'s icon now takes the colours of your theme like the others.</string>
+    <string name="rn_v155_l6">Replying in very deep threads works again. When a message carried a very long References line (one in nl.politiek had 27 message-ids), the reply could exceed the 998-character limit of a header line and the server refused it. Now NeReO removes duplicate ids and, above the limit, drops the oldest ones after the first, always keeping the start of the thread and the most recent messages, as RFC 5537 prescribes. Below the limit nothing changes.</string>
     <string name="rn_v154_title">New in 1.5.4</string>
     <string name="rn_v154_l1">«Quote and reply»: select some text in a message and the menu offers, next to «Quote», a command that opens the reply with that quotation already in place, the cursor below it and your signature at the end.</string>
     <string name="rn_v154_l2">Opening a group, new messages are no longer missed. The list used to go back to where you had left it before the new messages arrived on top; now, if new ones arrive while you have not touched the list yet, it goes to the top to show them.</string>

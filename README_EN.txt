@@ -1,8 +1,30 @@
 ======================================================================
- NeReO 1.5.4 - Ne(ws) Re(ader) O(pen-source)
+ NeReO 1.5.5 - Ne(ws) Re(ader) O(pen-source)
  Text-only Usenet (NNTP) newsreader for Android
- NeReO 1.5.4 (versionCode 168) - By MCSM - 2026/10/15
+ NeReO 1.5.5 (versionCode 173) - By MCSM - 2026/10/18
 ======================================================================
+ ***  VERSION 1.5.5  ***
+
+ Three entries from the to-do notebook: a known defect and two small confusions met by users. Plus a new look for the author of a message, and the themed icon; and a fix to 1.5.4 reported by a user.
+
+  * THE AUTHOR OF A MESSAGE HAS A NEW LOOK. Next to the name, their Face or, when there is none, their initials on a coloured circle: the colour comes from the address, so the same person always has the same colour, in every group. The date says "today", "yesterday" or the day of the week for recent messages (tap it for the full date). In the panels too, where the Face was missing until now.
+
+  * REPLYING IN VERY DEEP THREADS WORKS AGAIN. When a message carried a very long References line (one in nl.politiek had 27 message-ids), the reply went past the 998-character limit of a header line and the server refused it. Now NeReO removes duplicate ids and, above the limit, drops the oldest ones after the first, keeping the start of the thread and the most recent messages (RFC 5537). Below the limit nothing changes.
+
+  * X-FACES ARE SHOWN. The classic black-and-white Usenet face (the X-Face header, sent by MesNews and many traditional newsreaders) now appears next to the author's name, where until now only the colour Face did. Face first, then X-Face, then the coloured initials. Tap it to enlarge it: it stays sharp. NeReO shows X-Faces but does not send them.
+
+  * NEW MESSAGES REALLY STAY IN VIEW. The 1.5.4 fix worked only if NeReO had just taken you back to where you left off: on the first visit to a group after starting the app, or with the list already at the top, messages arriving with the sync could still end up above the edge of the screen. Now, every time you open a group, if new messages arrive and you have not yet moved the list with your finger, it goes to the top to show them. With the "newest first" orders it also notices a reply in the thread already at the top; with the "oldest first" orders, where new messages are at the bottom, you stay where you are. In the panel view too.
+
+  * THEMED ICON: on Android 13 and later, with themed icons switched on, NeReO's icon takes the colours of your theme too.
+
+  * SEARCH TELLS YOU WHERE IT FOUND THE WORD. When the word is only in the text of the message, the result shows a short excerpt with the word highlighted in yellow. Before, such a result had no highlight at all and looked wrong.
+
+  * THE SERVER'S 441 REFUSAL EXPLAINED. The server's reply, kept whole, is now followed by a line in your language. For the most common case, "Article must contain real content", it says what to do: write a little more.
+
+  * IN THE PANEL VIEW THE MESSAGE FIELD IS NO LONGER SQUEEZED: the writing area scrolls and the field keeps a usable height, as in the page view since 1.4.9.
+
+  * THE NAME IS RESERVED. The code stays GPL, but modified versions must use a different name and a different applicationId: see TRADEMARK.txt.
+
  ***  VERSION 1.5.4  ***
 
  Three requests from users, received by Marco the day after 1.5.3.
@@ -594,7 +616,7 @@ NeReO is a Usenet newsgroup reader for Android, dedicated to text discussions.
 
 No binary groups, no attachments, no ads, no telemetry: just messages and conversations, the way Usenet has always been.
 
-It is free software, released under the GNU GPL v3 or later.
+It is free software, released under the GNU GPL v3 or later. The name "NeReO" and its logo are reserved by the author: modified versions must use a different name (see TRADEMARK.txt). Sources also on GitHub: https://github.com/mcsm64/NeReO
 
 
 ===================
