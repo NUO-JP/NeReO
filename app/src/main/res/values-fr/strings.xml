@@ -51,9 +51,9 @@
     <string name="groups_reorder_toggle">Réorganiser les groupes</string>
     <string name="groups_move_down">Descendre</string>
     <string name="sec_section">Sécurité</string>
-    <string name="sec_plain_auth">Allow unencrypted authentication</string>
-    <string name="sec_lazy_auth">Send the password only when the server asks</string>
-    <string name="sec_lazy_auth_note">Normally NeReO authenticates as soon as it connects. With this on, it waits for the server to ask, then sends the credentials and repeats the command. On a server that cannot encrypt the connection this means the password crosses the network only when you publish, instead of at every sync. Off by default because it changes how every server is contacted: if one stops working, turn it back off.</string>
+    <string name="sec_plain_auth">Autoriser l'authentification non chiffrée</string>
+    <string name="sec_lazy_auth">N'utiliser le mot de passe que si le serveur le demande</string>
+    <string name="sec_lazy_auth_note">Par défaut NeReO s'authentifie dès qu'il se connecte. Avec ce pâramètre actif, il attend que le serveur le demande, puis envoie les identifiants et répète la commande. Avec un serveur qui n'encrypte pas la connexion, Le mot de passe circule sur internet en clair uniquement quand vous publiez et pas à chaque synchronisation. Inactif par défaut car cela change la manière dont le serveur est contacté: En cas de problème remettre ce paramètre sur off.</string>
     <string name="sec_cert_unverified">Do not check the host name on the certificate</string>
     <string name="sec_cert_unverified_note">NeReO checks that a server\'s certificate really belongs to the host it is connecting to. Turn this on only if your provider has a misconfigured certificate and you accept the risk: the connection stays encrypted but is no longer authenticated, so anyone in the middle could read everything, credentials included.\n\nWhat it does NOT do: it does not make NeReO accept a certificate that is self-signed, issued by an authority Android does not know, or expired. Those are refused regardless, and this switch cannot change that.</string>
     <string name="sec_plain_auth_note">Risky: when on, on a server without SSL/TLS your password is sent IN CLEAR over the network. Leave it off unless you have an old server that only accepts auth on an unencrypted port. Always prefer the SSL port (usually 563).</string>
