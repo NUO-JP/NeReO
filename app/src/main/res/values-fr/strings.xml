@@ -56,14 +56,14 @@
     <string name="sec_lazy_auth_note">Par défaut NeReO s'authentifie dès qu'il se connecte. Avec ce pâramètre actif, il attend que le serveur le demande, puis envoie les identifiants et répète la commande. Avec un serveur qui n'encrypte pas la connexion, Le mot de passe circule sur internet en clair uniquement quand vous publiez et pas à chaque synchronisation. Inactif par défaut car cela change la manière dont le serveur est contacté: En cas de problème remettre ce paramètre sur off.</string>
     <string name="sec_cert_unverified">Do not check the host name on the certificate</string>
     <string name="sec_cert_unverified_note">NeReO checks that a server\'s certificate really belongs to the host it is connecting to. Turn this on only if your provider has a misconfigured certificate and you accept the risk: the connection stays encrypted but is no longer authenticated, so anyone in the middle could read everything, credentials included.\n\nWhat it does NOT do: it does not make NeReO accept a certificate that is self-signed, issued by an authority Android does not know, or expired. Those are refused regardless, and this switch cannot change that.</string>
-    <string name="sec_plain_auth_note">Risky: when on, on a server without SSL/TLS your password is sent IN CLEAR over the network. Leave it off unless you have an old server that only accepts auth on an unencrypted port. Always prefer the SSL port (usually 563).</string>
-    <string name="sec_unsafe_title">Insecure connection</string>
-    <string name="sec_unsafe_msg">The server “%1$s” refuses to send your password over an unencrypted connection — and that’s a good thing. Two ways forward: switch that server to SSL (recommended, usually port 563), or allow unencrypted authentication for all servers (not recommended).</string>
-    <string name="sec_unsafe_use_ssl">Switch to SSL</string>
-    <string name="sec_unsafe_allow">Allow unencrypted (not recommended)</string>
-    <string name="quit_menu">Quit application</string>
-    <string name="quit_title">Quit NeReO?</string>
-    <string name="quit_confirm">Quit</string>
+    <string name="sec_plain_auth_note">Risqué: Si actif, avec un serveur non SSL/TLS your password is sent IN CLEAR over the network. Leave it off unless you have an old server that only accepts auth on an unencrypted port. Always prefer the SSL port (usually 563).</string>
+    <string name="sec_unsafe_title">Connexion non sécurisée/string>
+    <string name="sec_unsafe_msg">Le serveur “%1$s” refuse de recevoir votre mot de passe via une connexion non chiffrée — et c'est une bonne chose. Deux choix: Utiliser SSL pour ce serveur (recommandé, port 563 normallement), ou autoriser l'authentification non chiffrée pour tous les serveurs (déconseillé).</string>
+    <string name="sec_unsafe_use_ssl">Passer au protocole SSL</string>
+    <string name="sec_unsafe_allow">Autoriser les données non chiffrées (déconseillé)</string>
+    <string name="quit_menu">Quitter l'application</string>
+    <string name="quit_title">Quitter NeReO?</string>
+    <string name="quit_confirm">Quitter</string>
 
     <!-- ===== Schermata Aspetto ===== -->
     <string name="app_theme">Theme</string>
